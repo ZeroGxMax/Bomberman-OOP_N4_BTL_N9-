@@ -1,5 +1,6 @@
 package map;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +10,13 @@ import entities.Entity;
 import entities.Grass;
 import entities.Wall;
 import graphics.Sprite;
-import javafx.animation.AnimationTimer;
-import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 import javafx.scene.canvas.GraphicsContext;
-import javafx.stage.Stage;
 
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
@@ -23,7 +24,7 @@ public class Map {
     private List<Entity> entities = new ArrayList<>();
     private List<Entity> stillObjects = new ArrayList<>();
 
-    public void createMap() {
+    public void createMap(String mapPath) {
         Entity bomberman = new Bomber(1, 1, Sprite.player_right.getFxImage());
         entities.add(bomberman);
         for (int i = 0; i < WIDTH; i++) {

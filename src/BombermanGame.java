@@ -45,7 +45,7 @@ public class BombermanGame extends Application {
         Scene scene = new Scene(root);
 
         Map gameMap = new Map();
-        gameMap.createMap();
+        gameMap.createMap(Constants.MAP_PATH);
 
         // Them scene vao stage
         stage.setScene(scene);
@@ -59,7 +59,5 @@ public class BombermanGame extends Application {
             }
         };
         timer.start();
-        Entity bomberman = new Bomber(1, 1, Sprite.player_right.getFxImage());
-        entities.add(bomberman);
     }
 }
