@@ -1,0 +1,6 @@
+To do list:
+- Cấu trúc các package trong game:
+    +, Đã làm: Map, Constants (Zero)
+    +, Cần cấu trúc lại: Graphics, Entities, Factory, Input, Controller, ...
+- Tạo gameMap đúng với yêu cầu (grass, wall đúng vị trí): 
+    +, gameMap nhập từ res/levels/Level1.txt
