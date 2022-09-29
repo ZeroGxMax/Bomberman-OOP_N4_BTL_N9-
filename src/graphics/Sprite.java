@@ -2,6 +2,7 @@ package graphics;
 
 import javafx.scene.image.*;
 
+import graphics.SpriteSheet;
 import java.awt.image.BufferedImage;
 import java.nio.IntBuffer;
 
