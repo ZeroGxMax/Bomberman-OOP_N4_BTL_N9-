@@ -1,5 +1,6 @@
-package entities;
+package entities.still;
 
+import abstractClasses.Entity;
 import javafx.scene.image.Image;
 
 public class Wall extends Entity {
@@ -13,3 +14,4 @@ public class Wall extends Entity {
 
     }
 }
+

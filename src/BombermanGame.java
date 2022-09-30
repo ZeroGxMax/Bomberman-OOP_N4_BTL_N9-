@@ -4,10 +4,10 @@ import java.util.List;
 
 import constants.Constants;
 import map.Map;
-import entities.Bomber;
-import entities.Entity;
-import entities.Grass;
-import entities.Wall;
+import entities.animate.Bomber;
+import abstractClasses.Entity;
+import entities.still.Grass;
+import entities.still.Wall;
 import graphics.Sprite;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;

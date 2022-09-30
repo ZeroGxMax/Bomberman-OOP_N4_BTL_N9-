@@ -5,14 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import constants.Constants;
-import entities.Bomber;
-import entities.Entity;
-import entities.Grass;
-import entities.Wall;
+import entities.animate.AnimateEntity;
+import entities.animate.Bomber;
+import abstractClasses.Entity;
+import entities.still.Grass;
+import entities.still.Wall;
+import factory.*;
 import graphics.Sprite;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -21,7 +22,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
-    private List<Entity> entities = new ArrayList<>();
+    private List<Entity> animateEntities = new ArrayList<>();
     private List<Entity> stillObjects = new ArrayList<>();
     private int level;
     private int width;
@@ -41,24 +42,21 @@ public class Map {
 
     public Entity charIntoEntity(int i, int j, char c) {
         Entity object;
+        AnimateEntity character;
         switch (c) {
             case '#':
                 object = new Wall(j, i, Sprite.wall.getFxImage());
-                break;
+                return object;
 //            case 'p':
-//                object = new Bomber(j, i, Sprite.player_right.getFxImage());
-//                entities.add(object);
-//                break;
+//                character = new Bomber(j, i, Sprite.player_right.getFxImage());
+//                return character;
             default:
                 object = new Grass(j, i, Sprite.grass.getFxImage());
-                break;
+                return object;
         }
-        return object;
     }
 
     public void createMap(String mapPath) throws FileNotFoundException {
-        Entity bomberman = new Bomber(1, 1, Sprite.player_right.getFxImage());
-        entities.add(bomberman);
         Scanner sc = new Scanner(new File(mapPath));
         level = sc.nextInt();
         height = sc.nextInt();
@@ -68,12 +66,13 @@ public class Map {
 
         for (int i = 0; i < height; i++) {
             String str = sc.nextLine();
-//            System.out.println(str);
             for (int j = 0; j < width; j++) {
-                Entity object;
                 char c = str.charAt(j);
-                object = charIntoEntity(i, j, c);
-                stillObjects.add(object);
+                stillObjects.add(StillFactory.getStillEntity(i, j, c));
+                Entity animateOne = AnimateFactory.getAnimateEntity(i, j, c);
+                if (animateOne != null) {
+                    animateEntities.add(animateOne);
+                }
             }
         }
         sc.close();
@@ -96,12 +95,12 @@ public class Map {
 //    }
 
     public void updateMap() {
-        entities.forEach(Entity::update);
+        animateEntities.forEach(Entity::update);
     }
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(g -> g.render(gc));
-        entities.forEach(g -> g.render(gc));
+        animateEntities.forEach(g -> g.render(gc));
     }
 }
