@@ -2,6 +2,7 @@ package entities.animate;
 
 import abstractClasses.Entity;
 
+import graphics.Sprite;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -10,8 +11,8 @@ import javafx.scene.paint.Color;
 
 public class Bomber extends AnimateEntity {
 
-    public Bomber(int x, int y, Image img) {
-        super(x, y, img);
+    public Bomber(int x, int y, Sprite sprite) {
+        super(x, y, sprite);
     }
 
     @Override
