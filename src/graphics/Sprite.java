@@ -86,6 +86,7 @@ public class Sprite {
 			new Sprite(DEFAULT_SIZE, 10, 2, SpriteSheet.tiles, 16, 16)
 	};
 
+	//
 	public static Sprite balloom_dead = new Sprite(DEFAULT_SIZE, 9, 3, SpriteSheet.tiles, 16, 16);
 
 	//ONEAL
