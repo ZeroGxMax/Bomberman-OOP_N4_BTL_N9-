@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,12 @@ public class BombermanGame extends Application {
         Scene scene = new Scene(root);
 
         Map gameMap = new Map();
-        gameMap.createMap(Constants.MAP_PATH);
+        try {
+            gameMap.createMap(Constants.MAP_PATH);
+        } catch (FileNotFoundException e) {
+            System.out.println("Cannot create map!");
+        }
+
 
         // Them scene vao stage
         stage.setScene(scene);
