@@ -40,22 +40,6 @@ public class Map {
         return height;
     }
 
-    public Entity charIntoEntity(int i, int j, char c) {
-        Entity object;
-        AnimateEntity character;
-        switch (c) {
-            case '#':
-                object = new Wall(j, i, Sprite.wall.getFxImage());
-                return object;
-//            case 'p':
-//                character = new Bomber(j, i, Sprite.player_right.getFxImage());
-//                return character;
-            default:
-                object = new Grass(j, i, Sprite.grass.getFxImage());
-                return object;
-        }
-    }
-
     public void createMap(String mapPath) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(mapPath));
         level = sc.nextInt();
