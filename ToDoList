@@ -1,14 +1,14 @@
 To do list:
 - Cấu trúc các package trong game:
-    +, Đã làm: Map, Constants (Zero)
-    +, Cần cấu trúc lại: Graphics, Entities, Factory, Input, Controller, ...
+    +, Đã làm: Map, Constants, Factory (Zero)
+    +, Cần cấu trúc lại: Graphics, Entities, Input, Controller, ...
 - Tạo gameMap đúng với yêu cầu (grass, wall đúng vị trí): 
     +, gameMap nhập từ res/levels/Level1.txt (đã làm, Zero)
-    +, Yêu cầu thay đổi Entities thành Animated và Still để có thể tiếp tục nhập gameMap.
+    +, Yêu cầu thay đổi Entities thành Animated và Still để có thể tiếp tục nhập gameMap (đã làm).
     +, Yêu cầu bổ sung Entities: Brick, Portal, Ballon, Oneal.
     +, Yêu cầu bổ sung Items: Bomb, Flame, Speed.
 - Cấu trúc lại Entities:
-    +, Chia làm Animate và Still.
+    +, Chia làm Animate và Still (đã làm).
     +, Animate: Bomber, Ballon, Oneal, ...
     +, Still: Wall, Brick, Grass, Portal, ...
  
