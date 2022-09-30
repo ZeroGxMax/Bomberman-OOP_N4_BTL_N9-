@@ -1,8 +1,7 @@
 package factory;
 
 import entities.animate.Bomber;
-import entities.still.Grass;
-import entities.still.Wall;
+import entities.still.*;
 import abstractClasses.Entity;
 import graphics.Sprite;
 
@@ -11,6 +10,8 @@ public class StillFactory {
         switch (c) {
             case '#':
                 return new Wall(j, i, Sprite.wall.getFxImage());
+            case '*':
+                return new Brick(j, i, Sprite.brick.getFxImage());
             default:
                 return new Grass(j, i, Sprite.grass.getFxImage());
         }
