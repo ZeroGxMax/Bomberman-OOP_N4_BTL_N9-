@@ -1,0 +1,13 @@
+Giải thích về code:
+- Game application: BombermanGame
+  +, Thành phần chính: Entities và Still Objects, trong đó Entities là các thực thể động, cần add theo cách đặc biệt (tránh làm nhòe hình ảnh).
+  +, Window của game được tạo thành từ: Canvas, Group
+  +, AnimationTimer đóng vai trò như là game loop, sau mỗi lần, game được render và update lại.
+- Map:
+  +, Map có 3 hàm chính: createMap(), renderMap(), updateMap().
+  +, createMap(): Các entities và still objects được nhập từ file "src/levels/Level1.txt"
+  +, Scan ký tự để tạo thực thể.
+- Entities:
+  +, Chia làm Animate và Still
+  +, Các thực thể Animate để add vào entities list (trong map và main)
+  +, Các thực thể Still để add vào still object list (trong map và main)
