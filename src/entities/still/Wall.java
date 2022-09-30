@@ -1,12 +1,13 @@
 package entities.still;
 
 import abstractClasses.Entity;
+import graphics.Sprite;
 import javafx.scene.image.Image;
 
 public class Wall extends Entity {
 
-    public Wall(int x, int y, Image img) {
-        super(x, y, img);
+    public Wall(int x, int y, Sprite sprite) {
+        super(x, y, sprite);
     }
 
     @Override
