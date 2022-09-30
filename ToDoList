@@ -5,10 +5,15 @@ To do list:
 - Tạo gameMap đúng với yêu cầu (grass, wall đúng vị trí): 
     +, gameMap nhập từ res/levels/Level1.txt (đã làm, Zero)
     +, Yêu cầu thay đổi Entities thành Animated và Still để có thể tiếp tục nhập gameMap (đã làm).
-    +, Yêu cầu bổ sung Entities: Brick, Portal, Ballon, Oneal.
+    +, Yêu cầu bổ sung Entities: Brick, Ballon, Oneal (đã làm).
+    +, Yêu cầu bổ sung: Portal.
     +, Yêu cầu bổ sung Items: Bomb, Flame, Speed.
 - Cấu trúc lại Entities:
     +, Chia làm Animate và Still (đã làm).
-    +, Animate: Bomber, Ballon, Oneal, ...
-    +, Still: Wall, Brick, Grass, Portal, ...
+    +, Animate: Bomber, Ballon, Oneal, ... (đã làm)
+    +, Still: Wall, Brick, Grass, Portal, ... (đã làm)
+    +, Override các hàm update().
+- Cấu trúc lại Sprites:
+    +, Đưa các identifier giống nhau thành một mảng
+    +, 
  
