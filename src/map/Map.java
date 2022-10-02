@@ -1,6 +1,5 @@
 package map;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +22,7 @@ public class Map {
     public static final int HEIGHT = Constants.HEIGHT;
     private List<Entity> animateEntities = new ArrayList<>();
     private List<Entity> stillObjects = new ArrayList<>();
+    private static int[][] _map = new int[HEIGHT][WIDTH];
     private int level;
     private int width;
     private int height;
@@ -39,6 +39,12 @@ public class Map {
         return height;
     }
 
+    public static boolean isCanStepOn(int x, int y) {
+        if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
+            return false;
+        return _map[y][x] == 1 ? true : false;
+    }
+
     public void createMap(String mapPath) throws FileNotFoundException {
         Scanner sc = new Scanner(new File(mapPath));
         level = sc.nextInt();
@@ -51,7 +57,9 @@ public class Map {
             String str = sc.nextLine();
             for (int j = 0; j < width; j++) {
                 char c = str.charAt(j);
-                stillObjects.add(StillFactory.getStillEntity(i, j, c));
+                Entity temp = StillFactory.getStillEntity(i, j, c);
+                stillObjects.add(temp);
+                _map[i][j] = Grass.isGrass(temp) ? 1 : 0;
                 Entity animateOne = AnimateFactory.getAnimateEntity(i, j, c);
                 if (animateOne != null) {
                     animateEntities.add(animateOne);

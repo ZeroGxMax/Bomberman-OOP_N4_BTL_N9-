@@ -1,20 +1,14 @@
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 import constants.Constants;
-import constants.Constants.KEYBOARD;
-import entities.Entity;
 import graphics.Sprite;
+import input.KeyBoardInput;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import map.Map;
 
@@ -25,6 +19,9 @@ public class BombermanGame extends Application {
 
     private GraphicsContext gc;
     private Canvas canvas;
+    public static Scene scene;
+    public static Map gameMap = new Map();
+
     public static void main(String[] args) {
         Application.launch(BombermanGame.class);
     }
@@ -41,10 +38,9 @@ public class BombermanGame extends Application {
         root.getChildren().add(canvas);
 
         // Tao scene và set scene cho đầu vào bàn phím
-        Constants.scene = new Scene(root);
-        Constants.input1.setScene(Constants.scene);
+        scene = new Scene(root);
+        KeyBoardInput.setScene(scene);
 
-        Map gameMap = new Map();
         try {
             gameMap.createMap(Constants.MAP_PATH);
         } catch (FileNotFoundException e) {
@@ -52,7 +48,7 @@ public class BombermanGame extends Application {
         }
 
         // Them scene vao stage
-        stage.setScene(Constants.scene);
+        stage.setScene(scene);
         stage.show();
 
         AnimationTimer timer = new AnimationTimer() {

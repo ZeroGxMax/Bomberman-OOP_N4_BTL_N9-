@@ -11,17 +11,23 @@ import constants.Constants;
 
 public abstract class Entity {
     protected static Map gameMap;
-    //Tọa độ X tính từ góc trái trên trong Canvas
+    // Tọa độ X tính từ góc trái trên trong Canvas
     protected double x;
-    //Tọa độ Y tính từ góc trái trên trong Canvas
+    // Tọa độ Y tính từ góc trái trên trong Canvas
     protected double y;
+    // Tọa độ ô trong board
+    protected int xUnit;
+    protected int yUnit;
+
     protected Sprite sprite;
     protected Image img;
 
-    //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
+    // Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(double xUnit, double yUnit, Sprite sprite) {
         this.x = xUnit * Sprite.SCALED_SIZE;
         this.y = yUnit * Sprite.SCALED_SIZE;
+        this.xUnit = (int) xUnit;
+        this.yUnit = (int) yUnit;
         this.sprite = sprite;
         this.img = sprite.getFxImage();
     }
@@ -44,5 +50,3 @@ public abstract class Entity {
         gc.drawImage(img, x, y);
     }
 }
-
-

@@ -10,6 +10,10 @@ public class Grass extends Entity {
         super(x, y, sprite);
     }
 
+    public static boolean isGrass(Object obj) {
+        return obj instanceof Grass;
+    }
+
     @Override
     public void update() {
     }
