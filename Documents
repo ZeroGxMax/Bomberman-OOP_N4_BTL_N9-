@@ -11,3 +11,21 @@ Giải thích về code:
   +, Chia làm Animate và Still
   +, Các thực thể Animate để add vào entities list (trong map và main)
   +, Các thực thể Still để add vào still object list (trong map và main)
+  
+  *) Chú thích về việc khiến cho các thực thể động:
+  +, Sử dụng function movingSprite trong graphics/Sprite.java
+  +, Cây thừa kế: Entity -> AnimateEntity -> Mob -> Enemy -> Ballon/Oneal.
+  +, Entity: 
+      * Sử dụng hàm gc.drawImage(image, x, y) để render hình ảnh mới nhất.
+  +, AnimateEntity:
+      * Tạo data member animate cho thực thể (để truyền vào hàm movingSprite).
+      * Tạo function goAnimate() để thay đổi animate theo thời gian.
+  +, Mob:
+      * Tạo data member direction cho thực thể (trong constants có đấy).
+      * Tạo hai hàm abstract: calculateMove() và move() -> để thay đổi sự di chuyển dựa trên tính toán
+  +, Enemy:
+      * Sử dụng hàm override lại hàm render, sử dụng drawImage như cũ.
+      * Override lại các hàm calculateMove() và move()
+      * Tạo hàm abstract chooseSprite(): 
+  +, Ballon:
+      * Override lại hàm chooseSprite() -> Dựa theo direction để xác định hình ảnh hiện tại.
