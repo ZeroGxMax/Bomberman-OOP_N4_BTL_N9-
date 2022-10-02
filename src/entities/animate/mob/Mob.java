@@ -5,7 +5,7 @@ import entities.animate.AnimateEntity;
 import constants.Constants.DIRECTION;
 
 public abstract class Mob extends AnimateEntity {
-    protected DIRECTION direction = DIRECTION.LEFT;
+    protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
 
     public Mob(double x, double y, Sprite sprite) {

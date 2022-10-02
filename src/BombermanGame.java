@@ -3,19 +3,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import constants.Constants;
-import map.Map;
-import entities.animate.mob.Bomber;
+import constants.Constants.KEYBOARD;
 import entities.Entity;
-import entities.still.Grass;
-import entities.still.Wall;
 import graphics.Sprite;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import map.Map;
 
 public class BombermanGame extends Application {
 
@@ -24,9 +25,6 @@ public class BombermanGame extends Application {
 
     private GraphicsContext gc;
     private Canvas canvas;
-    private List<Entity> entities = new ArrayList<>();
-    private List<Entity> stillObjects = new ArrayList<>();
-
     public static void main(String[] args) {
         Application.launch(BombermanGame.class);
     }
@@ -42,8 +40,9 @@ public class BombermanGame extends Application {
         Group root = new Group();
         root.getChildren().add(canvas);
 
-        // Tao scene
-        Scene scene = new Scene(root);
+        // Tao scene và set scene cho đầu vào bàn phím
+        Constants.scene = new Scene(root);
+        Constants.input1.setScene(Constants.scene);
 
         Map gameMap = new Map();
         try {
@@ -52,9 +51,8 @@ public class BombermanGame extends Application {
             System.out.println("Cannot create map!");
         }
 
-
         // Them scene vao stage
-        stage.setScene(scene);
+        stage.setScene(Constants.scene);
         stage.show();
 
         AnimationTimer timer = new AnimationTimer() {
