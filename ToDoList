@@ -1,7 +1,7 @@
 To do list:
 - Cấu trúc các package trong game:
     +, Đã làm: Map, Constants, Factory (Zero)
-    +, Cần cấu trúc lại: Graphics, Entities, Input, Controller, ...
+    +, Cần cấu trúc lại: Graphics, Entities, Input, ...
 - Tạo gameMap đúng với yêu cầu (grass, wall đúng vị trí): 
     +, gameMap nhập từ res/levels/Level1.txt (đã làm, Zero)
     +, Yêu cầu thay đổi Entities thành Animated và Still để có thể tiếp tục nhập gameMap (đã làm).
@@ -12,8 +12,12 @@ To do list:
     +, Chia làm Animate và Still (đã làm).
     +, Animate: Bomber, Ballon, Oneal, ... (đã làm)
     +, Still: Wall, Brick, Grass, Portal, ... (đã làm)
-    +, Override các hàm update().
+    +, Override các hàm update() và render() (đã làm)
 - Cấu trúc lại Sprites:
-    +, Đưa các identifier giống nhau thành một mảng
-    +, 
+    +, Đưa các identifier giống nhau thành một mảng.
+- Khiến cho các Enemy di chuyển:
+    +, Đơn thuần di chuyển (đã làm).
+    +, Di chuyển có hướng.
+    +, Chạm tường (có block).
+    +, Tracing.
  
