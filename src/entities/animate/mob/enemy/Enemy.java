@@ -16,6 +16,7 @@ public abstract class Enemy extends Mob {
     @Override
     public void update() {
         goAnimate();
+        calculateMove();
     }
 
     @Override
