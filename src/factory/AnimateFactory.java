@@ -1,7 +1,9 @@
 package factory;
 
-import abstractClasses.Entity;
-import entities.animate.*;
+import entities.Entity;
+import entities.animate.mob.Bomber;
+import entities.animate.mob.enemy.Balloon;
+import entities.animate.mob.enemy.Oneal;
 import graphics.Sprite;
 
 public class AnimateFactory {

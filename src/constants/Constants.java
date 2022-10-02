@@ -13,7 +13,8 @@ public class Constants {
         UP,
         DOWN,
         LEFT,
-        RIGHT
+        RIGHT,
+        NONE
     }
 }
 

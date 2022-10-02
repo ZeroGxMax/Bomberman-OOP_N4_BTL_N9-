@@ -1,6 +1,6 @@
 package entities.animate;
 
-import abstractClasses.Entity;
+import entities.Entity;
 
 import graphics.Sprite;
 import javafx.scene.SnapshotParameters;
@@ -12,14 +12,18 @@ import javafx.scene.paint.Color;
 import java.awt.font.ImageGraphicAttribute;
 
 public abstract class AnimateEntity extends Entity {
-    protected Sprite[] currentSprite;
+    protected int animate = 0;
+    protected int MAX_ANIMATE = 1000;
 
     public AnimateEntity(int x, int y, Sprite sprite) {
         super(x, y, sprite);
     }
 
-//    public void updateAnimation(int time) {
-//        this.sprite = Sprite.movingSprite(currentSprite, time);
-//        this.img = this.sprite.getFxImage();
-//    }
+    protected void goAnimate() {
+        if (animate < MAX_ANIMATE) {
+            animate++;
+        } else {
+            animate = 0;
+        }
+    }
 }

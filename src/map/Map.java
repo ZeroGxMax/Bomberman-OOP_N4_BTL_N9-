@@ -6,8 +6,7 @@ import java.util.List;
 
 import constants.Constants;
 import entities.animate.AnimateEntity;
-import entities.animate.Bomber;
-import abstractClasses.Entity;
+import entities.Entity;
 import entities.still.Grass;
 import entities.still.Wall;
 import factory.*;
@@ -68,7 +67,7 @@ public class Map {
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
-        stillObjects.forEach(g -> g.render(gc));
-        animateEntities.forEach(g -> g.render(gc));
+        stillObjects.forEach(stillObjects -> stillObjects.render(gc));
+        animateEntities.forEach(animateEntities -> animateEntities.render(gc));
     }
 }
