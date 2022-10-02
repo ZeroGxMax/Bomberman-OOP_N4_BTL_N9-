@@ -1,12 +1,14 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants.DIRECTION;
-import constants.Constants;
+import tracing.RandomTracing;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
+    public RandomTracing tracing = new RandomTracing();
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -28,6 +30,14 @@ public abstract class Enemy extends Mob {
     protected void calculateMove() {
         double xa = 0;
         double ya = 0;
+
+        if (tracing.timeEachDirection == tracing.TIME_EACH_DIRECTION_MAX) {
+            direction = tracing.calculateDirection();
+            tracing.timeEachDirection = 0;
+        } else {
+            tracing.timeEachDirection++;
+        }
+
         if (direction == DIRECTION.UP) ya += 0.5;
         if (direction == DIRECTION.DOWN) ya -= 0.5;
         if (direction == DIRECTION.RIGHT) xa += 0.5;
