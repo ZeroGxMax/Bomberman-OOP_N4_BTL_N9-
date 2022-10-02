@@ -7,9 +7,8 @@ import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
 public abstract class Enemy extends Mob {
-    protected int finalAnimation = 30;
 
-    public Enemy(int x, int y, Sprite sprite) {
+    public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 
@@ -27,17 +26,17 @@ public abstract class Enemy extends Mob {
 
     @Override
     protected void calculateMove() {
-        int xa = 0;
-        int ya = 0;
-        if (direction == DIRECTION.UP) ya++;
-        if (direction == DIRECTION.DOWN) ya--;
-        if (direction == DIRECTION.RIGHT) xa++;
-        if (direction == DIRECTION.LEFT) xa--;
+        double xa = 0;
+        double ya = 0;
+        if (direction == DIRECTION.UP) ya += 0.5;
+        if (direction == DIRECTION.DOWN) ya -= 0.5;
+        if (direction == DIRECTION.RIGHT) xa += 0.5;
+        if (direction == DIRECTION.LEFT) xa -= 0.5;
 
         move(xa, ya);
     }
 
-    public void move(int xa, int ya) {
+    public void move(double xa, double ya) {
         x += xa;
         y += ya;
     }
