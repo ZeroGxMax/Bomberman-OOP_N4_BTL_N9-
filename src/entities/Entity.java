@@ -12,25 +12,25 @@ import constants.Constants;
 public abstract class Entity {
     protected static Map gameMap;
     //Tọa độ X tính từ góc trái trên trong Canvas
-    protected int x;
+    protected double x;
     //Tọa độ Y tính từ góc trái trên trong Canvas
-    protected int y;
+    protected double y;
     protected Sprite sprite;
     protected Image img;
 
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
-    public Entity(int xUnit, int yUnit, Sprite sprite) {
+    public Entity(double xUnit, double yUnit, Sprite sprite) {
         this.x = xUnit * Sprite.SCALED_SIZE;
         this.y = yUnit * Sprite.SCALED_SIZE;
         this.sprite = sprite;
         this.img = sprite.getFxImage();
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public double getY() {
         return y;
     }
 

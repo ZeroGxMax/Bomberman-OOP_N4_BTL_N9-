@@ -6,7 +6,7 @@ import graphics.Sprite;
 import javafx.scene.image.Image;
 
 public class Balloon extends Enemy {
-    public Balloon(int x, int y, Sprite sprite) {
+    public Balloon(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 

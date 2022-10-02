@@ -8,7 +8,7 @@ public abstract class Mob extends AnimateEntity {
     protected DIRECTION direction = DIRECTION.LEFT;
     protected boolean moving = false;
 
-    public Mob(int x, int y, Sprite sprite) {
+    public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 
@@ -22,5 +22,5 @@ public abstract class Mob extends AnimateEntity {
 
     protected abstract void calculateMove();
 
-    protected abstract void move(int xa, int ya);
+    protected abstract void move(double xa, double ya);
 }

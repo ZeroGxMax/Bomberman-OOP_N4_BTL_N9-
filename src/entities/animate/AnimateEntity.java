@@ -15,7 +15,7 @@ public abstract class AnimateEntity extends Entity {
     protected int animate = 0;
     protected int MAX_ANIMATE = 1000;
 
-    public AnimateEntity(int x, int y, Sprite sprite) {
+    public AnimateEntity(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 
