@@ -1,6 +1,6 @@
 package entities.still;
 
-import abstractClasses.Entity;
+import entities.Entity;
 import graphics.Sprite;
 import javafx.scene.image.Image;
 

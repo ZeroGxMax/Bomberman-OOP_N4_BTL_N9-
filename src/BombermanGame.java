@@ -4,8 +4,8 @@ import java.util.List;
 
 import constants.Constants;
 import map.Map;
-import entities.animate.Bomber;
-import abstractClasses.Entity;
+import entities.animate.mob.Bomber;
+import entities.Entity;
 import entities.still.Grass;
 import entities.still.Wall;
 import graphics.Sprite;

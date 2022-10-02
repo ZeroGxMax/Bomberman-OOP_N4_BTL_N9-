@@ -1,8 +1,7 @@
 package factory;
 
-import entities.animate.Bomber;
 import entities.still.*;
-import abstractClasses.Entity;
+import entities.Entity;
 import graphics.Sprite;
 
 public class StillFactory {
