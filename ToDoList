@@ -18,6 +18,7 @@ To do list:
 - Khiến cho các Enemy di chuyển:
     +, Đơn thuần di chuyển (đã làm).
     +, Di chuyển có hướng.
+        * Dựa trên animate/random, thay đổi direction.
     +, Chạm tường (có block).
     +, Tracing.
  
