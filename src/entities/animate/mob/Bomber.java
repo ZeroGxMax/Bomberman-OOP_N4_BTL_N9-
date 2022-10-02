@@ -12,12 +12,12 @@ import javafx.scene.paint.Color;
 
 public class Bomber extends Mob {
 
-    public Bomber(int x, int y, Sprite sprite) {
+    public Bomber(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 
     @Override
-    public void move(int xa, int ya) {
+    public void move(double xa, double ya) {
 
     }
 

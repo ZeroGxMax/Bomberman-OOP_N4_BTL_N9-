@@ -6,7 +6,7 @@ import graphics.Sprite;
 import javafx.scene.image.Image;
 
 public class Oneal extends Enemy {
-    public Oneal(int x, int y, Sprite sprite) {
+    public Oneal(double x, double y, Sprite sprite) {
         super(x, y, sprite);
     }
 
