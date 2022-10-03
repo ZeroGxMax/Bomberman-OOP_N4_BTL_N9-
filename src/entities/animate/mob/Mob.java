@@ -46,19 +46,6 @@ public abstract class Mob extends AnimateEntity {
         return true;
     }
 
-    public boolean isMovable() {
-        ArrayList<Pair<Integer, Integer>> border = getBorder();
-        for (Pair<Integer, Integer> point : border) {
-            int x = (point.getKey() + 1) / Sprite.SCALED_SIZE;
-            int y = (point.getValue() + 1) / Sprite.SCALED_SIZE;
-            StillObject entity = gameMap.getStillObjectAt(x, y);
-            if (!(entity instanceof Grass)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
     protected abstract void calculateMove();
 
     protected abstract void move(double xa, double ya);
