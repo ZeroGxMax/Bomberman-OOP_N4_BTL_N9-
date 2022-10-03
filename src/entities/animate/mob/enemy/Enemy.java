@@ -1,7 +1,9 @@
 package entities.animate.mob.enemy;
 
+import constants.Constants;
 import constants.Constants.DIRECTION;
 import entities.Entity;
+import input.KeyBoardInput;
 import tracing.RandomTracing;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
@@ -17,17 +19,15 @@ public abstract class Enemy extends Mob {
     }
 
     @Override
-    public void update() {
-        goAnimate();
-        calculateMove();
-    }
-
-    @Override
     public void render(GraphicsContext gc) {
         chooseSprite();
         gc.drawImage(sprite.getFxImage(), x, y);
     }
 
+    /**
+     * Dựa vào tracing để xác định ví trí di chuyển
+     * Dựa theo direction để thay đổi tọa độ
+     */
     @Override
     protected void calculateMove() {
         double xa = 0;
@@ -39,11 +39,15 @@ public abstract class Enemy extends Mob {
         } else {
             tracing.timeEachDirection++;
         }
+        if (!moving) {
+//            moving = true;
+            return;
+        }
 
-        if (direction == DIRECTION.UP) ya += 0.5;
-        if (direction == DIRECTION.DOWN) ya -= 0.5;
-        if (direction == DIRECTION.RIGHT) xa += 0.5;
-        if (direction == DIRECTION.LEFT) xa -= 0.5;
+        if (direction == DIRECTION.UP) ya -= 1;
+        if (direction == DIRECTION.DOWN) ya += 1;
+        if (direction == DIRECTION.RIGHT) xa += 1;
+        if (direction == DIRECTION.LEFT) xa -= 1;
 
         move(xa, ya);
     }
@@ -53,19 +57,54 @@ public abstract class Enemy extends Mob {
         y += ya;
     }
 
-//    @Override
-//    protected boolean canMove(double x, double y) {
-//        double nextX = x;
-//        double nextY = y;
-//
-//        if (direction == DIRECTION.UP) nextY += 0.5;
-//        if (direction == DIRECTION.DOWN) nextY -= 0.5;
-//        if (direction == DIRECTION.RIGHT) nextX += 0.5;
-//        if (direction == DIRECTION.LEFT) nextX -= 0.5;
-//
-//        return true;
-//
-//    }
+    @Override
+    public void setDirection() {
+        if (!isCanChangeDirection()) {
+            return;
+        }
+        // Depend on direction determine if it can still move:
+        moving = true;
+        switch (direction) {
+            case UP:
+                if (Map.isCanStepOn(xUnit, yUnit - 1)) {
+                    yUnit--;
+                } else {
+                    moving = false;
+                }
+                break;
+            case DOWN:
+                if (Map.isCanStepOn(xUnit, yUnit + 1)) {
+                    yUnit++;
+                } else {
+                    moving = false;
+                }
+                break;
+            case LEFT:
+                if (Map.isCanStepOn(xUnit - 1, yUnit)) {
+                    xUnit--;
+                } else {
+                    moving = false;
+                }
+                break;
+            case RIGHT:
+                if (Map.isCanStepOn(xUnit + 1, yUnit)) {
+                    xUnit++;
+                } else {
+                    moving = false;
+                }
+                break;
+            default:
+                moving = false;
+                break;
+        }
+    }
+
+    @Override
+    public void update() {
+        setDirection();
+//        goAnimate();
+        calculateMove();
+    }
 
     public abstract void chooseSprite();
 }

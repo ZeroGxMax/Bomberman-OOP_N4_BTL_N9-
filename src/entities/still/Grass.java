@@ -8,11 +8,13 @@ public class Grass extends StillObject {
 
     public Grass(int x, int y, Sprite sprite) {
         super(x, y, sprite);
-        canBlock = false;
+    }
+
+    public static boolean isGrass(Object obj) {
+        return obj instanceof Grass;
     }
 
     @Override
     public void update() {
     }
 }
-
