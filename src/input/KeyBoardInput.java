@@ -1,61 +1,58 @@
 package input;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
-import constants.Constants;
 import constants.Constants.KEYBOARD;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 
 /**
- * Lưu tất cả các input từ từ bàn phím vào một hàng đợi có các phần tử là
- * KEYBOARD (enum trong constants.Constants).
+ * Lấy dữ liệu bàn phím từ một Scene.
  */
 public class KeyBoardInput {
-    private long time = System.currentTimeMillis();
-    private Queue<Constants.KEYBOARD> KEY_BOARD_INPUT = new LinkedList<>();
+    private static KEYBOARD _input;
 
-    public void push(KEYBOARD input) {
-        if (KEY_BOARD_INPUT.size() < 2 && System.currentTimeMillis() - time > 50) {
-            time = System.currentTimeMillis();
-            KEY_BOARD_INPUT.add(input);
-        }
+    /**
+     * Lấy key input tương ứng với phím được nhập trong Scene. Nếu không có KeyEvent
+     * nào trả về UNKNOWN.
+     *
+     * @return Một giá trị KEYBOARD (constants.Constants)
+     */
+    public static KEYBOARD getInput() {
+        KEYBOARD answer = _input == null ? KEYBOARD.UNKNOWN : _input;
+        _input = null;
+        return answer;
     }
 
-    public KEYBOARD pop() {
-        return KEY_BOARD_INPUT.poll();
-    }
-
-    public boolean isEmpty() {
-        return KEY_BOARD_INPUT.isEmpty();
-    }
-
-    public void setScene(Scene scene) {
+    /**
+     * Cài đặt Scene cho lớp.
+     *
+     * @param scene
+     */
+    public static void setScene(Scene scene) {
+        // Bắt sự kiện khi nhấn phím
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case UP:
-                        push(KEYBOARD.UP);
+                        _input = KEYBOARD.UP;
                         break;
                     case DOWN:
-                        push(KEYBOARD.DOWN);
+                        _input = KEYBOARD.DOWN;
                         break;
                     case LEFT:
-                        push(KEYBOARD.LEFT);
+                        _input = KEYBOARD.LEFT;
                         break;
                     case RIGHT:
-                        push(KEYBOARD.RIGHT);
+                        _input = KEYBOARD.RIGHT;
                         break;
                     case ENTER:
-                        push(KEYBOARD.ENTER);
+                        _input = KEYBOARD.ENTER;
                         break;
                     case ESCAPE:
-                        push(KEYBOARD.ESC);
+                        _input = KEYBOARD.ESC;
                     default:
-                        push(KEYBOARD.UNKNOWN);
+                        _input = KEYBOARD.UNKNOWN;
                         break;
                 }
             }

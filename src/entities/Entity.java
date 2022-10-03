@@ -16,6 +16,9 @@ public abstract class Entity {
     protected double x;
     //Tọa độ Y tính từ góc trái trên trong Canvas
     protected double y;
+    // Tọa độ ô trong board
+    protected int xUnit;
+    protected int yUnit;
     protected Sprite sprite;
     protected Image img;
     protected boolean canBlock = false;
@@ -24,6 +27,8 @@ public abstract class Entity {
     public Entity(double xUnit, double yUnit, Sprite sprite) {
         this.x = xUnit * Sprite.SCALED_SIZE;
         this.y = yUnit * Sprite.SCALED_SIZE;
+        this.xUnit = (int) xUnit;
+        this.yUnit = (int) yUnit;
         this.sprite = sprite;
         this.img = sprite.getFxImage();
     }
