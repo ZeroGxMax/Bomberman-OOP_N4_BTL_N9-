@@ -12,32 +12,18 @@ import constants.Constants;
 
 public abstract class Entity {
     protected static Map gameMap;
-<<<<<<< HEAD
     //Tọa độ X tính từ góc trái trên trong Canvas
     protected double x;
     //Tọa độ Y tính từ góc trái trên trong Canvas
-=======
-    // Tọa độ X tính từ góc trái trên trong Canvas
-    protected double x;
-    // Tọa độ Y tính từ góc trái trên trong Canvas
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
     protected double y;
     // Tọa độ ô trong board
     protected int xUnit;
     protected int yUnit;
-<<<<<<< HEAD
-=======
-
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
     protected Sprite sprite;
     protected Image img;
     protected boolean canBlock = false;
 
-<<<<<<< HEAD
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
-=======
-    // Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
     public Entity(double xUnit, double yUnit, Sprite sprite) {
         this.x = xUnit * Sprite.SCALED_SIZE;
         this.y = yUnit * Sprite.SCALED_SIZE;
@@ -77,3 +63,5 @@ public abstract class Entity {
         gc.drawImage(img, x, y);
     }
 }
+
+
