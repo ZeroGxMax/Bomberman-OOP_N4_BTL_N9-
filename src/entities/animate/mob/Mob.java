@@ -34,10 +34,10 @@ public abstract class Mob extends AnimateEntity {
     protected boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
-        if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > 1) {
+        if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > 1.75) {
             return false;
         }
-        if (Math.abs(yUnit * Sprite.SCALED_SIZE - y) > 1) {
+        if (Math.abs(yUnit * Sprite.SCALED_SIZE - y) > 1.75) {
             return false;
         }
         // Cài đặt lại vị trí nhân vật
