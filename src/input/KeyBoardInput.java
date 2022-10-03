@@ -14,7 +14,11 @@ public class KeyBoardInput {
     /**
      * Lấy key input tương ứng với phím được nhập trong Scene. Nếu không có KeyEvent
      * nào trả về UNKNOWN.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
      * @return Một giá trị KEYBOARD (constants.Constants)
      */
     public static KEYBOARD getInput() {
@@ -25,7 +29,11 @@ public class KeyBoardInput {
 
     /**
      * Cài đặt Scene cho lớp.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
      * @param scene
      */
     public static void setScene(Scene scene) {
@@ -58,4 +66,8 @@ public class KeyBoardInput {
             }
         });
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5

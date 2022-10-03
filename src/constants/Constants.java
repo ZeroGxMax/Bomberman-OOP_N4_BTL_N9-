@@ -26,4 +26,8 @@ public class Constants {
         ESC,
         UNKNOWN
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
