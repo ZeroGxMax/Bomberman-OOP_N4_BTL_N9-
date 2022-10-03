@@ -29,6 +29,8 @@ Giải thích về code:
       * Tạo hàm abstract chooseSprite(): 
   +, Ballon:
       * Override lại hàm chooseSprite() -> Dựa theo direction để xác định hình ảnh hiện tại.
+<<<<<<< HEAD
+=======
 
   *) Chú thích về việc lấy giá trị từ bàn phím:
   +, Cài đặt scene cho lớp KeyBoardInput tại hàm main (trog Bomberman.java)
@@ -39,3 +41,4 @@ Giải thích về code:
         *, Thêm mảng 2 chiều _map (những nơi bomber có thể bước lên có giá trị 1, ngược lại là 0)
         *, Thêm phương thức isCanStepOn().
     +, Sử dụng setDirection() và calculateMove() để di chuyển nhân vật.
+>>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5

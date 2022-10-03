@@ -1,8 +1,11 @@
 package entities.animate;
 
 import entities.Entity;
-
 import graphics.Sprite;
+import javafx.util.Pair;
+
+import java.util.ArrayList;
+
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;

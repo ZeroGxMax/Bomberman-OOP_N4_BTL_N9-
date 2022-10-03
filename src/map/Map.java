@@ -21,10 +21,10 @@ public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
     private List<Entity> animateEntities = new ArrayList<>();
-    private List<Entity> stillObjects = new ArrayList<>();
+    private static int width;
     private static int[][] _map;
     private int level;
-    private static int width;
+    private List<Entity> stillObjects = new ArrayList<>();
     private static int height;
 
     public int getLevel() {
@@ -41,7 +41,7 @@ public class Map {
 
     /**
      * Kiểm tra ô có tọa độ (x, y) trong bản đồ bomber có thể đi vào được không.
-     * 
+     *
      * @param x Tọa độ theo chiều ngang, hướng trái -> phải, bắt đầu từ 0
      * @param y Tọa độ theo chiều dọc, hướng từ trên -> dưới, bắt đầu từ 0
      * @return Khả năng đi vào ô (x, y)

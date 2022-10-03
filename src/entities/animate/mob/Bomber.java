@@ -18,30 +18,10 @@ public class Bomber extends Mob {
     }
 
     /**
-     * Kiểm tra xem có thể chuyền hướng không. Nhân vật chỉ có thể chuyển hướng khi
-     * đã đi đến đúng ô.
-     * 
-     * @return
-     */
-    private boolean isCanChangeDirection() {
-        // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
-        // trị 1 có thể thay đổi cho phù hợp).
-        if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > 1) {
-            return false;
-        }
-        if (Math.abs(yUnit * Sprite.SCALED_SIZE - y) > 1) {
-            return false;
-        }
-        // Cài đặt lại vị trí nhân vật
-        x = xUnit * Sprite.SCALED_SIZE;
-        y = yUnit * Sprite.SCALED_SIZE;
-        return true;
-    }
-
-    /**
      * Lấy key input để set hướng cho nhân vật, cập nhật trạng thái di chuyển trong
      * biến moving.
      */
+    @Override
     public void setDirection() {
         if (!isCanChangeDirection()) {
             return;
