@@ -49,11 +49,8 @@ public abstract class Mob extends AnimateEntity {
     protected abstract void calculateMove();
 
     protected abstract void move(double xa, double ya);
-<<<<<<< HEAD
 
     public abstract void setDirection();
 
 //    protected abstract void canMove(double x, double y);
-=======
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
 }
