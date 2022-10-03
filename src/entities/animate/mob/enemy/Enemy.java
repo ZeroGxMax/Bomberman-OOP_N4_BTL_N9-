@@ -1,21 +1,14 @@
 package entities.animate.mob.enemy;
 
-<<<<<<< HEAD
 import constants.Constants;
 import constants.Constants.DIRECTION;
 import entities.Entity;
 import input.KeyBoardInput;
-=======
-import constants.Constants.DIRECTION;
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
 import tracing.RandomTracing;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
-<<<<<<< HEAD
 import map.Map;
-=======
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
 import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
@@ -26,15 +19,6 @@ public abstract class Enemy extends Mob {
     }
 
     @Override
-<<<<<<< HEAD
-=======
-    public void update() {
-        goAnimate();
-        calculateMove();
-    }
-
-    @Override
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
     public void render(GraphicsContext gc) {
         chooseSprite();
         gc.drawImage(sprite.getFxImage(), x, y);
@@ -49,28 +33,19 @@ public abstract class Enemy extends Mob {
         double xa = 0;
         double ya = 0;
 
-<<<<<<< HEAD
         if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX && isCanChangeDirection()) {
-=======
-        if (tracing.timeEachDirection == tracing.TIME_EACH_DIRECTION_MAX) {
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
             direction = tracing.calculateDirection();
             tracing.timeEachDirection = 0;
         } else {
             tracing.timeEachDirection++;
         }
 
-<<<<<<< HEAD
         if (!moving) {
             return;
         }
 
         if (direction == DIRECTION.UP) ya -= 0.5;
         if (direction == DIRECTION.DOWN) ya += 0.5;
-=======
-        if (direction == DIRECTION.UP) ya += 0.5;
-        if (direction == DIRECTION.DOWN) ya -= 0.5;
->>>>>>> 5bdb1658fe5352bf649d393722be7c40fbc391b5
         if (direction == DIRECTION.RIGHT) xa += 0.5;
         if (direction == DIRECTION.LEFT) xa -= 0.5;
 
