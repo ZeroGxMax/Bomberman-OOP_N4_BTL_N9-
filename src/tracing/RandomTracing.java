@@ -7,7 +7,7 @@ import java.util.Random;
 public class RandomTracing extends Tracing {
     public static final int TIME_EACH_DIRECTION_MAX = 100;
     protected static Random random = new Random();
-    public int timeEachDirection = 0;
+    public int timeEachDirection = 95; // Some overhead before first moving
 
     @Override
     public DIRECTION calculateDirection() {

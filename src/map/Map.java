@@ -11,7 +11,6 @@ import entities.still.Grass;
 import entities.still.Wall;
 import factory.*;
 import graphics.Sprite;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -26,6 +25,14 @@ public class Map {
     private int level;
     private int width;
     private int height;
+
+    public static boolean isSame(double a, double b) {
+        if (Math.abs(a - b) < 0.1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public int getLevel() {
         return level;
@@ -69,5 +76,14 @@ public class Map {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(stillObjects -> stillObjects.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
+    }
+
+    public boolean getStillObjectAt(double x, double y) {
+        for (int i = 0; i < stillObjects.size(); i++) {
+            if (isSame(x, stillObjects.get(i).getX()) && isSame(y, stillObjects.get(i).getY())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
