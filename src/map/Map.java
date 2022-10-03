@@ -22,10 +22,10 @@ public class Map {
     public static final int HEIGHT = Constants.HEIGHT;
     private List<Entity> animateEntities = new ArrayList<>();
     private List<Entity> stillObjects = new ArrayList<>();
-    private static int[][] _map = new int[HEIGHT][WIDTH];
+    private static int[][] _map;
     private int level;
-    private int width;
-    private int height;
+    private static int width;
+    private static int height;
 
     public int getLevel() {
         return level;
@@ -39,8 +39,16 @@ public class Map {
         return height;
     }
 
+    /**
+     * Kiểm tra ô có tọa độ (x, y) trong bản đồ bomber có thể đi vào được không.
+     * 
+     * @param x Tọa độ theo chiều ngang, hướng trái -> phải, bắt đầu từ 0
+     * @param y Tọa độ theo chiều dọc, hướng từ trên -> dưới, bắt đầu từ 0
+     * @return Khả năng đi vào ô (x, y)
+     */
     public static boolean isCanStepOn(int x, int y) {
-        if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
+        // Kiểm tra tọa độ có trong map không
+        if (x < 0 || y < 0 || x >= width || y >= height)
             return false;
         return _map[y][x] == 1 ? true : false;
     }
@@ -50,6 +58,7 @@ public class Map {
         level = sc.nextInt();
         height = sc.nextInt();
         width = sc.nextInt();
+        _map = new int[height][width];
 
         sc.nextLine();
 
