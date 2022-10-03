@@ -1,10 +1,12 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants.DIRECTION;
+import entities.Entity;
 import tracing.RandomTracing;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import map.Map;
 import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
@@ -50,6 +52,20 @@ public abstract class Enemy extends Mob {
         x += xa;
         y += ya;
     }
+
+//    @Override
+//    protected boolean canMove(double x, double y) {
+//        double nextX = x;
+//        double nextY = y;
+//
+//        if (direction == DIRECTION.UP) nextY += 0.5;
+//        if (direction == DIRECTION.DOWN) nextY -= 0.5;
+//        if (direction == DIRECTION.RIGHT) nextX += 0.5;
+//        if (direction == DIRECTION.LEFT) nextX -= 0.5;
+//
+//        return true;
+//
+//    }
 
     public abstract void chooseSprite();
 }

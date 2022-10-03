@@ -1,5 +1,6 @@
 package entities;
 
+import javafx.geometry.Rectangle2D;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -17,6 +18,7 @@ public abstract class Entity {
     protected double y;
     protected Sprite sprite;
     protected Image img;
+    protected boolean canBlock = false;
 
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(double xUnit, double yUnit, Sprite sprite) {
@@ -36,6 +38,18 @@ public abstract class Entity {
 
     public Sprite getSprite() {
         return sprite;
+    }
+
+    public Rectangle2D getBoundary() {
+        return new Rectangle2D(x, y, Sprite.SCALED_SIZE, Sprite.SCALED_SIZE);
+    }
+
+    public boolean isCollision(Entity entity) {
+        if (entity == null) {
+            return false;
+        } else {
+            return this.getBoundary().intersects(entity.getBoundary());
+        }
     }
 
     public abstract void update();
