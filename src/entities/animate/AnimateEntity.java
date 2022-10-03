@@ -29,15 +29,4 @@ public abstract class AnimateEntity extends Entity {
             animate = 0;
         }
     }
-
-    public ArrayList<Pair<Integer, Integer>> getBorder() {
-        int width = (int) sprite.getFxImage().getWidth();
-        int height = (int) sprite.getFxImage().getHeight();
-        ArrayList<Pair<Integer, Integer>> result = new ArrayList<>();
-        result.add(new Pair<>(xUnit, yUnit));
-        result.add(new Pair<>(xUnit + height - 1, yUnit));
-        result.add(new Pair<>(xUnit, yUnit + width - 1));
-        result.add(new Pair<>(xUnit + height - 1, yUnit + width - 1));
-        return result;
-    }
 }

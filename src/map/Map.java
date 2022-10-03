@@ -7,7 +7,6 @@ import constants.Constants;
 import entities.animate.AnimateEntity;
 import entities.Entity;
 import entities.still.Grass;
-import entities.still.StillObject;
 import entities.still.Wall;
 import factory.*;
 import graphics.Sprite;
@@ -22,11 +21,11 @@ public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
     private List<Entity> animateEntities = new ArrayList<>();
-    private static int[][] _map;
     private static int width;
+    private static int[][] _map;
     private int level;
+    private List<Entity> stillObjects = new ArrayList<>();
     private static int height;
-    private Entity[][] stillObjects;
 
     public int getLevel() {
         return level;
@@ -47,15 +46,6 @@ public class Map {
      * @param y Tọa độ theo chiều dọc, hướng từ trên -> dưới, bắt đầu từ 0
      * @return Khả năng đi vào ô (x, y)
      */
-
-    public static boolean isSame(double a, double b) {
-        if (Math.abs(a - b) < 0.1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public static boolean isCanStepOn(int x, int y) {
         // Kiểm tra tọa độ có trong map không
         if (x < 0 || y < 0 || x >= width || y >= height)
@@ -77,7 +67,7 @@ public class Map {
             for (int j = 0; j < width; j++) {
                 char c = str.charAt(j);
                 Entity temp = StillFactory.getStillEntity(i, j, c);
-                stillObjects[i][j] = temp;
+                stillObjects.add(temp);
                 _map[i][j] = Grass.isGrass(temp) ? 1 : 0;
                 Entity animateOne = AnimateFactory.getAnimateEntity(i, j, c);
                 if (animateOne != null) {
@@ -94,15 +84,7 @@ public class Map {
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; i < width; j++) {
-                stillObjects[i][j].render(gc);
-            }
-        }
+        stillObjects.forEach(stillObjects -> stillObjects.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
-    }
-
-    public StillObject getStillObjectAt(int x, int y) {
-        return (StillObject) stillObjects[x][y];
     }
 }

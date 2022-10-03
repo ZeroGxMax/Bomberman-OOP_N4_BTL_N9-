@@ -33,21 +33,21 @@ public abstract class Enemy extends Mob {
         double xa = 0;
         double ya = 0;
 
-        if (tracing.timeEachDirection == tracing.TIME_EACH_DIRECTION_MAX) {
+        if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX && isCanChangeDirection()) {
             direction = tracing.calculateDirection();
             tracing.timeEachDirection = 0;
         } else {
             tracing.timeEachDirection++;
         }
+
         if (!moving) {
-//            moving = true;
             return;
         }
 
-        if (direction == DIRECTION.UP) ya -= 1;
-        if (direction == DIRECTION.DOWN) ya += 1;
-        if (direction == DIRECTION.RIGHT) xa += 1;
-        if (direction == DIRECTION.LEFT) xa -= 1;
+        if (direction == DIRECTION.UP) ya -= 0.5;
+        if (direction == DIRECTION.DOWN) ya += 0.5;
+        if (direction == DIRECTION.RIGHT) xa += 0.5;
+        if (direction == DIRECTION.LEFT) xa -= 0.5;
 
         move(xa, ya);
     }
