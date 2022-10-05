@@ -2,8 +2,10 @@ package entities.animate.mob;
 
 import constants.Constants;
 import constants.Constants.DIRECTION;
+import constants.Constants.KEYBOARD;
 import graphics.Sprite;
 import input.KeyBoardInput;
+import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
 public class Bomber extends Mob {
@@ -73,20 +75,51 @@ public class Bomber extends Mob {
         double xa = 0;
         double ya = 0;
         if (direction == DIRECTION.UP)
-            ya -= 1.5;
+            ya -= 1.75;
         if (direction == DIRECTION.DOWN)
-            ya += 1.5;
+            ya += 1.75;
         if (direction == DIRECTION.RIGHT)
-            xa += 1.5;
+            xa += 1.75;
         if (direction == DIRECTION.LEFT)
-            xa -= 1.5;
+            xa -= 1.75;
         move(xa, ya);
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        chooseSprite();
+        gc.drawImage(sprite.getFxImage(), x, y);
+    }
+
+    public void chooseSprite() {
+        switch (direction) {
+            case UP:
+                sprite = Sprite.movingSprite(Sprite.player_up[0], Sprite.player_up[1],
+                        Sprite.player_up[2], animate, 40);
+                break;
+            case RIGHT:
+                sprite = Sprite.movingSprite(Sprite.player_right[0], Sprite.player_right[1],
+                        Sprite.player_right[2], animate, 40);
+                break;
+            case DOWN:
+                sprite = Sprite.movingSprite(Sprite.player_down[0], Sprite.player_down[1],
+                        Sprite.player_down[2], animate, 40);
+                break;
+            case LEFT:
+                sprite = Sprite.movingSprite(Sprite.player_left[0], Sprite.player_left[1],
+                        Sprite.player_left[2], animate, 40);
+                break;
+            case NONE:
+                sprite = Sprite.player_down[0];
+                break;
+        }
+        img = sprite.getFxImage();
     }
 
     @Override
     public void update() {
         setDirection();
-        // goAnimate();
         calculateMove();
+        goAnimate();
     }
 }

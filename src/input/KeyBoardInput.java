@@ -19,7 +19,6 @@ public class KeyBoardInput {
      */
     public static KEYBOARD getInput() {
         KEYBOARD answer = _input == null ? KEYBOARD.UNKNOWN : _input;
-        _input = null;
         return answer;
     }
 
@@ -35,26 +34,40 @@ public class KeyBoardInput {
             public void handle(KeyEvent event) {
                 switch (event.getCode()) {
                     case UP:
+                    case W:
                         _input = KEYBOARD.UP;
                         break;
                     case DOWN:
+                    case S:
                         _input = KEYBOARD.DOWN;
                         break;
                     case LEFT:
+                    case A:
                         _input = KEYBOARD.LEFT;
                         break;
                     case RIGHT:
+                    case D:
                         _input = KEYBOARD.RIGHT;
                         break;
                     case ENTER:
+                    case SPACE:
                         _input = KEYBOARD.ENTER;
                         break;
                     case ESCAPE:
                         _input = KEYBOARD.ESC;
+                    case K:
+                        _input = KEYBOARD.K;
                     default:
                         _input = KEYBOARD.UNKNOWN;
                         break;
                 }
+            }
+        });
+
+        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                _input = null;
             }
         });
     }
