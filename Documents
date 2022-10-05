@@ -39,3 +39,6 @@ Giải thích về code:
         *, Thêm mảng 2 chiều _map (những nơi bomber có thể bước lên có giá trị 1, ngược lại là 0)
         *, Thêm phương thức isCanStepOn().
     +, Sử dụng setDirection() và calculateMove() để di chuyển nhân vật.
+    
+*) Vấn đề:
+- Quái không thể chuyển hướng giữa đường.
