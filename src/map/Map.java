@@ -6,6 +6,7 @@ import java.util.List;
 import constants.Constants;
 import entities.animate.AnimateEntity;
 import entities.Entity;
+import entities.animate.mob.Bomber;
 import entities.still.Grass;
 import entities.still.Wall;
 import factory.*;
@@ -20,7 +21,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
-    private List<Entity> animateEntities = new ArrayList<>();
+    public List<Entity> animateEntities = new ArrayList<>();
     private static int width;
     private static int[][] _map;
     private int level;
@@ -75,10 +76,24 @@ public class Map {
                 }
             }
         }
+        // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
+        updateMap();
         sc.close();
     }
 
+    public Bomber getBomber() {
+        for (int i = 0; i < animateEntities.size(); i++) {
+            if (animateEntities.get(i).isBomber == true) {
+                return (Bomber) animateEntities.get(i);
+            }
+        }
+        return null;
+    }
+
     public void updateMap() {
+        for (int i = 0; i < animateEntities.size(); i++) {
+            animateEntities.get(i).setGameMap(this);
+        }
         animateEntities.forEach(Entity::update);
     }
 
