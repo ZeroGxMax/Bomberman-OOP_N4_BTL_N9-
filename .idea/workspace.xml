@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Walls and bricks now can block enemy">
-      <change afterPath="$PROJECT_DIR$/src/support/Unit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracing/DirectedTracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tracing/RandomTracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/RandomTracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tracing/Tracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/Tracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" afterDir="false" />
-    </list>
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -130,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664783078454</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Oneal now can trace player.">
+      <created>1665160771213</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665160771213</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,7 +124,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Zero_branch_2" />
+                        <option value="origin/Zero_branch_2" />
                       </list>
                     </value>
                   </entry>
@@ -158,6 +138,23 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Walls and bricks now can block enemy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Walls and bricks now can block enemy" />
+    <MESSAGE value="Enemy now move truely random" />
+    <MESSAGE value="Oneal now can trace player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Oneal now can trace player." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java</url>
+          <line>61</line>
+          <properties class="entities.animate.mob.enemy.Enemy">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
