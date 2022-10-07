@@ -10,7 +10,8 @@ import map.Map;
 import constants.Constants;
 
 public abstract class Entity {
-    protected static Map gameMap;
+    // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
+    protected Map gameMap = new Map();
     //Tọa độ X tính từ góc trái trên trong Canvas
     protected double x;
     //Tọa độ Y tính từ góc trái trên trong Canvas
@@ -21,6 +22,9 @@ public abstract class Entity {
     protected Sprite sprite;
     protected Image img;
     protected boolean canBlock = false;
+    public boolean isBomber = false;
+
+    public Entity() {}
 
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(double xUnit, double yUnit, Sprite sprite) {
@@ -32,12 +36,24 @@ public abstract class Entity {
         this.img = sprite.getFxImage();
     }
 
+    public void setGameMap(Map gameMap) {
+        this.gameMap = gameMap;
+    }
+
     public double getX() {
         return x;
     }
 
     public double getY() {
         return y;
+    }
+
+    public int getxUnit() {
+        return xUnit;
+    }
+
+    public int getyUnit() {
+        return yUnit;
     }
 
     public Sprite getSprite() {

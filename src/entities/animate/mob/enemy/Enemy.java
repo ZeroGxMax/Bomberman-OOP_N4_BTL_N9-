@@ -13,16 +13,10 @@ import support.Unit;
 import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
-    public RandomTracing tracing = new RandomTracing();
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
-    }
-
-    @Override
-    public void render(GraphicsContext gc) {
-        chooseSprite();
-        gc.drawImage(sprite.getFxImage(), x, y);
+        velocity = 0.5;
     }
 
     /**
@@ -34,6 +28,12 @@ public abstract class Enemy extends Mob {
         double xa = 0;
         double ya = 0;
 
+<<<<<<< HEAD
+        if (direction == Constants.DIRECTION.UP) ya -= velocity;
+        if (direction == Constants.DIRECTION.DOWN) ya += velocity;
+        if (direction == Constants.DIRECTION.RIGHT) xa += velocity;
+        if (direction == Constants.DIRECTION.LEFT) xa -= velocity;
+=======
 
         if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX
                 && isCanChangeDirection()) {
@@ -51,6 +51,7 @@ public abstract class Enemy extends Mob {
         if (direction == DIRECTION.DOWN) ya += 0.5;
         if (direction == DIRECTION.RIGHT) xa += 0.5;
         if (direction == DIRECTION.LEFT) xa -= 0.5;
+>>>>>>> main
 
         move(xa, ya);
     }
@@ -61,6 +62,18 @@ public abstract class Enemy extends Mob {
     }
 
     @Override
+<<<<<<< HEAD
+    public void update() {
+        setDirection();
+        goAnimate();
+        calculateMove();
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        chooseSprite();
+        gc.drawImage(sprite.getFxImage(), x, y);
+=======
     public void setDirection() {
         if (!isCanChangeDirection()) {
             return;
@@ -114,6 +127,7 @@ public abstract class Enemy extends Mob {
         setDirection();
         goAnimate();
         calculateMove();
+>>>>>>> main
     }
 
     public abstract void chooseSprite();

@@ -8,10 +8,14 @@ import constants.Constants.DIRECTION;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import map.Map;
 
 public abstract class Mob extends AnimateEntity {
     protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
+    protected double velocity;
+
+    public Mob() {}
 
     public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
