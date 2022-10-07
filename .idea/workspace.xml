@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player." />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/StillObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/StillObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,20 +150,5 @@
     <MESSAGE value="Enemy now move truely random" />
     <MESSAGE value="Oneal now can trace player." />
     <option name="LAST_COMMIT_MESSAGE" value="Oneal now can trace player." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java</url>
-          <line>61</line>
-          <properties class="entities.animate.mob.enemy.Enemy">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
