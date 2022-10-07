@@ -23,6 +23,7 @@ public class Bomber extends Mob {
      * Lấy key input để set hướng cho nhân vật, cập nhật trạng thái di chuyển trong
      * biến moving.
      */
+
     @Override
     public void setDirection() {
         if (!isCanChangeDirection()) {

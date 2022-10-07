@@ -4,8 +4,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
+import support.Unit;
 import graphics.Sprite;
 import map.Map;
 import constants.Constants;
@@ -25,10 +24,10 @@ public abstract class Entity {
 
     //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(double xUnit, double yUnit, Sprite sprite) {
-        this.x = xUnit * Sprite.SCALED_SIZE;
-        this.y = yUnit * Sprite.SCALED_SIZE;
         this.xUnit = (int) xUnit;
         this.yUnit = (int) yUnit;
+        this.x = Unit.unitToCoordinate(xUnit);
+        this.y = Unit.unitToCoordinate(yUnit);
         this.sprite = sprite;
         this.img = sprite.getFxImage();
     }

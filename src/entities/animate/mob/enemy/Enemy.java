@@ -9,6 +9,7 @@ import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
+import support.Unit;
 import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
@@ -33,15 +34,17 @@ public abstract class Enemy extends Mob {
         double xa = 0;
         double ya = 0;
 
-        if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX && isCanChangeDirection()) {
+
+        if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX
+                && isCanChangeDirection()) {
             direction = tracing.calculateDirection();
             tracing.timeEachDirection = 0;
         } else {
+            // If the enemy hit the wall, change it direction.
+            if (!moving) {
+                direction = tracing.calculateDirection();
+            }
             tracing.timeEachDirection++;
-        }
-
-        if (!moving) {
-            return;
         }
 
         if (direction == DIRECTION.UP) ya -= 0.5;
@@ -62,6 +65,13 @@ public abstract class Enemy extends Mob {
         if (!isCanChangeDirection()) {
             return;
         }
+
+        int randomNumber = tracing.random.nextInt();
+
+        if (randomNumber % 4 == 0) {
+            direction = tracing.calculateDirection();
+        }
+
         // Depend on direction determine if it can still move:
         moving = true;
         switch (direction) {
@@ -102,7 +112,7 @@ public abstract class Enemy extends Mob {
     @Override
     public void update() {
         setDirection();
-//        goAnimate();
+        goAnimate();
         calculateMove();
     }
 

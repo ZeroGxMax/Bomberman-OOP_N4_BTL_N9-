@@ -31,6 +31,8 @@ public abstract class Mob extends AnimateEntity {
      *
      * @return
      */
+
+
     protected boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
