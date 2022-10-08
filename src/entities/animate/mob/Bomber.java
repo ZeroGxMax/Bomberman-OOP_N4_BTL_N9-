@@ -3,14 +3,19 @@ package entities.animate.mob;
 import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
+import entities.animate.bomb.Bomb;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
 public class Bomber extends Mob {
+    private int countBomb = 0;
+    private int Max_Bomb = 1;
+    private Bomb b = new Bomb();
 
-    public Bomber() {}
+    public Bomber() {
+    }
 
     public Bomber(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -36,6 +41,9 @@ public class Bomber extends Mob {
         }
         // Lấy input
         Constants.KEYBOARD temp = KeyBoardInput.getInput();
+        if (temp == KEYBOARD.ENTER && countBomb < Max_Bomb) {
+            makeBomb();
+        }
         // Update direction and moving
         moving = true;
         switch (temp) {
@@ -122,10 +130,19 @@ public class Bomber extends Mob {
         img = sprite.getFxImage();
     }
 
+    private void makeBomb() {
+        b = new Bomb(xUnit, yUnit);
+        gameMap.bomb.add(b);
+        countBomb++;
+    }
+
     @Override
     public void update() {
         setDirection();
         calculateMove();
         goAnimate();
+        if (b.isDestroyed()) {
+            countBomb = 0;
+        }
     }
 }
