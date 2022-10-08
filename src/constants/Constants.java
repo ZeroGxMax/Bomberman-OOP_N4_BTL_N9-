@@ -27,4 +27,21 @@ public class Constants {
         ESC,
         UNKNOWN
     }
+
+    public enum BOMB_STATUS{
+        START,
+        EXPLOSION,
+        DESTROYED
+    }
+
+    public enum BOMB_UNITS {
+        BOMB,
+        EXPLOSION_CENTER,
+        EXPLOSION_VERTICAL,
+        EXPLOSION_VERTICAL_TOP_LAST,
+        EXPLOSION_VERTICAL_DOWN_LAST,
+        EXPLOSION_HORIZONTAL,
+        EXPLOSION_HORIZONTAL_LEFT_LAST,
+        EXPLOSION_HORIZONTAL_RIGHT_LAST
+    }
 }
