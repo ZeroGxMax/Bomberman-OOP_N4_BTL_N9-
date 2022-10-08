@@ -9,8 +9,13 @@ import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
 public class Bomber extends Mob {
+
+    public Bomber() {}
+
     public Bomber(double x, double y, Sprite sprite) {
         super(x, y, sprite);
+        velocity = 1.75;
+        isBomber = true;
     }
 
     @Override
@@ -23,6 +28,7 @@ public class Bomber extends Mob {
      * Lấy key input để set hướng cho nhân vật, cập nhật trạng thái di chuyển trong
      * biến moving.
      */
+
     @Override
     public void setDirection() {
         if (!isCanChangeDirection()) {

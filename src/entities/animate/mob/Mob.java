@@ -8,10 +8,14 @@ import constants.Constants.DIRECTION;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import map.Map;
 
 public abstract class Mob extends AnimateEntity {
     protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
+    protected double velocity;
+
+    public Mob() {}
 
     public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -31,6 +35,8 @@ public abstract class Mob extends AnimateEntity {
      *
      * @return
      */
+
+
     protected boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
