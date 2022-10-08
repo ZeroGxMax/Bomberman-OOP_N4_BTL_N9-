@@ -2,7 +2,6 @@ package entities.animate;
 
 import entities.Entity;
 import graphics.Sprite;
-import map.Map;
 
 public abstract class AnimateEntity extends Entity {
     protected int animate = 0;

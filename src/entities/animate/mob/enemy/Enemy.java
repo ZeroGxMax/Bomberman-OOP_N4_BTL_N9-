@@ -1,16 +1,9 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
-import constants.Constants.DIRECTION;
-import entities.Entity;
-import input.KeyBoardInput;
-import tracing.RandomTracing;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
-import map.Map;
-import support.Unit;
-import tracing.Tracing;
 
 public abstract class Enemy extends Mob {
 

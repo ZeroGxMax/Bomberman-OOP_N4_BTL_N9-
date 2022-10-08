@@ -4,6 +4,7 @@ import constants.Constants.BOMB_STATUS;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import map.Map;
 
 public class Bomb extends AnimateEntity {
     private BOMB_STATUS status;
@@ -30,6 +31,7 @@ public class Bomb extends AnimateEntity {
         switch (status) {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
+                Map._map[yUnit][xUnit] = 1;
                 break;
             case EXPLOSION:
                 status = BOMB_STATUS.DESTROYED;
@@ -41,7 +43,6 @@ public class Bomb extends AnimateEntity {
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
         if (status == BOMB_STATUS.START) {
             status1.update();
             if (status1.isNext())

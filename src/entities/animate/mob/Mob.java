@@ -1,14 +1,8 @@
 package entities.animate.mob;
 
-import graphics.Sprite;
-import entities.still.Grass;
-import entities.still.StillObject;
-import entities.animate.AnimateEntity;
 import constants.Constants.DIRECTION;
-import javafx.util.Pair;
-
-import java.util.ArrayList;
-import map.Map;
+import entities.animate.AnimateEntity;
+import graphics.Sprite;
 
 public abstract class Mob extends AnimateEntity {
     protected DIRECTION direction = DIRECTION.NONE;

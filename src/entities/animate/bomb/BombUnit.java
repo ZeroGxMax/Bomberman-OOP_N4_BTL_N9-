@@ -51,7 +51,7 @@ public class BombUnit extends AnimateEntity {
         if (destroy)
             return;
         goAnimate();
-        sprite = Sprite.movingSprite(sprites, animate, 30);
+        sprite = Sprite.movingSprite(sprites, animate, 300);
         if (sprite != sprites[countFrames]) {
             countFrames++;
         }

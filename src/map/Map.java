@@ -9,9 +9,8 @@ import java.util.Scanner;
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
-import entities.animate.bomb.BombStart;
-import entities.animate.bomb.BombUnit;
 import entities.animate.mob.Bomber;
+import entities.still.Brick;
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.StillFactory;
@@ -22,13 +21,13 @@ public class Map {
     public static final int HEIGHT = Constants.HEIGHT;
 
     public List<Entity> animateEntities = new ArrayList<>();
-    private List<Entity> stillObjects = new ArrayList<>();
+    public List<Entity> stillObjects = new ArrayList<>();
     public List<Bomb> bomb = new ArrayList<>();
 
     private static int width;
     private static int height;
     private int level;
-    private static int[][] _map;
+    public static int[][] _map;
 
     public int getLevel() {
         return level;
@@ -78,8 +77,10 @@ public class Map {
                 }
             }
         }
+        for (int i = 0; i < animateEntities.size(); i++) {
+            animateEntities.get(i).setGameMap(this);
+        }
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
-        updateMap();
         sc.close();
     }
 
@@ -92,11 +93,19 @@ public class Map {
         return null;
     }
 
-    public void updateMap() {
-        for (int i = 0; i < animateEntities.size(); i++) {
-            animateEntities.get(i).setGameMap(this);
+    public Brick getBrickAt(int xUnit, int yUnit) {
+        for (int i = 0; i < stillObjects.size(); i++) {
+            if (stillObjects.get(i) instanceof Brick && stillObjects.get(i).getxUnit() == xUnit && stillObjects.get(i).getyUnit() == yUnit) {
+                return (Brick) stillObjects.get(i);
+            }
         }
+        return null;
+    }
+
+    public void updateMap() {
+
         animateEntities.forEach(Entity::update);
+        stillObjects.forEach(a->a.update());
         bomb.forEach(bomb->bomb.update());
     }
 

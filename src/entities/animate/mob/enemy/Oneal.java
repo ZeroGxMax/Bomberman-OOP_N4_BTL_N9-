@@ -1,14 +1,9 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants.DIRECTION;
-import entities.Entity;
-import entities.animate.AnimateEntity;
-import entities.animate.mob.Bomber;
 import graphics.Sprite;
-import javafx.scene.image.Image;
 import map.Map;
 import tracing.DirectedTracing;
-import tracing.RandomTracing;
 
 public class Oneal extends Enemy {
     public DirectedTracing tracing = new DirectedTracing(this);
@@ -84,14 +79,12 @@ public class Oneal extends Enemy {
         switch (direction) {
             case UP:
             case RIGHT:
-                sprite = Sprite.movingSprite(Sprite.oneal_right[0], Sprite.oneal_right[1],
-                        Sprite.oneal_right[2], animate, 60);
+                sprite = Sprite.movingSprite(Sprite.oneal_right, animate, 60);
                 img = sprite.getFxImage();
                 break;
             case DOWN:
             case LEFT:
-                sprite = Sprite.movingSprite(Sprite.oneal_left[0], Sprite.oneal_left[1],
-                        Sprite.oneal_left[2], animate, 60);
+                sprite = Sprite.movingSprite(Sprite.oneal_left, animate, 60);
                 img = sprite.getFxImage();
                 break;
             case NONE:
