@@ -9,7 +9,6 @@ public class Bomb extends AnimateEntity {
     private BOMB_STATUS status;
     private BombStart status1;
     private BombExplosion status2;
-    private boolean isDestroyed = false;
 
     public Bomb() {
         super();
