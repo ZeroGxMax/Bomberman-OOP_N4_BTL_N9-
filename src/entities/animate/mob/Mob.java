@@ -29,14 +29,13 @@ public abstract class Mob extends AnimateEntity {
         return direction;
     }
 
+
     /**
      * Kiểm tra xem có thể chuyền hướng không. Nhân vật chỉ có thể chuyển hướng khi
      * đã đi đến đúng ô.
      *
      * @return
      */
-
-
     protected boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
@@ -52,11 +51,21 @@ public abstract class Mob extends AnimateEntity {
         return true;
     }
 
+    public double getVelocity() {
+        return velocity;
+    }
+
+    public void setVelocity(double velocity) {
+        this.velocity = velocity;
+    }
+
     protected abstract void calculateMove();
 
     protected abstract void move(double xa, double ya);
 
     public abstract void setDirection();
 
-//    protected abstract void canMove(double x, double y);
+
+
+    //    protected abstract void canMove(double x, double y);
 }

@@ -1,8 +1,7 @@
-package entities.still;
+package entities.still.destroyable;
 
-import entities.Entity;
+import entities.still.StillObject;
 import graphics.Sprite;
-import javafx.scene.image.Image;
 
 public class Brick extends StillObject {
     public Brick(int x, int y, Sprite sprite) {

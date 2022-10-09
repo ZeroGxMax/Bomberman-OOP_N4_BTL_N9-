@@ -89,13 +89,13 @@ public class Bomber extends Mob {
         double xa = 0;
         double ya = 0;
         if (direction == DIRECTION.UP)
-            ya -= 1.75;
+            ya -= velocity;
         if (direction == DIRECTION.DOWN)
-            ya += 1.75;
+            ya += velocity;
         if (direction == DIRECTION.RIGHT)
-            xa += 1.75;
+            xa += velocity;
         if (direction == DIRECTION.LEFT)
-            xa -= 1.75;
+            xa -= velocity;
         move(xa, ya);
     }
 
