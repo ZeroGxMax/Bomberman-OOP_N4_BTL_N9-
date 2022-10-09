@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player." />
-=======
     <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Walls and bricks now can block enemy">
       <change afterPath="$PROJECT_DIR$/src/support/Unit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_15.xml" beforeDir="false" />

@@ -1,32 +1,34 @@
 package map;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import constants.Constants;
-import entities.animate.AnimateEntity;
-import entities.Entity;
-import entities.animate.mob.Bomber;
-import entities.still.Grass;
-import entities.still.Wall;
-import factory.*;
-import graphics.Sprite;
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+import constants.Constants;
+import entities.Entity;
+import entities.animate.bomb.Bomb;
+import entities.animate.bomb.BombStart;
+import entities.animate.bomb.BombUnit;
+import entities.animate.mob.Bomber;
+import entities.still.Grass;
+import factory.AnimateFactory;
+import factory.StillFactory;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
+
     public List<Entity> animateEntities = new ArrayList<>();
-    private static int width;
-    private static int[][] _map;
-    private int level;
     private List<Entity> stillObjects = new ArrayList<>();
+    public List<Bomb> bomb = new ArrayList<>();
+
+    private static int width;
     private static int height;
+    private int level;
+    private static int[][] _map;
 
     public int getLevel() {
         return level;
@@ -95,11 +97,13 @@ public class Map {
             animateEntities.get(i).setGameMap(this);
         }
         animateEntities.forEach(Entity::update);
+        bomb.forEach(bomb->bomb.update());
     }
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(stillObjects -> stillObjects.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
+        bomb.forEach(bomb -> bomb.render(gc));
     }
 }

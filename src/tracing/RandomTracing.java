@@ -5,14 +5,8 @@ import constants.Constants.DIRECTION;
 import java.util.Random;
 
 public class RandomTracing extends Tracing {
-<<<<<<< HEAD
     public static final int TIME_EACH_DIRECTION_MAX = 100;
     public int timeEachDirection = 95; // Some overhead before first moving
-=======
-    public static final int TIME_EACH_DIRECTION_MAX = 10;
-    public static Random random = new Random();
-    public int timeEachDirection = random.nextInt(10); // Some overhead before first moving
->>>>>>> main
 
     @Override
     public DIRECTION calculateDirection() {
@@ -45,12 +39,7 @@ public class RandomTracing extends Tracing {
                 default:
                     return DIRECTION.NONE;
             }
-<<<<<<< HEAD
         } else {
-=======
-        }
-        if (direction == DIRECTION.LEFT || direction == DIRECTION.RIGHT) {
->>>>>>> main
             switch (randomNumber) {
                 case 0:
                     return DIRECTION.UP;
@@ -60,9 +49,5 @@ public class RandomTracing extends Tracing {
                     return DIRECTION.NONE;
             }
         }
-<<<<<<< HEAD
-=======
-        return DIRECTION.LEFT;
->>>>>>> main
     }
 }
