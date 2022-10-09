@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Brick.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/StillObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/StillObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" afterDir="false" />
-    </list>
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Oneal now can trace player." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,16 +42,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Bomberman-OOP_N4_BTL_N9-&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Test/Bomberman-OOP_N4_BTL_N9--main",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BombermanGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BombermanGame" />
