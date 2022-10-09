@@ -7,6 +7,7 @@ import entities.animate.mob.Bomber;
 import graphics.Sprite;
 import javafx.scene.image.Image;
 import map.Map;
+import support.Probability;
 import tracing.DirectedTracing;
 import tracing.RandomTracing;
 
@@ -16,6 +17,21 @@ public class Oneal extends Enemy {
     public Oneal(double x, double y, Sprite sprite) {
         super(x, y, sprite);
         tracing.setBomber(gameMap.getBomber());
+    }
+
+    protected void changeVelocity() {
+        int randomNumber = tracing.random.nextInt() % 3;
+        switch (randomNumber) {
+            case 0:
+                velocity = 0.5;
+                break;
+            case 1:
+                velocity = 1;
+                break;
+            case 2:
+                velocity = 1.5;
+                break;
+        }
     }
 
     /**
@@ -40,6 +56,9 @@ public class Oneal extends Enemy {
         }
 
         int randomNumber = tracing.random.nextInt();
+        if (Probability.isSometimes()) {
+            changeVelocity();
+        }
 
         direction = tracing.calculateDirection();
 
