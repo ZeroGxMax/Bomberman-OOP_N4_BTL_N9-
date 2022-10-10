@@ -10,7 +10,11 @@ import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
+<<<<<<< HEAD
 import entities.still.Brick;
+=======
+import entities.still.destroyable.Brick;
+>>>>>>> Zero_branch_2
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.StillFactory;

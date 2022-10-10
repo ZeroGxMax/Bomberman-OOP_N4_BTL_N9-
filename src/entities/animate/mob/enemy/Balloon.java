@@ -2,6 +2,7 @@ package entities.animate.mob.enemy;
 
 import graphics.Sprite;
 import map.Map;
+import support.Probability;
 import tracing.RandomTracing;
 
 public class Balloon extends Enemy {
@@ -40,7 +41,7 @@ public class Balloon extends Enemy {
 
         int randomNumber = tracing.random.nextInt();
 
-        if (randomNumber % 4 == 0) {
+        if (Probability.isSometimes()) {
             direction = tracing.calculateDirection();
         }
 

@@ -1,7 +1,12 @@
-package entities.still;
+package entities.still.destroyable;
 
+<<<<<<< HEAD:src/entities/still/Brick.java
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+=======
+import entities.still.StillObject;
+import graphics.Sprite;
+>>>>>>> Zero_branch_2:src/entities/still/destroyable/Brick.java
 
 public class Brick extends StillObject {
     protected int animate = 0;

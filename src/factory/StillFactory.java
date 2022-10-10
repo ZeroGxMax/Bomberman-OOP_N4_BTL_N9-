@@ -1,6 +1,7 @@
 package factory;
 
 import entities.still.*;
+import entities.still.destroyable.Brick;
 import entities.Entity;
 import graphics.Sprite;
 
