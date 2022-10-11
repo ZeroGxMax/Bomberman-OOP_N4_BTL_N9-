@@ -67,11 +67,6 @@ public class BombUnit extends AnimateEntity {
 
     public void destroyEntity() {
         Entity brick = gameMap.getEntityAt(xUnit + 1, yUnit);
-        if (brick == null) {
-            System.out.println("Heloo");
-        } else {
-            System.out.println("Crazy");
-        }
         if (brick != null) {
             brick.setDestroy(true);
         }

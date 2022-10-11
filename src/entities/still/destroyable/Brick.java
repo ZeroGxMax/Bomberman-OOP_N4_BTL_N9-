@@ -1,5 +1,6 @@
-package entities.still;
+package entities.still.destroyable;
 
+import entities.still.StillObject;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 

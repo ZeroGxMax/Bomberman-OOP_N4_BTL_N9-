@@ -3,7 +3,7 @@ package entities.animate.bomb;
 import constants.Constants.BOMB_STATUS;
 import entities.Entity;
 import entities.animate.AnimateEntity;
-import entities.still.Brick;
+import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
