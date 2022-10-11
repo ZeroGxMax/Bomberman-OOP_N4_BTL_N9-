@@ -10,9 +10,9 @@ import support.Unit;
 public abstract class Entity {
     // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
     protected Map gameMap = new Map();
-    //Tọa độ X tính từ góc trái trên trong Canvas
+    // Tọa độ X tính từ góc trái trên trong Canvas
     protected double x;
-    //Tọa độ Y tính từ góc trái trên trong Canvas
+    // Tọa độ Y tính từ góc trái trên trong Canvas
     protected double y;
     // Tọa độ ô trong board
     protected int xUnit;
@@ -23,9 +23,10 @@ public abstract class Entity {
     public boolean isBomber = false;
     protected boolean destroyed = false;
 
-    public Entity() {}
+    public Entity() {
+    }
 
-    //Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
+    // Khởi tạo đối tượng, chuyển từ tọa độ đơn vị sang tọa độ trong canvas
     public Entity(double xUnit, double yUnit, Sprite sprite) {
         this.xUnit = (int) xUnit;
         this.yUnit = (int) yUnit;
@@ -85,5 +86,3 @@ public abstract class Entity {
         gc.drawImage(img, x, y);
     }
 }
-
-
