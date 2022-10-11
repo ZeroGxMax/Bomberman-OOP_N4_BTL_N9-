@@ -1,14 +1,16 @@
 package entities.animate.bomb;
 
+import constants.Constants;
 import constants.Constants.BOMB_UNITS;
+import entities.Entity;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 
 public class BombUnit extends AnimateEntity {
     protected Sprite[] sprites = new Sprite[3];
 
-    private boolean destroy = false;
-    private int countFrames = 0;
+    protected boolean destroy = false;
+    protected int countFrames = 0;
 
     public BombUnit(int x, int y, Sprite[] sprites) {
         super(x, y, sprites[0]);
@@ -51,12 +53,27 @@ public class BombUnit extends AnimateEntity {
         if (destroy)
             return;
         goAnimate();
-        sprite = Sprite.movingSprite(sprites, animate, 300);
+        sprite = Sprite.movingSprite(sprites, animate, Constants.BOMB_EXPLODE_TIME);
         if (sprite != sprites[countFrames]) {
             countFrames++;
         }
-        if (countFrames == 3)
+        if (countFrames == 3) {
             destroy = true;
+            destroyEntity();
+        }
+
         img = sprite.getFxImage();
+    }
+
+    public void destroyEntity() {
+        Entity brick = gameMap.getEntityAt(xUnit + 1, yUnit);
+        if (brick == null) {
+            System.out.println("Heloo");
+        } else {
+            System.out.println("Crazy");
+        }
+        if (brick != null) {
+            brick.setDestroy(true);
+        }
     }
 }

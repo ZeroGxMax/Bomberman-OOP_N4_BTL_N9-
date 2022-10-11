@@ -80,6 +80,9 @@ public class Map {
         for (int i = 0; i < animateEntities.size(); i++) {
             animateEntities.get(i).setGameMap(this);
         }
+        for (int i = 0; i < stillObjects.size(); i++) {
+            stillObjects.get(i).setGameMap(this);
+        }
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
     }
@@ -93,20 +96,26 @@ public class Map {
         return null;
     }
 
-    public Brick getBrickAt(int xUnit, int yUnit) {
+    public Entity getEntityAt(int xUnit, int yUnit) {
+        // if (animateEntities.size() == 0) {
+        // System.out.println("Why?");
+        // } else {
+        // System.out.println("Yes");
+        // }
+        // return stillObjects.get(0);
         for (int i = 0; i < stillObjects.size(); i++) {
-            if (stillObjects.get(i) instanceof Brick && stillObjects.get(i).getxUnit() == xUnit && stillObjects.get(i).getyUnit() == yUnit) {
-                return (Brick) stillObjects.get(i);
+            if (stillObjects.get(i).getxUnit() == xUnit
+                    && stillObjects.get(i).getyUnit() == yUnit) {
+                return stillObjects.get(i);
             }
         }
         return null;
     }
 
     public void updateMap() {
-
         animateEntities.forEach(Entity::update);
-        stillObjects.forEach(a->a.update());
-        bomb.forEach(bomb->bomb.update());
+        stillObjects.forEach(a -> a.update());
+        bomb.forEach(bomb -> bomb.update());
     }
 
     public void renderMap(GraphicsContext gc) {

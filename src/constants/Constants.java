@@ -5,6 +5,8 @@ public class Constants {
     public static final int WIDTH = 31;
     public static final int HEIGHT = 13;
 
+    public static final int BOMB_EXPLODE_TIME = 30;
+
     public static final String MAP_PATH = Constants.class.getResource("/levels/Level1.txt").getPath();
 
     public static final String TEXTURE_PATH = "/textures/classic.png";

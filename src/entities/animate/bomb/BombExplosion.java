@@ -19,7 +19,7 @@ public class BombExplosion extends AnimateEntity {
         if (gameMap.isCanStepOn(x + 1, y)) {
             units.add(new BombUnit(x + 1, y, Sprite.explosion_horizontal_right_last));
         }
-        if (gameMap.isCanStepOn(x, y +1)) {
+        if (gameMap.isCanStepOn(x, y + 1)) {
             units.add(new BombUnit(x, y + 1, Sprite.explosion_vertical_down_last));
         }
 

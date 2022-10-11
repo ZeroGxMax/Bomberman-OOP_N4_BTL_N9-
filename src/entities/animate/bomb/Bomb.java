@@ -1,7 +1,9 @@
 package entities.animate.bomb;
 
 import constants.Constants.BOMB_STATUS;
+import entities.Entity;
 import entities.animate.AnimateEntity;
+import entities.still.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
@@ -60,8 +62,10 @@ public class Bomb extends AnimateEntity {
     public void render(GraphicsContext gc) {
         if (status == BOMB_STATUS.START)
             status1.render(gc);
-        else if(status == BOMB_STATUS.EXPLOSION){
+        else if (status == BOMB_STATUS.EXPLOSION) {
             status2.render(gc);
         }
     }
+
+    
 }

@@ -21,6 +21,7 @@ public abstract class Entity {
     protected Image img;
     protected boolean canBlock = false;
     public boolean isBomber = false;
+    protected boolean destroy = false;
 
     public Entity() {}
 
@@ -52,6 +53,10 @@ public abstract class Entity {
 
     public int getyUnit() {
         return yUnit;
+    }
+
+    public void setDestroy(boolean destroy) {
+        this.destroy = destroy;
     }
 
     public Sprite getSprite() {
