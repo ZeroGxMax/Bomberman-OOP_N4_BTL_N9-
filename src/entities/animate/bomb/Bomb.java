@@ -22,6 +22,7 @@ public class Bomb extends AnimateEntity {
         status = BOMB_STATUS.START;
         status1 = new BombStart(x, y);
         status2 = new BombExplosion(x, y);
+        Map._map[y][x] = 0;
     }
 
     public boolean isDestroyed() {
@@ -74,7 +75,7 @@ public class Bomb extends AnimateEntity {
     public void render(GraphicsContext gc) {
         if (status == BOMB_STATUS.START)
             status1.render(gc);
-        else if(status == BOMB_STATUS.EXPLOSION){
+        else if (status == BOMB_STATUS.EXPLOSION) {
             status2.render(gc);
         }
     }

@@ -2,16 +2,14 @@ package entities.animate.bomb;
 
 import constants.Constants;
 import constants.Constants.BOMB_UNITS;
-import entities.Entity;
 import entities.animate.AnimateEntity;
-import entities.still.destroyable.Brick;
 import graphics.Sprite;
 
 public class BombUnit extends AnimateEntity {
     protected Sprite[] sprites = new Sprite[3];
 
-    private boolean destroy = false;
-    private int countFrames = 0;
+    protected boolean destroy = false;
+    protected int countFrames = 0;
 
     public BombUnit(int x, int y, Sprite[] sprites) {
         super(x, y, sprites[0]);

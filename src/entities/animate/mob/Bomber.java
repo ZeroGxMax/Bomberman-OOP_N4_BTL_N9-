@@ -1,5 +1,8 @@
 package entities.animate.mob;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
@@ -10,9 +13,18 @@ import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
 public class Bomber extends Mob {
-    private int countBomb = 0;
-    private int Max_Bomb = 1;
-    private Bomb b = new Bomb();
+    private int Max_Bombs = 1;
+    private List<Bomb> b = new ArrayList<>();
+    private int time_between_bomb = 10;
+
+    public int getMax_Bombs() {
+        return Max_Bombs;
+    }
+
+    public void setMax_Bombs(int max_Bomb) {
+        Max_Bombs = max_Bomb;
+        System.out.println("bombs set to " + getMax_Bombs());
+    }
 
     public Bomber() {
     }
@@ -21,6 +33,12 @@ public class Bomber extends Mob {
         super(x, y, sprite);
         velocity = 1.75;
         isBomber = true;
+    }
+
+    @Override
+    public void setGameMap(Map gameMap) {
+        this.gameMap = gameMap;
+        b = gameMap.bombList;
     }
 
     @Override
@@ -34,16 +52,19 @@ public class Bomber extends Mob {
      * biến moving.
      */
 
-    @Override
-    public void setDirection() {
-        if (!isCanChangeDirection()) {
-            return;
-        }
-        // Lấy input
+    private void setActive() {
+        time_between_bomb--;
         Constants.KEYBOARD temp = KeyBoardInput.getInput();
-        // Update direction and moving
+        if (temp == KEYBOARD.ENTER) {
+            if (time_between_bomb <= 0 && b.size() < Max_Bombs)
+                makeBomb();
+        }
+        setDirection();
+    }
+
+    public void setDirection(KEYBOARD key) {
         moving = true;
-        switch (temp) {
+        switch (key) {
             case UP:
                 direction = DIRECTION.UP;
                 if (Map.isCanStepOn(xUnit, yUnit - 1))
@@ -77,6 +98,16 @@ public class Bomber extends Mob {
                 moving = false;
                 break;
         }
+
+    }
+
+    @Override
+    public void setDirection() {
+        if (!isCanChangeDirection()) {
+            return;
+        }
+        // Lấy input
+        setDirection(KeyBoardInput.getInput());
     }
 
     @Override
@@ -124,21 +155,16 @@ public class Bomber extends Mob {
     }
 
     private void makeBomb() {
-        b = new Bomb(xUnit, yUnit);
-        gameMap.bombList.add(b);
-        countBomb++;
+        Bomb temp = new Bomb(xUnit, yUnit);
+        temp.setGameMap(gameMap);
+        b.add(temp);
+        time_between_bomb = 5;
     }
 
     @Override
     public void update() {
-        if (KeyBoardInput.getInput() == KEYBOARD.ENTER && countBomb < Max_Bomb) {
-            makeBomb();
-        }
-        setDirection();
+        setActive();
         calculateMove();
         goAnimate();
-        if (b.isDestroyed()) {
-            countBomb = 0;
-        }
     }
 }
