@@ -1,7 +1,10 @@
 package entities.animate.bomb;
 
+import constants.Constants;
 import constants.Constants.BOMB_UNITS;
+import entities.Entity;
 import entities.animate.AnimateEntity;
+import entities.still.destroyable.Brick;
 import graphics.Sprite;
 
 public class BombUnit extends AnimateEntity {
@@ -51,12 +54,13 @@ public class BombUnit extends AnimateEntity {
         if (destroy)
             return;
         goAnimate();
-        sprite = Sprite.movingSprite(sprites, animate, 30);
+        sprite = Sprite.movingSprite(sprites, animate, Constants.BOMB_EXPLOSION_TIME);
         if (sprite != sprites[countFrames]) {
             countFrames++;
         }
-        if (countFrames == 3)
+        if (countFrames == 3) {
             destroy = true;
+        }
         img = sprite.getFxImage();
     }
 }

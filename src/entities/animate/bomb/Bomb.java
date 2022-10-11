@@ -1,9 +1,11 @@
 package entities.animate.bomb;
 
 import constants.Constants.BOMB_STATUS;
+import entities.Entity;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import map.Map;
 
 public class Bomb extends AnimateEntity {
     private BOMB_STATUS status;
@@ -30,9 +32,23 @@ public class Bomb extends AnimateEntity {
         switch (status) {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
+                Map._map[yUnit][xUnit] = 1;
                 break;
             case EXPLOSION:
                 status = BOMB_STATUS.DESTROYED;
+
+                Entity detroyedObject[] = {
+                        gameMap.getObjectAt(xUnit + 1, yUnit),
+                        gameMap.getObjectAt(xUnit - 1, yUnit),
+                        gameMap.getObjectAt(xUnit, yUnit + 1),
+                        gameMap.getObjectAt(xUnit, yUnit - 1)
+                };
+                for (int i = 0; i < 4; i++) {
+                    if (detroyedObject[i] != null
+                            && !detroyedObject[i].isDestroyed()) {
+                        detroyedObject[i].setDestroyed(true);
+                    }
+                }
                 break;
             default:
                 break;
@@ -41,7 +57,6 @@ public class Bomb extends AnimateEntity {
 
     @Override
     public void update() {
-        // TODO Auto-generated method stub
         if (status == BOMB_STATUS.START) {
             status1.update();
             if (status1.isNext())

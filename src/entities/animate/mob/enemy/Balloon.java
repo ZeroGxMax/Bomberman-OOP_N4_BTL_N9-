@@ -1,10 +1,6 @@
 package entities.animate.mob.enemy;
 
-import constants.Constants;
-import entities.animate.AnimateEntity;
-import entities.animate.mob.Mob;
 import graphics.Sprite;
-import javafx.scene.image.Image;
 import map.Map;
 import support.Probability;
 import tracing.RandomTracing;
@@ -91,14 +87,12 @@ public class Balloon extends Enemy {
         switch (direction) {
             case UP:
             case RIGHT:
-                sprite = Sprite.movingSprite(Sprite.balloom_right[0], Sprite.balloom_right[1],
-                        Sprite.balloom_right[2], animate, 60);
+                sprite = Sprite.movingSprite(Sprite.balloom_right, animate, 60);
                 img = sprite.getFxImage();
                 break;
             case DOWN:
             case LEFT:
-                sprite = Sprite.movingSprite(Sprite.balloom_left[0], Sprite.balloom_left[1],
-                        Sprite.balloom_left[2], animate, 60);
+                sprite = Sprite.movingSprite(Sprite.balloom_left, animate, 60);
                 img = sprite.getFxImage();
                 break;
             case NONE:

@@ -41,9 +41,6 @@ public class Bomber extends Mob {
         }
         // Lấy input
         Constants.KEYBOARD temp = KeyBoardInput.getInput();
-        if (temp == KEYBOARD.ENTER && countBomb < Max_Bomb) {
-            makeBomb();
-        }
         // Update direction and moving
         moving = true;
         switch (temp) {
@@ -102,26 +99,22 @@ public class Bomber extends Mob {
     @Override
     public void render(GraphicsContext gc) {
         chooseSprite();
-        gc.drawImage(sprite.getFxImage(), x, y);
+        gc.drawImage(img, x, y);
     }
 
     public void chooseSprite() {
         switch (direction) {
             case UP:
-                sprite = Sprite.movingSprite(Sprite.player_up[0], Sprite.player_up[1],
-                        Sprite.player_up[2], animate, 40);
+                sprite = Sprite.movingSprite(Sprite.player_up, animate, 30);
                 break;
             case RIGHT:
-                sprite = Sprite.movingSprite(Sprite.player_right[0], Sprite.player_right[1],
-                        Sprite.player_right[2], animate, 40);
+                sprite = Sprite.movingSprite(Sprite.player_right, animate, 30);
                 break;
             case DOWN:
-                sprite = Sprite.movingSprite(Sprite.player_down[0], Sprite.player_down[1],
-                        Sprite.player_down[2], animate, 40);
+                sprite = Sprite.movingSprite(Sprite.player_down, animate, 30);
                 break;
             case LEFT:
-                sprite = Sprite.movingSprite(Sprite.player_left[0], Sprite.player_left[1],
-                        Sprite.player_left[2], animate, 40);
+                sprite = Sprite.movingSprite(Sprite.player_left, animate, 30);
                 break;
             case NONE:
                 sprite = Sprite.player_down[0];
@@ -132,12 +125,15 @@ public class Bomber extends Mob {
 
     private void makeBomb() {
         b = new Bomb(xUnit, yUnit);
-        gameMap.bomb.add(b);
+        gameMap.bombList.add(b);
         countBomb++;
     }
 
     @Override
     public void update() {
+        if (KeyBoardInput.getInput() == KEYBOARD.ENTER && countBomb < Max_Bomb) {
+            makeBomb();
+        }
         setDirection();
         calculateMove();
         goAnimate();

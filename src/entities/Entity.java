@@ -1,13 +1,11 @@
 package entities;
 
+import graphics.Sprite;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import support.Unit;
-import graphics.Sprite;
 import map.Map;
-import constants.Constants;
+import support.Unit;
 
 public abstract class Entity {
     // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
@@ -23,6 +21,7 @@ public abstract class Entity {
     protected Image img;
     protected boolean canBlock = false;
     public boolean isBomber = false;
+    protected boolean destroyed = false;
 
     public Entity() {}
 
@@ -58,6 +57,14 @@ public abstract class Entity {
 
     public Sprite getSprite() {
         return sprite;
+    }
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
+
+    public void setDestroyed(boolean destroyed) {
+        this.destroyed = destroyed;
     }
 
     public Rectangle2D getBoundary() {
