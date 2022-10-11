@@ -125,7 +125,7 @@ public class Bomber extends Mob {
 
     private void makeBomb() {
         b = new Bomb(xUnit, yUnit);
-        gameMap.bomb.add(b);
+        gameMap.bombList.add(b);
         countBomb++;
     }
 

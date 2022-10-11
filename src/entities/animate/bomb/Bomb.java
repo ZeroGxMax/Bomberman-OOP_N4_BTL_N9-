@@ -1,6 +1,7 @@
 package entities.animate.bomb;
 
 import constants.Constants.BOMB_STATUS;
+import entities.Entity;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
@@ -35,6 +36,19 @@ public class Bomb extends AnimateEntity {
                 break;
             case EXPLOSION:
                 status = BOMB_STATUS.DESTROYED;
+
+                Entity detroyedObject[] = {
+                        gameMap.getObjectAt(xUnit + 1, yUnit),
+                        gameMap.getObjectAt(xUnit - 1, yUnit),
+                        gameMap.getObjectAt(xUnit, yUnit + 1),
+                        gameMap.getObjectAt(xUnit, yUnit - 1)
+                };
+                for (int i = 0; i < 4; i++) {
+                    if (detroyedObject[i] != null
+                            && !detroyedObject[i].isDestroyed()) {
+                        detroyedObject[i].setDestroyed(true);
+                    }
+                }
                 break;
             default:
                 break;

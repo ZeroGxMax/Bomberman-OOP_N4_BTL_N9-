@@ -5,16 +5,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Vector;
 
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
-<<<<<<< HEAD
-import entities.still.Brick;
-=======
 import entities.still.destroyable.Brick;
->>>>>>> Zero_branch_2
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.StillFactory;
@@ -26,7 +23,7 @@ public class Map {
 
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
-    public List<Bomb> bomb = new ArrayList<>();
+    public List<Bomb> bombList = new ArrayList<>();
 
     private static int width;
     private static int height;
@@ -84,6 +81,9 @@ public class Map {
         for (int i = 0; i < animateEntities.size(); i++) {
             animateEntities.get(i).setGameMap(this);
         }
+        for (int i = 0; i < stillObjects.size(); i++) {
+            stillObjects.get(i).setGameMap(this);
+        }
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
     }
@@ -97,26 +97,29 @@ public class Map {
         return null;
     }
 
-    public Brick getBrickAt(int xUnit, int yUnit) {
+    public Entity getObjectAt(int xUnit, int yUnit) {
         for (int i = 0; i < stillObjects.size(); i++) {
-            if (stillObjects.get(i) instanceof Brick && stillObjects.get(i).getxUnit() == xUnit && stillObjects.get(i).getyUnit() == yUnit) {
-                return (Brick) stillObjects.get(i);
+            if (stillObjects.get(i).getxUnit() == xUnit
+                    && stillObjects.get(i).getyUnit() == yUnit) {
+                return stillObjects.get(i);
             }
         }
         return null;
     }
 
     public void updateMap() {
-
+        for (int i = 0; i < bombList.size(); i++) {
+            bombList.get(i).setGameMap(this);
+        }
         animateEntities.forEach(Entity::update);
         stillObjects.forEach(a->a.update());
-        bomb.forEach(bomb->bomb.update());
+        bombList.forEach(bomb->bomb.update());
     }
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(stillObjects -> stillObjects.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
-        bomb.forEach(bomb -> bomb.render(gc));
+        bombList.forEach(bombList -> bombList.render(gc));
     }
 }

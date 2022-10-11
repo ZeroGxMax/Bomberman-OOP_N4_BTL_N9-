@@ -21,6 +21,7 @@ public abstract class Entity {
     protected Image img;
     protected boolean canBlock = false;
     public boolean isBomber = false;
+    protected boolean destroyed = false;
 
     public Entity() {}
 
@@ -56,6 +57,14 @@ public abstract class Entity {
 
     public Sprite getSprite() {
         return sprite;
+    }
+
+    public boolean isDestroyed() {
+        return destroyed;
+    }
+
+    public void setDestroyed(boolean destroyed) {
+        this.destroyed = destroyed;
     }
 
     public Rectangle2D getBoundary() {
