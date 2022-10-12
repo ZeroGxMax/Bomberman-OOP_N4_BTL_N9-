@@ -26,7 +26,7 @@ public class Bomb extends AnimateEntity {
     }
 
     public boolean isDestroyed() {
-        return status == BOMB_STATUS.DESTROYED ? true : false;
+        return status == BOMB_STATUS.DESTROYED;
     }
 
     public void updateStatus() {

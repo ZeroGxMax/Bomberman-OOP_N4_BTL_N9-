@@ -1,5 +1,6 @@
 package entities.animate.bomb;
 
+import constants.Constants;
 import graphics.Sprite;
 
 public class BombStart extends BombUnit {
@@ -16,7 +17,7 @@ public class BombStart extends BombUnit {
         if (destroy)
             return;
         goAnimate();
-        sprite = Sprite.movingSprite(sprites, animate, 75);
+        sprite = Sprite.movingSprite(sprites, animate, Constants.BOMB_WAITING_TIME);
         if (sprite != sprites[countFrames]) {
             countFrames++;
         }
