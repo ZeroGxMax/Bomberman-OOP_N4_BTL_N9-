@@ -58,11 +58,7 @@ public class KeyBoardInput {
                         input = KEYBOARD.ENTER;
                         break;
                     case ESCAPE:
-<<<<<<< Updated upstream
                         input = KEYBOARD.ESC;
-=======
-                        _input = KEYBOARD.ESC;
->>>>>>> Stashed changes
                     default:
                         break;
                 }
