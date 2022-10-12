@@ -24,7 +24,6 @@ public class Constants {
         DOWN,
         LEFT,
         RIGHT,
-        K,
         ENTER,
         ESC,
         UNKNOWN

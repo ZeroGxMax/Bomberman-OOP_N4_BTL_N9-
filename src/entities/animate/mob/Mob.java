@@ -7,9 +7,10 @@ import graphics.Sprite;
 public abstract class Mob extends AnimateEntity {
     protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
-    protected double velocity;
+    protected double velocity = 1;
 
-    public Mob() {}
+    public Mob() {
+    }
 
     public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -23,7 +24,6 @@ public abstract class Mob extends AnimateEntity {
         return direction;
     }
 
-
     /**
      * Kiểm tra xem có thể chuyền hướng không. Nhân vật chỉ có thể chuyển hướng khi
      * đã đi đến đúng ô.
@@ -33,10 +33,10 @@ public abstract class Mob extends AnimateEntity {
     protected boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
-        if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > 1.75) {
+        if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > velocity) {
             return false;
         }
-        if (Math.abs(yUnit * Sprite.SCALED_SIZE - y) > 1.75) {
+        if (Math.abs(yUnit * Sprite.SCALED_SIZE - y) > velocity) {
             return false;
         }
         // Cài đặt lại vị trí nhân vật
@@ -61,7 +61,5 @@ public abstract class Mob extends AnimateEntity {
 
     public abstract void setDirection();
 
-
-
-    //    protected abstract void canMove(double x, double y);
+    // protected abstract void canMove(double x, double y);
 }
