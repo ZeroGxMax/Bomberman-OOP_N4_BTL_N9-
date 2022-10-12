@@ -54,8 +54,7 @@ public class Bomber extends Mob {
 
     private void setActive() {
         time_between_bomb--;
-        Constants.KEYBOARD temp = KeyBoardInput.getInput();
-        if (temp == KEYBOARD.ENTER) {
+        if (KeyBoardInput.getInput2() == KEYBOARD.ENTER) {
             if (time_between_bomb <= 0 && b.size() < Max_Bombs)
                 makeBomb();
         }
@@ -158,7 +157,7 @@ public class Bomber extends Mob {
         Bomb temp = new Bomb(xUnit, yUnit);
         temp.setGameMap(gameMap);
         b.add(temp);
-        time_between_bomb = 5;
+        time_between_bomb = 10;
     }
 
     @Override

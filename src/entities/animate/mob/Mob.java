@@ -42,6 +42,7 @@ public abstract class Mob extends AnimateEntity {
         // Cài đặt lại vị trí nhân vật
         x = xUnit * Sprite.SCALED_SIZE;
         y = yUnit * Sprite.SCALED_SIZE;
+        moving = false;
         return true;
     }
 
