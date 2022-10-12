@@ -3,7 +3,6 @@ package entities.animate.mob;
 import java.util.ArrayList;
 import java.util.List;
 
-import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
 import entities.animate.bomb.Bomb;
@@ -15,15 +14,15 @@ import map.Map;
 public class Bomber extends Mob {
     private int Max_Bombs = 1;
     private List<Bomb> b = new ArrayList<>();
-    private int time_between_bomb = 10;
+    private int time_between_bomb = 0;
+    private int bomb_length = 1;
 
-    public int getMax_Bombs() {
-        return Max_Bombs;
+    public void setBomb_length(int bomb_length) {
+        this.bomb_length = bomb_length;
     }
 
     public void setMax_Bombs(int max_Bomb) {
         Max_Bombs = max_Bomb;
-        System.out.println("bombs set to " + getMax_Bombs());
     }
 
     public Bomber() {
@@ -33,6 +32,7 @@ public class Bomber extends Mob {
         super(x, y, sprite);
         velocity = 1.75;
         isBomber = true;
+        velocity = 1.75;
     }
 
     @Override
@@ -54,8 +54,7 @@ public class Bomber extends Mob {
 
     private void setActive() {
         time_between_bomb--;
-        Constants.KEYBOARD temp = KeyBoardInput.getInput();
-        if (temp == KEYBOARD.ENTER) {
+        if (KeyBoardInput.getInput2() == KEYBOARD.ENTER) {
             if (time_between_bomb <= 0 && b.size() < Max_Bombs)
                 makeBomb();
         }
@@ -74,24 +73,27 @@ public class Bomber extends Mob {
                 break;
             case DOWN:
                 direction = DIRECTION.DOWN;
-                if (Map.isCanStepOn(xUnit, yUnit + 1))
+                if (Map.isCanStepOn(xUnit, yUnit + 1)) {
                     yUnit++;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             case LEFT:
                 direction = DIRECTION.LEFT;
-                if (Map.isCanStepOn(xUnit - 1, yUnit))
+                if (Map.isCanStepOn(xUnit - 1, yUnit)) {
                     xUnit--;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             case RIGHT:
                 direction = DIRECTION.RIGHT;
-                if (Map.isCanStepOn(xUnit + 1, yUnit))
+                if (Map.isCanStepOn(xUnit + 1, yUnit)) {
                     xUnit++;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             default:
                 direction = DIRECTION.NONE;
@@ -106,7 +108,6 @@ public class Bomber extends Mob {
         if (!isCanChangeDirection()) {
             return;
         }
-        // Lấy input
         setDirection(KeyBoardInput.getInput());
     }
 
@@ -155,10 +156,10 @@ public class Bomber extends Mob {
     }
 
     private void makeBomb() {
-        Bomb temp = new Bomb(xUnit, yUnit);
+        Bomb temp = new Bomb(xUnit, yUnit, bomb_length);
         temp.setGameMap(gameMap);
         b.add(temp);
-        time_between_bomb = 5;
+        time_between_bomb = 10;
     }
 
     @Override

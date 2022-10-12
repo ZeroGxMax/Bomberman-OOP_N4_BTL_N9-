@@ -11,20 +11,51 @@ import map.Map;
 public class BombExplosion extends AnimateEntity {
     private List<BombUnit> units = new ArrayList<BombUnit>();
 
-    public BombExplosion(int x, int y) {
+    public BombExplosion(int x, int y, int length) {
         units.add(new BombUnit(x, y, Sprite.bomb_exploded));
-        if (Map.isCanStepOn(x - 1, y)) {
-            units.add(new BombUnit(x - 1, y, Sprite.explosion_horizontal_left_last));
+        for (int i = 1; i <= length; i++) {
+            if (Map.isCanStepOn(x - i, y)) {
+                if (i == length) {
+                    units.add(new BombUnit(x - i, y, Sprite.explosion_horizontal_left_last));
+                } else {
+                    units.add(new BombUnit(x - i, y, Sprite.explosion_horizontal));
+                }
+            } else {
+                break;
+            }
         }
-        if (Map.isCanStepOn(x + 1, y)) {
-            units.add(new BombUnit(x + 1, y, Sprite.explosion_horizontal_right_last));
+        for (int i = 1; i <= length; i++) {
+            if (Map.isCanStepOn(x + i, y)) {
+                if (i == length) {
+                    units.add(new BombUnit(x + i, y, Sprite.explosion_horizontal_right_last));
+                } else {
+                    units.add(new BombUnit(x + i, y, Sprite.explosion_horizontal));
+                }
+            } else {
+                break;
+            }
         }
-        if (Map.isCanStepOn(x, y + 1)) {
-            units.add(new BombUnit(x, y + 1, Sprite.explosion_vertical_down_last));
+        for (int i = 1; i <= length; i++) {
+            if (Map.isCanStepOn(x, y - i)) {
+                if (i == length) {
+                    units.add(new BombUnit(x, y - i, Sprite.explosion_vertical_top_last));
+                } else {
+                    units.add(new BombUnit(x, y - i, Sprite.explosion_vertical));
+                }
+            } else {
+                break;
+            }
         }
-
-        if (Map.isCanStepOn(x, y - 1)) {
-            units.add(new BombUnit(x, y - 1, Sprite.explosion_vertical_top_last));
+        for (int i = 1; i <= length; i++) {
+            if (Map.isCanStepOn(x, y + i)) {
+                if (i == length) {
+                    units.add(new BombUnit(x, y + i, Sprite.explosion_vertical_down_last));
+                } else {
+                    units.add(new BombUnit(x, y + i, Sprite.explosion_vertical));
+                }
+            } else {
+                break;
+            }
         }
     }
 

@@ -1,7 +1,6 @@
 package entities.items;
 
 import graphics.Sprite;
-import javafx.scene.canvas.GraphicsContext;
 
 public class LimitBombItem extends Items {
     public LimitBombItem(int xUnit, int yUnit) {

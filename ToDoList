@@ -21,6 +21,15 @@ To do list:
         * Dựa trên animate/random, thay đổi direction.
     +, Chạm tường (có block).
     +, Tracing.
- 
+- Bomb:
+    +, Đặt, nổ (đã làm)
+    +, Phá hủy brick (đã làm)
+    +, Phá hủy enemy.
+    +, Phá hủy player.
+- Item:
+    +, Hiện ra sau khi brick bị hủy (đã làm).
+    +, Hiệu ứng: Speed (đã làm), Bomb limit, Flame range, ...
+- Remove quái vật:
+    +, Quái vật bị remove khỏi game map sau khi bị nổ chết.
  
  - GUI cho phần menu, pause, option:
