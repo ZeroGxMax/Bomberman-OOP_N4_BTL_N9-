@@ -54,11 +54,7 @@ public class Bomber extends Mob {
 
     private void setActive() {
         time_between_bomb--;
-<<<<<<< Updated upstream
         if (KeyBoardInput.getInput2() == KEYBOARD.ENTER) {
-=======
-        if (KeyBoardInput.getInput() == KEYBOARD.ENTER) {
->>>>>>> Stashed changes
             if (time_between_bomb <= 0 && b.size() < Max_Bombs)
                 makeBomb();
         }
