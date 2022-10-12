@@ -1,10 +1,12 @@
 package entities.items;
 
 import graphics.Sprite;
+import javafx.scene.canvas.GraphicsContext;
 
 public class LimitBombItem extends Items {
     public LimitBombItem(int xUnit, int yUnit) {
-        super(xUnit, yUnit, Sprite.powerup_bombs);
+        super(xUnit, yUnit);
+        this.actualSprite = Sprite.powerup_bombs;
         effect = Effect.limit_bomb;
     }
 

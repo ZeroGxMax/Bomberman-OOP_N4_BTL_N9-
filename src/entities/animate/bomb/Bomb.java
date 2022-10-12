@@ -34,10 +34,6 @@ public class Bomb extends AnimateEntity {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
                 Map._map[yUnit][xUnit] = 1;
-                break;
-            case EXPLOSION:
-                status = BOMB_STATUS.DESTROYED;
-
                 Entity detroyedObject[] = {
                         gameMap.getObjectAt(xUnit + 1, yUnit),
                         gameMap.getObjectAt(xUnit - 1, yUnit),
@@ -50,6 +46,9 @@ public class Bomb extends AnimateEntity {
                         detroyedObject[i].setDestroyed(true);
                     }
                 }
+                break;
+            case EXPLOSION:
+                status = BOMB_STATUS.DESTROYED;
                 break;
             default:
                 break;

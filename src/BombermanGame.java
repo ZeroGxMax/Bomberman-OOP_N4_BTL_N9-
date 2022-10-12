@@ -54,7 +54,7 @@ public class BombermanGame extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-//                System.out.println(gameMap.bombList.size());
+//                System.out.println(gameMap.items.size());
                 gameMap.renderMap(gc);
                 gameMap.updateMap();
             }

@@ -14,8 +14,11 @@ import entities.items.Items;
 import entities.items.LimitBombItem;
 import entities.items.SpeedupItem;
 import entities.still.Grass;
+import entities.still.Wall;
 import factory.AnimateFactory;
+import factory.ItemFactory;
 import factory.StillFactory;
+import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Map {
@@ -78,6 +81,13 @@ public class Map {
                 if (animateOne != null) {
                     animateEntities.add(animateOne);
                 }
+                Entity itemEntity = ItemFactory.getItemEntity(i, j, c);
+                if (itemEntity != null) {
+                    Items anItem = (Items) itemEntity;
+                    items.add(anItem);
+                    items.get(items.size() - 1).setBomber(getBomber());
+                    _map[i][j] = 0;
+                }
             }
         }
         for (int i = 0; i < animateEntities.size(); i++) {
@@ -86,12 +96,12 @@ public class Map {
         for (int i = 0; i < stillObjects.size(); i++) {
             stillObjects.get(i).setGameMap(this);
         }
+        for (int i = 0; i < items.size(); i++) {
+            items.get(i).setBomber(getBomber());
+            items.get(i).setGameMap(this);
+        }
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
-        items.add(new LimitBombItem(3, 4));
-        items.get(0).setBomber(getBomber());
-        items.add(new SpeedupItem(3, 5));
-        items.get(1).setBomber(getBomber());
     }
 
     public Bomber getBomber() {
@@ -104,12 +114,20 @@ public class Map {
     }
 
     public Entity getObjectAt(int xUnit, int yUnit) {
+        for (int i = 0; i < items.size(); i++) {
+            if (items.get(i).getxUnit() == xUnit
+                    && items.get(i).getyUnit() == yUnit) {
+                System.out.println("Hello");
+                return items.get(i);
+            }
+        }
         for (int i = 0; i < stillObjects.size(); i++) {
             if (stillObjects.get(i).getxUnit() == xUnit
                     && stillObjects.get(i).getyUnit() == yUnit) {
                 return stillObjects.get(i);
             }
         }
+
         return null;
     }
 
@@ -123,13 +141,13 @@ public class Map {
         }
         animateEntities.forEach(Entity::update);
         stillObjects.forEach(a -> a.update());
-        items.forEach(a -> a.update());
+        items.forEach(items -> items.update());
     }
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(stillObjects -> stillObjects.render(gc));
-        items.forEach(a -> a.render(gc));
+        items.forEach(items -> items.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
         bombList.forEach(bombList -> bombList.render(gc));
     }
