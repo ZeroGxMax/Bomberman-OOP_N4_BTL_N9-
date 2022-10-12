@@ -51,6 +51,7 @@ public abstract class Mob extends AnimateEntity {
 
     public void setVelocity(double velocity) {
         this.velocity = velocity;
+        System.out.println("set velocity to " + getVelocity());
     }
 
     protected abstract void calculateMove();

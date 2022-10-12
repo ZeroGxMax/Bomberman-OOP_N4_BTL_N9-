@@ -5,13 +5,14 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.Vector;
 
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
-import entities.still.destroyable.Brick;
+import entities.items.Items;
+import entities.items.LimitBombItem;
+import entities.items.SpeedupItem;
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.StillFactory;
@@ -24,6 +25,7 @@ public class Map {
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
     public List<Bomb> bombList = new ArrayList<>();
+    public List<Items> items = new ArrayList<>();
 
     private static int width;
     private static int height;
@@ -86,6 +88,10 @@ public class Map {
         }
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
+        items.add(new LimitBombItem(3, 4));
+        items.get(0).setBomber(getBomber());
+        items.add(new SpeedupItem(3, 5));
+        items.get(1).setBomber(getBomber());
     }
 
     public Bomber getBomber() {
@@ -109,16 +115,21 @@ public class Map {
 
     public void updateMap() {
         for (int i = 0; i < bombList.size(); i++) {
-            bombList.get(i).setGameMap(this);
+            bombList.get(i).update();
+            if (bombList.get(i).isDestroyed()) {
+                bombList.remove(i);
+                i--;
+            }
         }
         animateEntities.forEach(Entity::update);
-        stillObjects.forEach(a->a.update());
-        bombList.forEach(bomb->bomb.update());
+        stillObjects.forEach(a -> a.update());
+        items.forEach(a -> a.update());
     }
 
     public void renderMap(GraphicsContext gc) {
         gc.clearRect(0, 0, WIDTH, HEIGHT);
         stillObjects.forEach(stillObjects -> stillObjects.render(gc));
+        items.forEach(a -> a.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
         bombList.forEach(bombList -> bombList.render(gc));
     }
