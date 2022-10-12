@@ -11,14 +11,10 @@ import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
 import entities.items.Items;
-import entities.items.LimitBombItem;
-import entities.items.SpeedupItem;
 import entities.still.Grass;
-import entities.still.Wall;
 import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
-import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Map {

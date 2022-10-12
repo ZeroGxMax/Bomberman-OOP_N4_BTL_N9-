@@ -14,15 +14,15 @@ import map.Map;
 public class Bomber extends Mob {
     private int Max_Bombs = 1;
     private List<Bomb> b = new ArrayList<>();
-    private int time_between_bomb = 10;
+    private int time_between_bomb = 0;
+    private int bomb_length = 1;
 
-    public int getMax_Bombs() {
-        return Max_Bombs;
+    public void setBomb_length(int bomb_length) {
+        this.bomb_length = bomb_length;
     }
 
     public void setMax_Bombs(int max_Bomb) {
         Max_Bombs = max_Bomb;
-        System.out.println("bombs set to " + getMax_Bombs());
     }
 
     public Bomber() {
@@ -156,7 +156,7 @@ public class Bomber extends Mob {
     }
 
     private void makeBomb() {
-        Bomb temp = new Bomb(xUnit, yUnit);
+        Bomb temp = new Bomb(xUnit, yUnit, bomb_length);
         temp.setGameMap(gameMap);
         b.add(temp);
         time_between_bomb = 10;

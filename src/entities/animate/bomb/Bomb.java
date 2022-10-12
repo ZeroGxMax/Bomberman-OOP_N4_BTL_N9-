@@ -17,11 +17,11 @@ public class Bomb extends AnimateEntity {
         status = BOMB_STATUS.START;
     }
 
-    public Bomb(int x, int y) {
+    public Bomb(int x, int y, int length) {
         super(x, y, Sprite.balloom_dead);
         status = BOMB_STATUS.START;
         status1 = new BombStart(x, y);
-        status2 = new BombExplosion(x, y);
+        status2 = new BombExplosion(x, y,length);
         Map._map[y][x] = 0;
     }
 
