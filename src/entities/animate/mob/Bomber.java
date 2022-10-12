@@ -3,7 +3,6 @@ package entities.animate.mob;
 import java.util.ArrayList;
 import java.util.List;
 
-import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
 import entities.animate.bomb.Bomb;
@@ -33,6 +32,7 @@ public class Bomber extends Mob {
         super(x, y, sprite);
         velocity = 1.75;
         isBomber = true;
+        velocity = 1.75;
     }
 
     @Override
@@ -54,8 +54,11 @@ public class Bomber extends Mob {
 
     private void setActive() {
         time_between_bomb--;
-        Constants.KEYBOARD temp = KeyBoardInput.getInput();
-        if (temp == KEYBOARD.ENTER) {
+<<<<<<< Updated upstream
+        if (KeyBoardInput.getInput2() == KEYBOARD.ENTER) {
+=======
+        if (KeyBoardInput.getInput() == KEYBOARD.ENTER) {
+>>>>>>> Stashed changes
             if (time_between_bomb <= 0 && b.size() < Max_Bombs)
                 makeBomb();
         }
@@ -74,24 +77,27 @@ public class Bomber extends Mob {
                 break;
             case DOWN:
                 direction = DIRECTION.DOWN;
-                if (Map.isCanStepOn(xUnit, yUnit + 1))
+                if (Map.isCanStepOn(xUnit, yUnit + 1)) {
                     yUnit++;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             case LEFT:
                 direction = DIRECTION.LEFT;
-                if (Map.isCanStepOn(xUnit - 1, yUnit))
+                if (Map.isCanStepOn(xUnit - 1, yUnit)) {
                     xUnit--;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             case RIGHT:
                 direction = DIRECTION.RIGHT;
-                if (Map.isCanStepOn(xUnit + 1, yUnit))
+                if (Map.isCanStepOn(xUnit + 1, yUnit)) {
                     xUnit++;
-                else
+                } else {
                     moving = false;
+                }
                 break;
             default:
                 direction = DIRECTION.NONE;
@@ -106,7 +112,6 @@ public class Bomber extends Mob {
         if (!isCanChangeDirection()) {
             return;
         }
-        // Lấy input
         setDirection(KeyBoardInput.getInput());
     }
 
@@ -158,7 +163,7 @@ public class Bomber extends Mob {
         Bomb temp = new Bomb(xUnit, yUnit);
         temp.setGameMap(gameMap);
         b.add(temp);
-        time_between_bomb = 5;
+        time_between_bomb = 10;
     }
 
     @Override

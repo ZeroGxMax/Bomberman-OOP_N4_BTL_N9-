@@ -9,7 +9,8 @@ import javafx.scene.input.KeyEvent;
  * Lấy dữ liệu bàn phím từ một Scene.
  */
 public class KeyBoardInput {
-    private static KEYBOARD _input;
+    private static KEYBOARD _input = KEYBOARD.UNKNOWN;
+    private static KEYBOARD input = KEYBOARD.UNKNOWN;
 
     /**
      * Lấy key input tương ứng với phím được nhập trong Scene. Nếu không có KeyEvent
@@ -18,8 +19,11 @@ public class KeyBoardInput {
      * @return Một giá trị KEYBOARD (constants.Constants)
      */
     public static KEYBOARD getInput() {
-        KEYBOARD answer = _input == null ? KEYBOARD.UNKNOWN : _input;
-        return answer;
+        return _input;
+    }
+
+    public static KEYBOARD getInput2() {
+        return input;
     }
 
     /**
@@ -51,14 +55,15 @@ public class KeyBoardInput {
                         break;
                     case ENTER:
                     case SPACE:
-                        _input = KEYBOARD.ENTER;
+                        input = KEYBOARD.ENTER;
                         break;
                     case ESCAPE:
+<<<<<<< Updated upstream
+                        input = KEYBOARD.ESC;
+=======
                         _input = KEYBOARD.ESC;
-                    case K:
-                        _input = KEYBOARD.K;
+>>>>>>> Stashed changes
                     default:
-                        _input = KEYBOARD.UNKNOWN;
                         break;
                 }
             }
@@ -67,7 +72,24 @@ public class KeyBoardInput {
         scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                _input = null;
+                switch (event.getCode()) {
+                    case UP:
+                    case W:
+                    case DOWN:
+                    case S:
+                    case LEFT:
+                    case A:
+                    case RIGHT:
+                    case D:
+                        _input = KEYBOARD.UNKNOWN;
+                        break;
+                    case ENTER:
+                    case SPACE:
+                    case ESCAPE:
+                        input = KEYBOARD.UNKNOWN;
+                    default:
+                        break;
+                }
             }
         });
     }
