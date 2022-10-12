@@ -4,7 +4,8 @@ import graphics.Sprite;
 
 public class SpeedupItem extends Items {
     public SpeedupItem(int xUnit, int yUnit) {
-        super(xUnit, yUnit, Sprite.powerup_speed);
+        super(xUnit, yUnit);
+        this.actualSprite = Sprite.powerup_speed;
         effect = Effect.speed_up;
     }
 
