@@ -10,11 +10,14 @@ import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
+import entities.animate.mob.enemy.Balloon;
+import entities.animate.mob.enemy.Enemy;
 import entities.items.Items;
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
+import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
 public class Map {
@@ -86,6 +89,7 @@ public class Map {
                 }
             }
         }
+//        animateEntities.add(new Balloon(1, 1, Sprite.balloom_left[0]));
         for (int i = 0; i < animateEntities.size(); i++) {
             animateEntities.get(i).setGameMap(this);
         }
@@ -110,10 +114,15 @@ public class Map {
     }
 
     public Entity getObjectAt(int xUnit, int yUnit) {
+        for (int i = 0; i < animateEntities.size(); i++) {
+            if (animateEntities.get(i).getxUnit() == xUnit
+                    && animateEntities.get(i).getyUnit() == yUnit) {
+                return animateEntities.get(i);
+            }
+        }
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getxUnit() == xUnit
                     && items.get(i).getyUnit() == yUnit) {
-                System.out.println("Hello");
                 return items.get(i);
             }
         }
@@ -135,7 +144,15 @@ public class Map {
                 i--;
             }
         }
-        animateEntities.forEach(Entity::update);
+        for (int i = 0; i < animateEntities.size(); i++) {
+            animateEntities.get(i).update();
+            if (animateEntities.get(i).isDestroyed()
+                    && animateEntities.get(i).getTimeAfter() == 0
+                    && animateEntities.get(i) instanceof Enemy) {
+                animateEntities.remove(i);
+                i--;
+            }
+        }
         stillObjects.forEach(a -> a.update());
         items.forEach(items -> items.update());
     }

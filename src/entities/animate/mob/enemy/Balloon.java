@@ -1,5 +1,6 @@
 package entities.animate.mob.enemy;
 
+import constants.Constants;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
@@ -10,6 +11,7 @@ public class Balloon extends Enemy {
 
     public Balloon(double x, double y, Sprite sprite) {
         super(x, y, sprite);
+        deadSprites.add(Sprite.balloom_dead);
     }
 
     /**
@@ -84,6 +86,25 @@ public class Balloon extends Enemy {
 
     @Override
     public void chooseSprite() {
+        if (destroyed && timeAfter == -1) {
+            return;
+        }
+        if (destroyed) {
+            if (timeAfter == 0) {
+                gameMap.animateEntities.remove(gameMap.getObjectAt(xUnit, yUnit));
+                return;
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/4) {
+                sprite = deadSprites.get(2);
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/3) {
+                sprite = deadSprites.get(1);
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/2) {
+                sprite = deadSprites.get(0);
+            } else {
+                sprite = deadSprites.get(3);
+            }
+            return;
+        }
+
         switch (direction) {
             case UP:
             case RIGHT:
