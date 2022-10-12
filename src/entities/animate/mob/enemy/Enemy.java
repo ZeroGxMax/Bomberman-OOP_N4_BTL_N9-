@@ -5,11 +5,19 @@ import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Enemy extends Mob {
+    protected List<Sprite> deadSprites = new ArrayList<>();
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
         velocity = 0.5;
+        deadSprites.add(Sprite.mob_dead[0]);
+        deadSprites.add(Sprite.mob_dead[1]);
+        deadSprites.add(Sprite.mob_dead[2]);
+        timeAfter = Constants.ENEMY_DEATH_TIME;
     }
 
     /**
@@ -36,6 +44,14 @@ public abstract class Enemy extends Mob {
 
     @Override
     public void update() {
+        if (destroyed && timeAfter == -1) {
+            return;
+        }
+        if (destroyed) {
+            goAnimate();
+            timeAfter--;
+            return;
+        }
         setDirection();
         goAnimate();
         calculateMove();
