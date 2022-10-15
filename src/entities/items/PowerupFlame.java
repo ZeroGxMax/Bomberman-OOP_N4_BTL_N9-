@@ -13,7 +13,7 @@ public class PowerupFlame extends Items {
     @Override
     protected void setPowerUp() {
         if (active) {
-            bomber.setBomb_length(2);
+            bomber.setBomb_length(bomber.getBomb_length() + 1);
         } else {
             bomber.setBomb_length(1);
         }
