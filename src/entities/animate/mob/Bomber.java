@@ -21,6 +21,10 @@ public class Bomber extends Mob {
         this.bomb_length = bomb_length;
     }
 
+    public int getBomb_length() {
+        return bomb_length;
+    }
+
     public void setMax_Bombs(int max_Bomb) {
         Max_Bombs = max_Bomb;
     }
