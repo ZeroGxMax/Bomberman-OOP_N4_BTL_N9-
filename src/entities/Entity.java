@@ -22,6 +22,7 @@ public abstract class Entity {
     protected boolean canBlock = false;
     public boolean isBomber = false;
     protected boolean destroyed = false;
+    protected int timeAfter;
 
     public Entity() {
     }
@@ -34,6 +35,14 @@ public abstract class Entity {
         this.y = Unit.unitToCoordinate(yUnit);
         this.sprite = sprite;
         this.img = sprite.getFxImage();
+    }
+
+    public int getTimeAfter() {
+        return timeAfter;
+    }
+
+    public void setTimeAfter(int timeAfter) {
+        this.timeAfter = timeAfter;
     }
 
     public void setGameMap(Map gameMap) {

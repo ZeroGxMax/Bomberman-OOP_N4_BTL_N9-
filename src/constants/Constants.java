@@ -4,8 +4,10 @@ public class Constants {
     public static final String GAME_TITLE = "Bomberman";
     public static final int WIDTH = 31;
     public static final int HEIGHT = 13;
+    public static final int BOMB_WAITING_TIME = 100;
     public static final int BOMB_EXPLOSION_TIME = 40;
     public static final int BRICK_DESTROY_TIME = 40;
+    public static final int ENEMY_DEATH_TIME = 100;
 
     public static final String MAP_PATH = Constants.class.getResource("/levels/Level1.txt").getPath();
 
@@ -24,6 +26,7 @@ public class Constants {
         DOWN,
         LEFT,
         RIGHT,
+        K,
         ENTER,
         ESC,
         UNKNOWN
