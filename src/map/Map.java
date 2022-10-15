@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthStyle;
+
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
@@ -33,6 +35,7 @@ public class Map {
     private static int height;
     private int level;
     public static int[][] _map;
+    protected boolean noEnemyLeft = false;
 
     public int getLevel() {
         return level;
@@ -89,7 +92,7 @@ public class Map {
                 }
             }
         }
-//        animateEntities.add(new Balloon(1, 1, Sprite.balloom_left[0]));
+        // animateEntities.add(new Balloon(1, 1, Sprite.balloom_left[0]));
         for (int i = 0; i < animateEntities.size(); i++) {
             animateEntities.get(i).setGameMap(this);
         }
@@ -163,5 +166,68 @@ public class Map {
         items.forEach(items -> items.render(gc));
         animateEntities.forEach(animateEntities -> animateEntities.render(gc));
         bombList.forEach(bombList -> bombList.render(gc));
+        if (animateEntities.size() == 1 && !noEnemyLeft) {
+            setNoEnemyLeft(true);
+        }
+    }
+
+    public List<Entity> getAnimateEntities() {
+        return animateEntities;
+    }
+
+    public void setAnimateEntities(List<Entity> animateEntities) {
+        this.animateEntities = animateEntities;
+    }
+
+    public List<Entity> getStillObjects() {
+        return stillObjects;
+    }
+
+    public void setStillObjects(List<Entity> stillObjects) {
+        this.stillObjects = stillObjects;
+    }
+
+    public List<Bomb> getBombList() {
+        return bombList;
+    }
+
+    public void setBombList(List<Bomb> bombList) {
+        this.bombList = bombList;
+    }
+
+    public List<Items> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Items> items) {
+        this.items = items;
+    }
+
+    public static void setWidth(int width) {
+        Map.width = width;
+    }
+
+    public static void setHeight(int height) {
+        Map.height = height;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public static int[][] get_map() {
+        return _map;
+    }
+
+    public static void set_map(int[][] _map) {
+        Map._map = _map;
+    }
+
+    public boolean isNoEnemyLeft() {
+        return noEnemyLeft;
+    }
+
+    public void setNoEnemyLeft(boolean noEnemyLeft) {
+        this.noEnemyLeft = noEnemyLeft;
     }
 }

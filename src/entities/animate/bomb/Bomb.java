@@ -101,6 +101,7 @@ public class Bomb extends AnimateEntity {
     public void update() {
         if (status == BOMB_STATUS.START) {
             status1.update();
+
             if (status1.isNext())
                 updateStatus();
         }
