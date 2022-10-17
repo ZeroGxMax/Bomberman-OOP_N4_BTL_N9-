@@ -7,7 +7,7 @@ import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 
-public abstract class Items extends StillObject {
+public abstract class Items extends Brick {
     protected Bomber bomber = new Bomber();
     protected boolean shown = false;
     protected boolean active = false;// lưu trạng thái item tác dụng tới bomber(nếu có thì true)
@@ -64,7 +64,7 @@ public abstract class Items extends StillObject {
      */
     public void start() {
         time_start = System.currentTimeMillis();
-        time_of_existence = 10000; // 10000 (ms) = 10 (s)
+        time_of_existence = Long.MAX_VALUE; // 10000 (ms) = 10 (s)
         active = true;
         shown = false;
         setPowerUp();

@@ -1,6 +1,7 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
+import entities.animate.mob.Bomber;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;

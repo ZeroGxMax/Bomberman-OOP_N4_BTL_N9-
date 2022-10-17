@@ -2,8 +2,10 @@ package factory;
 
 import entities.Entity;
 import entities.items.LimitBombItem;
+import entities.items.Portal;
 import entities.items.PowerupFlame;
 import entities.items.SpeedupItem;
+import graphics.Sprite;
 
 public class ItemFactory {
     public static Entity getItemEntity(int i, int j, char c) {
@@ -14,6 +16,8 @@ public class ItemFactory {
                 return new SpeedupItem(j, i);
             case 'f':
                 return new PowerupFlame(j, i);
+            case 'x':
+                return new Portal(j, i);
             default:
                 return null;
         }
