@@ -93,6 +93,12 @@ public class Map {
             }
         }
         // animateEntities.add(new Balloon(1, 1, Sprite.balloom_left[0]));
+
+        // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
+        sc.close();
+    }
+
+    public void initEntities() {
         for (int i = 0; i < animateEntities.size(); i++) {
             animateEntities.get(i).setGameMap(this);
         }
@@ -103,8 +109,9 @@ public class Map {
             items.get(i).setBomber(getBomber());
             items.get(i).setGameMap(this);
         }
-        // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
-        sc.close();
+        for (int i = 0; i < animateEntities.size(); i++) {
+            animateEntities.get(i).init();
+        }
     }
 
     public Bomber getBomber() {

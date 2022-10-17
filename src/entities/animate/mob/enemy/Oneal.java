@@ -47,12 +47,6 @@ public class Oneal extends Enemy {
         super.calculateMove();
     }
 
-    public void kill() {
-        if (gameMap.getObjectAt(xUnit, yUnit) instanceof Bomber) {
-            tracing.getBomber().setDestroyed(true);
-        }
-    }
-
     @Override
     public void setDirection() {
         if (!isCanChangeDirection()) {

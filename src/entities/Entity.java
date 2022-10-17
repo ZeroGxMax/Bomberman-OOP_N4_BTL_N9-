@@ -91,6 +91,10 @@ public abstract class Entity {
 
     public abstract void update();
 
+    public void init() {
+
+    }
+
     public void render(GraphicsContext gc) {
         gc.drawImage(img, x, y);
     }

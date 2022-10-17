@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Enemy extends Mob {
+    protected Bomber bomber;
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -56,6 +57,7 @@ public abstract class Enemy extends Mob {
         setDirection();
         goAnimate();
         calculateMove();
+        kill();
     }
 
     @Override
@@ -64,7 +66,16 @@ public abstract class Enemy extends Mob {
         gc.drawImage(sprite.getFxImage(), x, y);
     }
 
-    public abstract void kill();
+    public void kill() {
+        if (bomber.getxUnit() == this.xUnit
+                && bomber.getyUnit() == this.yUnit) {
+            bomber.setDestroyed(true);
+        }
+    }
+
+    public void init() {
+        this.bomber = gameMap.getBomber();
+    }
 
     public abstract void chooseSprite();
 }

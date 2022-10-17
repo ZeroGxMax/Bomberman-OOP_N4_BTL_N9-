@@ -200,4 +200,8 @@ public class Bomber extends Mob {
         calculateMove();
         goAnimate();
     }
+
+    public void init() {
+
+    }
 }

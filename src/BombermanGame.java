@@ -43,6 +43,7 @@ public class BombermanGame extends Application {
 
         try {
             gameMap.createMap(Constants.MAP_PATH);
+            gameMap.initEntities();
         } catch (FileNotFoundException e) {
             System.out.println("Cannot create map!");
         }

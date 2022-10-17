@@ -123,11 +123,5 @@ public class Balloon extends Enemy {
                 break;
         }
     }
-
-    public void kill() {
-        if (gameMap.getObjectAt(xUnit, yUnit) instanceof Bomber) {
-            tracing.getBomber().setDestroyed(true);
-        }
-    }
 }
 
