@@ -5,12 +5,7 @@ import entities.animate.mob.Bomber;
 import entities.animate.mob.enemy.Enemy;
 
 public class DirectedTracing extends Tracing {
-    Bomber bomber;
-    Enemy enemy;
 
-    public void setBomber(Bomber bomber) {
-        this.bomber = bomber;
-    }
 
     public DirectedTracing(Enemy enemy) {
         this.enemy = enemy;

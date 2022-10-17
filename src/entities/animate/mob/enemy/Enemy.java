@@ -4,12 +4,12 @@ import constants.Constants;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import tracing.Tracing;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Enemy extends Mob {
-    protected List<Sprite> deadSprites = new ArrayList<>();
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -62,6 +62,8 @@ public abstract class Enemy extends Mob {
         chooseSprite();
         gc.drawImage(sprite.getFxImage(), x, y);
     }
+
+    public abstract void kill();
 
     public abstract void chooseSprite();
 }

@@ -4,7 +4,11 @@ import constants.Constants.DIRECTION;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Mob extends AnimateEntity {
+    protected List<Sprite> deadSprites = new ArrayList<>();
     protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
     protected double velocity = 1;

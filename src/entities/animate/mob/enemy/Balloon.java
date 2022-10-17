@@ -1,6 +1,7 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
+import entities.animate.mob.Bomber;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
@@ -20,6 +21,9 @@ public class Balloon extends Enemy {
      */
     @Override
     protected void calculateMove() {
+        if (tracing.getBomber() == null) {
+            tracing.setBomber(gameMap.getBomber());
+        }
         if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX
                 && isCanChangeDirection()) {
             direction = tracing.calculateDirection();
@@ -91,7 +95,6 @@ public class Balloon extends Enemy {
         }
         if (destroyed) {
             if (timeAfter == 0) {
-                gameMap.animateEntities.remove(gameMap.getObjectAt(xUnit, yUnit));
                 return;
             } else if (timeAfter < Constants.ENEMY_DEATH_TIME/4) {
                 sprite = deadSprites.get(2);
@@ -118,6 +121,12 @@ public class Balloon extends Enemy {
                 break;
             case NONE:
                 break;
+        }
+    }
+
+    public void kill() {
+        if (gameMap.getObjectAt(xUnit, yUnit) instanceof Bomber) {
+            tracing.getBomber().setDestroyed(true);
         }
     }
 }

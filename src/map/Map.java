@@ -148,7 +148,7 @@ public class Map {
             animateEntities.get(i).update();
             if (animateEntities.get(i).isDestroyed()
                     && animateEntities.get(i).getTimeAfter() == 0
-                    && animateEntities.get(i) instanceof Enemy) {
+                    && animateEntities.get(i) instanceof Entity) {
                 animateEntities.remove(i);
                 i--;
             }
