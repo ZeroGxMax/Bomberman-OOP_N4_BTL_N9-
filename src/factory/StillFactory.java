@@ -3,6 +3,7 @@ package factory;
 import entities.still.*;
 import entities.still.destroyable.Brick;
 import entities.Entity;
+import entities.items.Portal;
 import graphics.Sprite;
 
 public class StillFactory {

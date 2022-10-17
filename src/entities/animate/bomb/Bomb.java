@@ -1,8 +1,13 @@
 package entities.animate.bomb;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import constants.Constants.BOMB_STATUS;
 import entities.Entity;
 import entities.animate.AnimateEntity;
+import entities.still.Wall;
+import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
@@ -11,17 +16,19 @@ public class Bomb extends AnimateEntity {
     private BOMB_STATUS status;
     private BombStart status1;
     private BombExplosion status2;
+    protected int bombLength;
 
     public Bomb() {
         super();
         status = BOMB_STATUS.START;
     }
 
-    public Bomb(int x, int y, int length) {
+    public Bomb(int x, int y, int bombLength) {
         super(x, y, Sprite.balloom_dead);
+        this.bombLength = bombLength;
         status = BOMB_STATUS.START;
         status1 = new BombStart(x, y);
-        status2 = new BombExplosion(x, y,length);
+        status2 = new BombExplosion(x, y, bombLength);
         Map._map[y][x] = 0;
     }
 
@@ -29,23 +36,58 @@ public class Bomb extends AnimateEntity {
         return status == BOMB_STATUS.DESTROYED;
     }
 
+    public void destroyedObjects() {
+        List<Entity> destroyedObject = new ArrayList<>();
+        for (int i = 1; i <= bombLength; i++) {
+            Entity entity = gameMap.getObjectAt(xUnit + i, yUnit);
+            if (entity instanceof Wall || (entity instanceof Brick && !entity.isDestroyed())) {
+                destroyedObject.add(entity);
+                break;
+            } else {
+                destroyedObject.add(entity);
+            }
+        }
+        for (int i = 1; i <= bombLength; i++) {
+            Entity entity = gameMap.getObjectAt(xUnit - i, yUnit);
+            if (entity instanceof Wall || (entity instanceof Brick && !entity.isDestroyed())) {
+                destroyedObject.add(entity);
+                break;
+            } else {
+                destroyedObject.add(entity);
+            }
+        }
+        for (int i = 1; i <= bombLength; i++) {
+            Entity entity = gameMap.getObjectAt(xUnit, yUnit + i);
+            if (entity instanceof Wall || (entity instanceof Brick && !entity.isDestroyed())) {
+                destroyedObject.add(entity);
+                break;
+            } else {
+                destroyedObject.add(entity);
+            }
+        }
+        for (int i = 1; i <= bombLength; i++) {
+            Entity entity = gameMap.getObjectAt(xUnit, yUnit - i);
+            if (entity instanceof Wall || (entity instanceof Brick && !entity.isDestroyed())) {
+                destroyedObject.add(entity);
+                break;
+            } else {
+                destroyedObject.add(entity);
+            }
+        }
+        for (int i = 0; i < destroyedObject.size(); i++) {
+            if (destroyedObject.get(i) != null
+                    && !destroyedObject.get(i).isDestroyed()) {
+                destroyedObject.get(i).setDestroyed(true);
+            }
+        }
+    }
+
     public void updateStatus() {
         switch (status) {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
                 Map._map[yUnit][xUnit] = 1;
-                Entity detroyedObject[] = {
-                        gameMap.getObjectAt(xUnit + 1, yUnit),
-                        gameMap.getObjectAt(xUnit - 1, yUnit),
-                        gameMap.getObjectAt(xUnit, yUnit + 1),
-                        gameMap.getObjectAt(xUnit, yUnit - 1)
-                };
-                for (int i = 0; i < 4; i++) {
-                    if (detroyedObject[i] != null
-                            && !detroyedObject[i].isDestroyed()) {
-                        detroyedObject[i].setDestroyed(true);
-                    }
-                }
+                destroyedObjects();
                 break;
             case EXPLOSION:
                 status = BOMB_STATUS.DESTROYED;
@@ -59,11 +101,13 @@ public class Bomb extends AnimateEntity {
     public void update() {
         if (status == BOMB_STATUS.START) {
             status1.update();
+
             if (status1.isNext())
                 updateStatus();
         }
         if (status == BOMB_STATUS.EXPLOSION) {
             status2.update();
+
             if (status2.isDestroy()) {
                 updateStatus();
             }
