@@ -3,6 +3,7 @@ package entities.animate.mob;
 import java.util.ArrayList;
 import java.util.List;
 
+import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
 import entities.animate.bomb.Bomb;
@@ -34,9 +35,12 @@ public class Bomber extends Mob {
 
     public Bomber(double x, double y, Sprite sprite) {
         super(x, y, sprite);
-        velocity = 1.75;
         isBomber = true;
         velocity = 1.75;
+        timeAfter = Constants.PLAYER_DEATH_TIME;
+        deadSprites.add(Sprite.player_dead[0]);
+        deadSprites.add(Sprite.player_dead[1]);
+        deadSprites.add(Sprite.player_dead[2]);
     }
 
     @Override
@@ -135,10 +139,26 @@ public class Bomber extends Mob {
     @Override
     public void render(GraphicsContext gc) {
         chooseSprite();
-        gc.drawImage(img, x, y);
+        gc.drawImage(sprite.getFxImage(), x, y);
     }
 
     public void chooseSprite() {
+        if (destroyed && timeAfter == -1) {
+            return;
+        }
+        if (destroyed) {
+            if (timeAfter == 0) {
+                return;
+            } else if (timeAfter < Constants.PLAYER_DEATH_TIME/4) {
+                sprite = deadSprites.get(2);
+            } else if (timeAfter < Constants.PLAYER_DEATH_TIME/2) {
+                sprite = deadSprites.get(1);
+            } else {
+                sprite = deadSprites.get(0);
+            }
+            return;
+        }
+
         switch (direction) {
             case UP:
                 sprite = Sprite.movingSprite(Sprite.player_up, animate, 30);
@@ -168,8 +188,20 @@ public class Bomber extends Mob {
 
     @Override
     public void update() {
+        if (destroyed && timeAfter == -1) {
+            return;
+        }
+        if (destroyed) {
+            goAnimate();
+            timeAfter--;
+            return;
+        }
         setActive();
         calculateMove();
         goAnimate();
+    }
+
+    public void init() {
+
     }
 }
