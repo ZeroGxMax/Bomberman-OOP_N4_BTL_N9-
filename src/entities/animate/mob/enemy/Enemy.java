@@ -5,12 +5,13 @@ import entities.animate.mob.Bomber;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import tracing.Tracing;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Enemy extends Mob {
-    protected List<Sprite> deadSprites = new ArrayList<>();
+    protected Bomber bomber;
 
     public Enemy(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -56,12 +57,24 @@ public abstract class Enemy extends Mob {
         setDirection();
         goAnimate();
         calculateMove();
+        kill();
     }
 
     @Override
     public void render(GraphicsContext gc) {
         chooseSprite();
         gc.drawImage(sprite.getFxImage(), x, y);
+    }
+
+    public void kill() {
+        if (bomber.getxUnit() == this.xUnit
+                && bomber.getyUnit() == this.yUnit) {
+            bomber.setDestroyed(true);
+        }
+    }
+
+    public void init() {
+        this.bomber = gameMap.getBomber();
     }
 
     public abstract void chooseSprite();

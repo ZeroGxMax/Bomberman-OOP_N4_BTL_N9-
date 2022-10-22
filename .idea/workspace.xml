@@ -4,10 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Bomb now can destroy enemies">
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Update: Bomb explosion time is more appropriate">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/BombStart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/BombStart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BombermanGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Bomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombExplosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombExplosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/LimitBombItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/LimitBombItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/PowerupFlame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/PowerupFlame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/SpeedupItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/SpeedupItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ItemFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ItemFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +174,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665568501082</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update: Bomb explosion time is more appropriate">
+      <created>1665569160712</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1665569160712</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update: Bomb explosion time is more appropriate">
+      <created>1666005844884</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666005844884</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -175,6 +221,7 @@
     <MESSAGE value="Add velocity and oneal velocity will vary over times" />
     <MESSAGE value="Item được đặt sau brick, và chỉ ăn được khi đã phá brick." />
     <MESSAGE value="Bomb now can destroy enemies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bomb now can destroy enemies" />
+    <MESSAGE value="Update: Bomb explosion time is more appropriate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update: Bomb explosion time is more appropriate" />
   </component>
 </project>

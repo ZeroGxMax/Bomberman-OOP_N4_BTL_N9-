@@ -2,6 +2,7 @@ package entities.animate.mob.enemy;
 
 import constants.Constants;
 import constants.Constants.DIRECTION;
+import entities.animate.mob.Bomber;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
@@ -12,7 +13,6 @@ public class Oneal extends Enemy {
 
     public Oneal(double x, double y, Sprite sprite) {
         super(x, y, sprite);
-        tracing.setBomber(gameMap.getBomber());
         deadSprites.add(Sprite.oneal_dead);
     }
 
@@ -37,7 +37,9 @@ public class Oneal extends Enemy {
      */
     @Override
     protected void calculateMove() {
-        tracing.setBomber(gameMap.getBomber());
+        if (tracing.getBomber() == null) {
+            tracing.setBomber(gameMap.getBomber());
+        }
         if (!moving) {
             direction = DIRECTION.NONE;
         }
@@ -47,7 +49,6 @@ public class Oneal extends Enemy {
 
     @Override
     public void setDirection() {
-        tracing.setBomber(gameMap.getBomber());
         if (!isCanChangeDirection()) {
             return;
         }
@@ -102,7 +103,6 @@ public class Oneal extends Enemy {
         }
         if (destroyed) {
             if (timeAfter == 0) {
-                gameMap.animateEntities.remove(gameMap.getObjectAt(xUnit, yUnit));
                 return;
             } else if (timeAfter < Constants.ENEMY_DEATH_TIME/4) {
                 sprite = deadSprites.get(2);
