@@ -1,14 +1,20 @@
 import java.io.FileNotFoundException;
 
+import javafx.concurrent.Task;
+import support.Delay;
+
 import constants.Constants;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import map.Map;
 
@@ -19,6 +25,7 @@ public class BombermanGame extends Application {
 
     private GraphicsContext gc;
     private Canvas canvas;
+    public static Scene level_1_scene;
     public static Scene scene;
     public static Map gameMap = new Map();
 
@@ -26,9 +33,7 @@ public class BombermanGame extends Application {
         Application.launch(BombermanGame.class);
     }
 
-    @Override
-    public void start(Stage stage) {
-        stage.setTitle(Constants.GAME_TITLE);
+    public void setMainScene(Stage stage) {
         // Tao Canvas
         canvas = new Canvas(Sprite.SCALED_SIZE * WIDTH, Sprite.SCALED_SIZE * HEIGHT);
         gc = canvas.getGraphicsContext2D();
@@ -61,5 +66,30 @@ public class BombermanGame extends Application {
             }
         };
         timer.start();
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle(Constants.GAME_TITLE);
+
+        Pane mainPane = (Pane) FXMLLoader.load(Constants.LEVEL_1_FXML);
+        // Tao scene và set scene cho đầu vào bàn phím
+        level_1_scene = new Scene(mainPane);
+        stage.setScene(level_1_scene);
+        stage.show();
+        delay(1000, () -> setMainScene(stage));
+    }
+
+    public static void delay(long millis, Runnable continuation) {
+        Task<Void> sleeper = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                try { Thread.sleep(millis); }
+                catch (InterruptedException e) { }
+                return null;
+            }
+        };
+        sleeper.setOnSucceeded(event -> continuation.run());
+        new Thread(sleeper).start();
     }
 }
