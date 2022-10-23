@@ -1,5 +1,6 @@
 package map;
 
+import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
