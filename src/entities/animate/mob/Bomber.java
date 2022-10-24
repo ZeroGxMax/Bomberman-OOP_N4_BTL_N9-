@@ -6,7 +6,7 @@ import java.util.List;
 import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
-import entities.animate.bomb.Bomb;
+import entities.animate.bomb.Explosion;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.scene.canvas.GraphicsContext;
@@ -14,7 +14,7 @@ import map.Map;
 
 public class Bomber extends Mob {
     private int Max_Bombs = 1;
-    private List<Bomb> b = new ArrayList<>();
+    private List<Explosion> b = new ArrayList<>();
     private int time_between_bomb = 0;
     private int bomb_length = 1;
 
@@ -149,9 +149,9 @@ public class Bomber extends Mob {
         if (destroyed) {
             if (timeAfter == 0) {
                 return;
-            } else if (timeAfter < Constants.PLAYER_DEATH_TIME/4) {
+            } else if (timeAfter < Constants.PLAYER_DEATH_TIME / 4) {
                 sprite = deadSprites.get(2);
-            } else if (timeAfter < Constants.PLAYER_DEATH_TIME/2) {
+            } else if (timeAfter < Constants.PLAYER_DEATH_TIME / 2) {
                 sprite = deadSprites.get(1);
             } else {
                 sprite = deadSprites.get(0);
@@ -180,7 +180,7 @@ public class Bomber extends Mob {
     }
 
     private void makeBomb() {
-        Bomb temp = new Bomb(xUnit, yUnit, bomb_length);
+        Explosion temp = new Explosion(xUnit, yUnit, bomb_length);
         temp.setGameMap(gameMap);
         b.add(temp);
         time_between_bomb = 10;

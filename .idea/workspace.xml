@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Enemy now can kill bomber&#10;New function: init() in map and all entities.">
-      <change afterPath="$PROJECT_DIR$/src/graphics/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/support/Delay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_12_2022_10_55_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2022_4_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2022_4_30_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BombermanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" afterDir="false" />
@@ -20,15 +15,23 @@
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/DestroyableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/destroyable/DestroyableObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graphics/SpriteSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/SpriteSheet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Bomb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Bomb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombExplosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombExplosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/BombUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/support/Probability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/support/Probability.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/support/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/support/Unit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,14 +76,16 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Bomberman-OOP_N4_BTL_N9-&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RunManager">
     <configuration name="BombermanGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="BombermanGame" />
       <module name="bomberman" />
       <method v="2">

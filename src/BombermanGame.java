@@ -1,20 +1,17 @@
 import java.io.FileNotFoundException;
 
-import javafx.concurrent.Task;
-import support.Delay;
-
 import constants.Constants;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import map.Map;
 

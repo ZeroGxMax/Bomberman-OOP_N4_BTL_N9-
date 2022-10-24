@@ -2,6 +2,8 @@ package constants;
 
 import java.net.URL;
 
+import media.Sound;
+
 public class Constants {
     public static final String GAME_TITLE = "Bomberman";
     public static final int WIDTH = 31;
@@ -15,6 +17,8 @@ public class Constants {
     public static final String MAP_PATH = Constants.class.getResource("/levels/Level1.txt").getPath();
 
     public static final String TEXTURE_PATH = "/textures/classic.png";
+
+    public static final String SOUND_PATH = Constants.class.getResource("/sound/").getPath();
 
     public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
 
@@ -39,7 +43,7 @@ public class Constants {
         UNKNOWN
     }
 
-    public enum BOMB_STATUS{
+    public enum BOMB_STATUS {
         START,
         EXPLOSION,
         DESTROYED
