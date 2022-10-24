@@ -1,10 +1,10 @@
 package entities.still.destroyable;
 
 import constants.Constants;
-import graphics.Sprite;
-import javafx.scene.canvas.GraphicsContext;
 import entities.still.StillObject;
 import graphics.Sprite;
+import javafx.scene.canvas.GraphicsContext;
+import map.Map;
 
 public class Brick extends StillObject {
     protected int animate = 0;
@@ -33,7 +33,7 @@ public class Brick extends StillObject {
         if (destroyed == true) {
             if (timeCount == 0) {
                 sprite = Sprite.grass;
-                gameMap._map[yUnit][xUnit] = 1;
+                Map._map[yUnit][xUnit] = 1;
             } else if (timeCount < Constants.BRICK_DESTROY_TIME/3) {
                 sprite = Sprite.brick_exploded[2];
             } else if (timeCount < Constants.BRICK_DESTROY_TIME*2/3) {
