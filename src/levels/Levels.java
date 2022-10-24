@@ -24,8 +24,6 @@ import static constants.Constants.WIDTH;
 public class Levels {
     public Map gameMap = new Map();
 
-    public int status = 1;
-
     public void setLevel1Introdution(Stage stage) {
         gameMap.reset();
         gameMap = new Map();
@@ -82,8 +80,7 @@ public class Levels {
                 gameMap.updateMap();
                 if (gameMap.getBomber() != null
                         && gameMap.getBomber().isDestroyed()
-                        && gameMap.getBomber().getTimeAfter() < 0
-                        && status == 1) {
+                        && gameMap.getBomber().getTimeAfter() < 0) {
                     try {
                         setLevel1Introdution(stage);
                         this.stop();

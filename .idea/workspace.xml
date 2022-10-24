@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Level 1 overhead">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game/Starter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/levels/Levels.java" afterDir="false" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Can play again when dead">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents" beforeDir="false" afterPath="$PROJECT_DIR$/Documents" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BombermanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/Screen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/support/Delay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/support/Delay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levels/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/Levels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" afterDir="false" />
@@ -217,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1666544571653</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Can play again when dead">
+      <created>1666631905102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666631905102</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Can play again when dead">
+      <created>1666631975085</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1666631975085</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +254,8 @@
     <MESSAGE value="Update: Bomb explosion time is more appropriate" />
     <MESSAGE value="Enemy now can kill bomber&#10;New function: init() in map and all entities." />
     <MESSAGE value="Level 1 overhead" />
-    <option name="LAST_COMMIT_MESSAGE" value="Level 1 overhead" />
+    <MESSAGE value="Can play again when dead" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can play again when dead" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
