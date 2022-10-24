@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import constants.Constants;
 import entities.Entity;
+import entities.animate.bomb.Bomb;
 import entities.animate.bomb.Explosion;
 import entities.animate.mob.Bomber;
 import entities.items.Items;
@@ -193,11 +194,11 @@ public class Map {
         this.stillObjects = stillObjects;
     }
 
-    public List<Explosion> getBombList() {
+    public List<Bomb> getBombList() {
         return bombList;
     }
 
-    public void setBombList(List<Explosion> bombList) {
+    public void setBombList(List<Bomb> bombList) {
         this.bombList = bombList;
     }
 
