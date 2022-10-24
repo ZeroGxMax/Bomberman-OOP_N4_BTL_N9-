@@ -1,7 +1,6 @@
-import java.io.FileNotFoundException;
+package game;
 
-import javafx.concurrent.Task;
-import support.Delay;
+import java.io.FileNotFoundException;
 
 import constants.Constants;
 import graphics.Sprite;
@@ -13,21 +12,29 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import levels.Levels;
 import map.Map;
+import constants.Constants.MENU_STATUS;
+import support.Delay;
+
+import static constants.Constants.MENU_STATUS.PLAYING;
+import static graphics.Sprite.SCALED_SIZE;
 
 public class BombermanGame extends Application {
-
+    public static MENU_STATUS menu_status;
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
 
-    private GraphicsContext gc;
-    private Canvas canvas;
+    public static Canvas canvas = new Canvas();
+    public static GraphicsContext gc = canvas.getGraphicsContext2D();
     public static Scene level_1_scene;
     public static Scene scene;
     public static Map gameMap = new Map();
+    public static Stage stage;
 
     public static void main(String[] args) {
         Application.launch(BombermanGame.class);
@@ -60,7 +67,6 @@ public class BombermanGame extends Application {
         AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
-//                System.out.println(gameMap.items.size());
                 gameMap.renderMap(gc);
                 gameMap.updateMap();
             }
@@ -72,24 +78,7 @@ public class BombermanGame extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle(Constants.GAME_TITLE);
 
-        Pane mainPane = (Pane) FXMLLoader.load(Constants.LEVEL_1_FXML);
-        // Tao scene và set scene cho đầu vào bàn phím
-        level_1_scene = new Scene(mainPane);
-        stage.setScene(level_1_scene);
-        stage.show();
-        delay(1000, () -> setMainScene(stage));
-    }
-
-    public static void delay(long millis, Runnable continuation) {
-        Task<Void> sleeper = new Task<Void>() {
-            @Override
-            protected Void call() throws Exception {
-                try { Thread.sleep(millis); }
-                catch (InterruptedException e) { }
-                return null;
-            }
-        };
-        sleeper.setOnSucceeded(event -> continuation.run());
-        new Thread(sleeper).start();
+        Levels myLevel = new Levels();
+        myLevel.setLevel1Introdution(stage);
     }
 }
