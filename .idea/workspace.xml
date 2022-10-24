@@ -4,31 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Enemy now can kill bomber&#10;New function: init() in map and all entities.">
-      <change afterPath="$PROJECT_DIR$/src/graphics/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/support/Delay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_10_12_2022_10_55_AM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Can play again when dead">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BombermanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BombermanGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/levels/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/Levels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/DestroyableObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/destroyable/DestroyableObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graphics/SpriteSheet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/SpriteSheet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/input/KeyBoardInput.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/input/KeyBoardInput.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/support/Probability.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/support/Probability.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/support/Unit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/support/Unit.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,21 +52,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Bomberman-OOP_N4_BTL_N9-&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Bomberman-OOP_N4_BTL_N9-",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BombermanGame">
     <configuration name="BombermanGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BombermanGame" />
+      <option name="MAIN_CLASS_NAME" value="game.BombermanGame" />
       <module name="bomberman" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Starter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Starter" />
+      <module name="bomberman" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -103,6 +106,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.BombermanGame" />
+        <item itemvalue="Application.Starter" />
         <item itemvalue="Application.BombermanGame" />
       </list>
     </recent_temporary>
@@ -193,7 +197,28 @@
       <option name="project" value="LOCAL" />
       <updated>1666496636840</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Level 1 overhead">
+      <created>1666544571653</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666544571653</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Can play again when dead">
+      <created>1666631905102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1666631905102</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Can play again when dead">
+      <created>1666631975085</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1666631975085</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +253,9 @@
     <MESSAGE value="Bomb now can destroy enemies" />
     <MESSAGE value="Update: Bomb explosion time is more appropriate" />
     <MESSAGE value="Enemy now can kill bomber&#10;New function: init() in map and all entities." />
-    <option name="LAST_COMMIT_MESSAGE" value="Enemy now can kill bomber&#10;New function: init() in map and all entities." />
+    <MESSAGE value="Level 1 overhead" />
+    <MESSAGE value="Can play again when dead" />
+    <option name="LAST_COMMIT_MESSAGE" value="Can play again when dead" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

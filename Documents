@@ -1,5 +1,5 @@
 Giải thích về code:
-- Game application: BombermanGame
+- Game application: game.BombermanGame
   +, Thành phần chính: Entities và Still Objects, trong đó Entities là các thực thể động, cần add theo cách đặc biệt (tránh làm nhòe hình ảnh).
   +, Window của game được tạo thành từ: Canvas, Group
   +, AnimationTimer đóng vai trò như là game loop, sau mỗi lần, game được render và update lại.

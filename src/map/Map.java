@@ -1,31 +1,29 @@
 package map;
 
-import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthStyle;
-
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Bomb;
 import entities.animate.mob.Bomber;
-import entities.animate.mob.enemy.Balloon;
 import entities.animate.mob.enemy.Enemy;
 import entities.items.Items;
 import entities.still.Grass;
 import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
-import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+
+import static constants.Constants.MENU_STATUS.PLAYING;
 
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
+    public int stage;
 
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
@@ -159,7 +157,7 @@ public class Map {
             animateEntities.get(i).update();
             if (animateEntities.get(i).isDestroyed()
                     && animateEntities.get(i).getTimeAfter() == 0
-                    && animateEntities.get(i) instanceof Entity) {
+                    && animateEntities.get(i) instanceof Enemy) {
                 animateEntities.remove(i);
                 i--;
             }
@@ -177,6 +175,13 @@ public class Map {
         if (animateEntities.size() == 1 && !noEnemyLeft) {
             setNoEnemyLeft(true);
         }
+    }
+
+    public void reset() {
+        animateEntities.clear();
+        stillObjects.clear();
+        bombList.clear();
+        items.clear();
     }
 
     public List<Entity> getAnimateEntities() {

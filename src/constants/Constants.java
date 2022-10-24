@@ -18,7 +18,9 @@ public class Constants {
 
     public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
 
-    public static final int LEVEL_DELAY_TIME = 100000000;
+    public static final int LEVEL_DELAY_TIME = 1000;
+
+    public static final int BOMBER_DEAD_DELAY_TIME = 1000;
 
     public enum DIRECTION {
         UP,
@@ -55,4 +57,21 @@ public class Constants {
         EXPLOSION_HORIZONTAL_LEFT_LAST,
         EXPLOSION_HORIZONTAL_RIGHT_LAST
     }
+
+    public enum MENU_STATUS {
+        MENU,
+        GUIDE,
+        PAUSE,
+        GAME_OVER,
+        GAME_WIN,
+
+        PLAYING,
+        NEXT_STAGE
+    }
+
+    public static String[] FONT_PATH = {
+            Constants.class.getResource("/fonts/font1.ttf").getPath(),
+            Constants.class.getResource("/fonts/font2.TTF").getPath(),
+            Constants.class.getResource("/fonts/font3.otf").getPath()
+    };
 }
