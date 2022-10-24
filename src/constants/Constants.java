@@ -1,5 +1,7 @@
 package constants;
 
+import java.net.URL;
+
 public class Constants {
     public static final String GAME_TITLE = "Bomberman";
     public static final int WIDTH = 31;
@@ -13,6 +15,10 @@ public class Constants {
     public static final String MAP_PATH = Constants.class.getResource("/levels/Level1.txt").getPath();
 
     public static final String TEXTURE_PATH = "/textures/classic.png";
+
+    public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
+
+    public static final int LEVEL_DELAY_TIME = 100000000;
 
     public enum DIRECTION {
         UP,
