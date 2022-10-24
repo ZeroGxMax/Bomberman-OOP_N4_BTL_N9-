@@ -18,8 +18,6 @@ public class Constants {
 
     public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
 
-    public static final URL LEVEL_1_IMAGE = Constants.class.getResource("/levelImage/Level_1.png");
-
     public static final int LEVEL_DELAY_TIME = 1000;
 
     public static final int BOMBER_DEAD_DELAY_TIME = 1000;
