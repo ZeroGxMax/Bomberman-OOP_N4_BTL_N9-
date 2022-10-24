@@ -2,8 +2,6 @@ package constants;
 
 import java.net.URL;
 
-import media.Sound;
-
 public class Constants {
     public static final String GAME_TITLE = "Bomberman";
     public static final int WIDTH = 31;

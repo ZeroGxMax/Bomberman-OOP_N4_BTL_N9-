@@ -87,6 +87,7 @@ public class Explosion extends AnimateEntity {
         switch (status) {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
+                SoundController.playSound(4);
                 Map._map[yUnit][xUnit] = 1;
                 SoundController.playSound(4);
                 destroyedObjects();

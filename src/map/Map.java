@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 import constants.Constants;
 import entities.Entity;
-import entities.animate.bomb.Bomb;
 import entities.animate.bomb.Explosion;
 import entities.animate.mob.Bomber;
+import entities.animate.mob.enemy.Enemy;
 import entities.items.Items;
 import entities.still.Grass;
 import factory.AnimateFactory;
@@ -22,6 +22,7 @@ import media.SoundController;
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
+    public int stage;
 
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
@@ -158,7 +159,7 @@ public class Map {
             animateEntities.get(i).update();
             if (animateEntities.get(i).isDestroyed()
                     && animateEntities.get(i).getTimeAfter() == 0
-                    && animateEntities.get(i) instanceof Entity) {
+                    && animateEntities.get(i) instanceof Enemy) {
                 animateEntities.remove(i);
                 i--;
             }
@@ -178,6 +179,13 @@ public class Map {
         }
     }
 
+    public void reset() {
+        animateEntities.clear();
+        stillObjects.clear();
+        bombList.clear();
+        items.clear();
+    }
+
     public List<Entity> getAnimateEntities() {
         return animateEntities;
     }
@@ -194,11 +202,11 @@ public class Map {
         this.stillObjects = stillObjects;
     }
 
-    public List<Bomb> getBombList() {
+    public List<Explosion> getBombList() {
         return bombList;
     }
 
-    public void setBombList(List<Bomb> bombList) {
+    public void setBombList(List<Explosion> bombList) {
         this.bombList = bombList;
     }
 

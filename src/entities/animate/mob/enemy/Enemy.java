@@ -5,10 +5,6 @@ import entities.animate.mob.Bomber;
 import entities.animate.mob.Mob;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
-import tracing.Tracing;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Enemy extends Mob {
     protected Bomber bomber;

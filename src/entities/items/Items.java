@@ -1,11 +1,10 @@
 package entities.items;
 
 import entities.animate.mob.Bomber;
-import entities.still.StillObject;
-import entities.still.Wall;
 import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
+import map.Map;
 
 public abstract class Items extends Brick {
     protected Bomber bomber = new Bomber();
@@ -76,7 +75,7 @@ public abstract class Items extends Brick {
             return;
         }
         if (destroyed && !shown && time_start == 0) {
-            gameMap._map[yUnit][xUnit] = 1;
+            Map._map[yUnit][xUnit] = 1;
             shown = true;
             sprite = actualSprite;
         }
