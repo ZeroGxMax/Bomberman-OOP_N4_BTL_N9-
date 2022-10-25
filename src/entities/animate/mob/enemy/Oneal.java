@@ -2,7 +2,6 @@ package entities.animate.mob.enemy;
 
 import constants.Constants;
 import constants.Constants.DIRECTION;
-import entities.animate.mob.Bomber;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
@@ -53,7 +52,6 @@ public class Oneal extends Enemy {
             return;
         }
 
-        int randomNumber = tracing.random.nextInt();
         if (Probability.isSometimes()) {
             changeVelocity();
         }

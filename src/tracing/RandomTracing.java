@@ -2,8 +2,6 @@ package tracing;
 
 import constants.Constants.DIRECTION;
 
-import java.util.Random;
-
 public class RandomTracing extends Tracing {
     public static final int TIME_EACH_DIRECTION_MAX = 100;
     public int timeEachDirection = 95; // Some overhead before first moving

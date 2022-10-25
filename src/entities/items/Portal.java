@@ -1,8 +1,7 @@
 package entities.items;
 
-import javax.swing.Spring;
-
 import graphics.Sprite;
+import map.Map;
 
 public class Portal extends Items {
 
@@ -21,7 +20,7 @@ public class Portal extends Items {
             return;
         }
         if (destroyed && !shown && time_start == 0) {
-            gameMap._map[yUnit][xUnit] = 1;
+            Map._map[yUnit][xUnit] = 1;
             shown = true;
             sprite = actualSprite;
         }

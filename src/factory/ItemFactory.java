@@ -5,7 +5,6 @@ import entities.items.LimitBombItem;
 import entities.items.Portal;
 import entities.items.PowerupFlame;
 import entities.items.SpeedupItem;
-import graphics.Sprite;
 
 public class ItemFactory {
     public static Entity getItemEntity(int i, int j, char c) {
