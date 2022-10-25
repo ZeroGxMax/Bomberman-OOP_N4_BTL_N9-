@@ -10,7 +10,8 @@ public class Brick extends StillObject {
     protected int animate = 0;
     protected int MAX_ANIMATE = 1000;
 
-    int timeCount = Constants.BRICK_DESTROY_TIME;
+    protected int timeCount = Constants.BRICK_DESTROY_TIME;
+    protected Sprite behindSprite;
 
     protected void goAnimate() {
         if (animate < MAX_ANIMATE) {
@@ -22,7 +23,7 @@ public class Brick extends StillObject {
 
     public Brick(int x, int y, Sprite sprite) {
         super(x, y, sprite);
-        canBlock = true;
+        behindSprite = Sprite.grass;
     }
 
     @Override
