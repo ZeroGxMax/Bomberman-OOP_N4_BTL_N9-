@@ -22,7 +22,6 @@ import media.SoundController;
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
-    public int stage;
 
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
@@ -33,7 +32,8 @@ public class Map {
     private static int height;
     private int level;
     public static int[][] _map;
-    protected boolean noEnemyLeft = false;
+    protected boolean noEnemyLeft = true;
+    protected boolean stagePassed = false;
 
     public int getLevel() {
         return level;
@@ -95,8 +95,8 @@ public class Map {
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
-        SoundController.init();
-        SoundController.playMusic(1);
+//        SoundController.init();
+//        SoundController.playMusic(1);
     }
 
     public void initEntities() {
@@ -184,6 +184,8 @@ public class Map {
         stillObjects.clear();
         bombList.clear();
         items.clear();
+        noEnemyLeft = false;
+        stagePassed = false;
     }
 
     public List<Entity> getAnimateEntities() {
@@ -244,5 +246,13 @@ public class Map {
 
     public void setNoEnemyLeft(boolean noEnemyLeft) {
         this.noEnemyLeft = noEnemyLeft;
+    }
+
+    public boolean isStagePassed() {
+        return stagePassed;
+    }
+
+    public void setStagePassed(boolean stagePassed) {
+        this.stagePassed = stagePassed;
     }
 }

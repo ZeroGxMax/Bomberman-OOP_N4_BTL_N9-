@@ -11,14 +11,21 @@ public class Constants {
     public static final int BRICK_DESTROY_TIME = 40;
     public static final int ENEMY_DEATH_TIME = 100;
     public static final int PLAYER_DEATH_TIME = 100;
+    public static final int STAGE_PASSED_TIME = 1000;
 
-    public static final String MAP_PATH = Constants.class.getResource("/levels/Level1.txt").getPath();
+    public static final String MAP_PATH[] = {
+            Constants.class.getResource("/levels/Level1.txt").getPath(),
+            Constants.class.getResource("/levels/Level2.txt").getPath()
+    };
 
     public static final String TEXTURE_PATH = "/textures/classic.png";
 
     public static final String SOUND_PATH = Constants.class.getResource("/sound/").getPath();
 
-    public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
+    public static final URL LEVEL_FXML[] =  {
+            Constants.class.getResource("/levels/Level_1.fxml"),
+            Constants.class.getResource("/levels/Level_2.fxml")
+    };
 
     public static final int LEVEL_DELAY_TIME = 1000;
 
