@@ -39,6 +39,11 @@ public class Explosion extends AnimateEntity {
 
     public void destroyedObjects() {
         List<Entity> destroyedObject = new ArrayList<>();
+
+        // Destroy object at current position:
+        Entity curEntity = gameMap.getObjectAt(xUnit, yUnit);
+        destroyedObject.add(curEntity);
+
         for (int i = 1; i <= bombLength; i++) {
             Entity entity = gameMap.getObjectAt(xUnit + i, yUnit);
             if (entity instanceof Wall || (entity instanceof Brick && !entity.isDestroyed())) {

@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Stage passed!">
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Fixed: Brick destroyed images before item shown">
+      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Doll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/items/Portal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Portal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/still/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/Wall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/still/destroyable/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/destroyable/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Portal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Portal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/AnimateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/AnimateFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/Sprite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -233,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666671542622</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fixed: Brick destroyed images before item shown">
+      <created>1666672591542</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1666672591542</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +279,9 @@
     <MESSAGE value="Level 1 overhead" />
     <MESSAGE value="Can play again when dead" />
     <MESSAGE value="Stage passed!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stage passed!" />
+    <MESSAGE value="Fixed: Brick destroyed image before item shown" />
+    <MESSAGE value="Fixed: Brick destroyed images before item shown" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed: Brick destroyed images before item shown" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
