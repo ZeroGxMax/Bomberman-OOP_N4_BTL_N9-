@@ -19,7 +19,6 @@ public abstract class Entity {
     protected int yUnit;
     protected Sprite sprite;
     protected Image img;
-    protected boolean canBlock = false;
     public boolean isBomber = false;
     protected boolean destroyed = false;
     protected int timeAfter;
