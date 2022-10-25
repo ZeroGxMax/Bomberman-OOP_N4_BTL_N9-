@@ -1,5 +1,6 @@
 package entities.items;
 
+import constants.Constants;
 import graphics.Sprite;
 import map.Map;
 
@@ -26,17 +27,17 @@ public class Portal extends Items {
         }
         // kiểm tra vị trí bomber so với item
         if (bomber.getxUnit() == xUnit && bomber.getyUnit() == yUnit && shown) {
-            // sprite = Sprite.grass;
-            start();
+            if (gameMap.isNoEnemyLeft()) {
+                start();
+            }
         }
         if (time_start == 0) {// time_start == 0 khi chưa start()
             return;
         }
         // kiểm tra xem hết thời gian tác dụng của item chưa
-        if (System.currentTimeMillis() - time_start > time_of_existence && active) {
-            active = false;
-            end = true;
-            setPowerUp();
+        if (System.currentTimeMillis() - time_start > Constants.STAGE_PASSED_TIME && active) {
+            //TODO PLAYSOUND HERE
+            gameMap.setStagePassed(true);
         }
     }
 
