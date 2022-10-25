@@ -16,6 +16,8 @@ public class Constants {
 
     public static final String TEXTURE_PATH = "/textures/classic.png";
 
+    public static final String SOUND_PATH = Constants.class.getResource("/sound/").getPath();
+
     public static final URL LEVEL_1_FXML = Constants.class.getResource("/levels/Level_1.fxml");
 
     public static final int LEVEL_DELAY_TIME = 1000;
@@ -41,7 +43,7 @@ public class Constants {
         UNKNOWN
     }
 
-    public enum BOMB_STATUS{
+    public enum BOMB_STATUS {
         START,
         EXPLOSION,
         DESTROYED

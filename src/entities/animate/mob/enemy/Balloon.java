@@ -1,7 +1,6 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
-import entities.animate.mob.Bomber;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
@@ -24,7 +23,7 @@ public class Balloon extends Enemy {
         if (tracing.getBomber() == null) {
             tracing.setBomber(gameMap.getBomber());
         }
-        if (tracing.timeEachDirection >= tracing.TIME_EACH_DIRECTION_MAX
+        if (tracing.timeEachDirection >= RandomTracing.TIME_EACH_DIRECTION_MAX
                 && isCanChangeDirection()) {
             direction = tracing.calculateDirection();
             tracing.timeEachDirection = 0;
@@ -44,8 +43,6 @@ public class Balloon extends Enemy {
         if (!isCanChangeDirection()) {
             return;
         }
-
-        int randomNumber = tracing.random.nextInt();
 
         if (Probability.isSometimes()) {
             direction = tracing.calculateDirection();

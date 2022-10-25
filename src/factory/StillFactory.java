@@ -1,9 +1,9 @@
 package factory;
 
-import entities.still.*;
-import entities.still.destroyable.Brick;
 import entities.Entity;
-import entities.items.Portal;
+import entities.still.Grass;
+import entities.still.Wall;
+import entities.still.destroyable.Brick;
 import graphics.Sprite;
 
 public class StillFactory {

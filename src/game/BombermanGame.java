@@ -3,26 +3,18 @@ package game;
 import java.io.FileNotFoundException;
 
 import constants.Constants;
+import constants.Constants.MENU_STATUS;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import levels.Levels;
 import map.Map;
-import constants.Constants.MENU_STATUS;
-import support.Delay;
-
-import static constants.Constants.MENU_STATUS.PLAYING;
-import static graphics.Sprite.SCALED_SIZE;
 
 public class BombermanGame extends Application {
     public static MENU_STATUS menu_status;

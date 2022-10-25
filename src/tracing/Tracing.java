@@ -10,7 +10,7 @@ public abstract class Tracing {
     protected Bomber bomber;
     protected Enemy enemy;
 
-    public static Random random = new Random();
+    public Random random = new Random();
 
     public abstract DIRECTION calculateDirection();
 

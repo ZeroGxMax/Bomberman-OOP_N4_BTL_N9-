@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import constants.Constants;
 import entities.Entity;
-import entities.animate.bomb.Bomb;
+import entities.animate.bomb.Explosion;
 import entities.animate.mob.Bomber;
 import entities.animate.mob.enemy.Enemy;
 import entities.items.Items;
@@ -17,8 +17,7 @@ import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
 import javafx.scene.canvas.GraphicsContext;
-
-import static constants.Constants.MENU_STATUS.PLAYING;
+import media.SoundController;
 
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
@@ -27,7 +26,7 @@ public class Map {
 
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
-    public List<Bomb> bombList = new ArrayList<>();
+    public List<Explosion> bombList = new ArrayList<>();
     public List<Items> items = new ArrayList<>();
 
     private static int width;
@@ -95,6 +94,9 @@ public class Map {
 
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
+
+        SoundController.init();
+        SoundController.playMusic(1);
     }
 
     public void initEntities() {
@@ -200,11 +202,11 @@ public class Map {
         this.stillObjects = stillObjects;
     }
 
-    public List<Bomb> getBombList() {
+    public List<Explosion> getBombList() {
         return bombList;
     }
 
-    public void setBombList(List<Bomb> bombList) {
+    public void setBombList(List<Explosion> bombList) {
         this.bombList = bombList;
     }
 
