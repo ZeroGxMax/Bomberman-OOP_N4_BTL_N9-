@@ -2,11 +2,11 @@ package entities.items;
 
 import graphics.Sprite;
 
-public class ThroughWallItem extends Items {
-    public ThroughWallItem(int xUnit, int yUnit) {
+public class SoftBlocksThroughItem extends Items {
+    public SoftBlocksThroughItem(int xUnit, int yUnit) {
         super(xUnit, yUnit);
         this.actualSprite = Sprite.powerup_wallpass;
-        effect = Effect.WALL_PASS;
+        effect = Effect.SOFT_BLOCK_PASS;
     }
 
     @Override
