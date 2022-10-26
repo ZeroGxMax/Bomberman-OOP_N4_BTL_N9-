@@ -95,8 +95,8 @@ public class Map {
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
-//        SoundController.init();
-//        SoundController.playMusic(1);
+       SoundController.init();
+       SoundController.playMusic(1);
     }
 
     public void initEntities() {
@@ -143,7 +143,6 @@ public class Map {
                 return stillObjects.get(i);
             }
         }
-
         return null;
     }
 
