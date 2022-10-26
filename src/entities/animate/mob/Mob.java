@@ -3,6 +3,7 @@ package entities.animate.mob;
 import constants.Constants.DIRECTION;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
+import map.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,8 @@ public abstract class Mob extends AnimateEntity {
     protected boolean moving = false;
     protected double velocity = 1;
 
-    public Mob() {}
+    public Mob() {
+    }
 
     public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -58,7 +60,7 @@ public abstract class Mob extends AnimateEntity {
     }
 
     public boolean isCanStepOn(int x, int y) {
-        return gameMap.isCanStepOn(x, y);
+        return Map.isCanStepOn(x, y);
     }
 
     protected abstract void calculateMove();

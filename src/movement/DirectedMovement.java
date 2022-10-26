@@ -7,7 +7,8 @@ import map.Map;
 
 public class DirectedMovement extends Movement {
 
-    public DirectedMovement() {}
+    public DirectedMovement() {
+    }
 
     public DirectedMovement(Bomber bomber, Enemy enemy, Map gameMap) {
         this.bomber = bomber;
@@ -22,7 +23,7 @@ public class DirectedMovement extends Movement {
 
         int vertical = random.nextInt(2);
 
-        if(vertical == 1) {
+        if (vertical == 1) {
             DIRECTION v = calculateRowDirection();
             if (v != DIRECTION.NONE) {
                 return v;
@@ -44,7 +45,7 @@ public class DirectedMovement extends Movement {
         if (gameMap == null) {
             return DIRECTION.NONE;
         }
-        if(bomber.getxUnit() < enemy.getxUnit()
+        if (bomber.getxUnit() < enemy.getxUnit()
                 && canMoveAhead(DIRECTION.LEFT)) {
             return DIRECTION.LEFT;
         } else if (bomber.getxUnit() > enemy.getxUnit()

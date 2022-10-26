@@ -8,6 +8,7 @@ import map.Map;
 import java.util.Random;
 
 public abstract class Movement {
+    public Random random = new Random();
     protected Bomber bomber;
     protected Enemy enemy;
     protected Map gameMap;
@@ -36,23 +37,18 @@ public abstract class Movement {
                 && !enemy.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() + 1)) {
             return false;
         }
-        if (direction == DIRECTION.LEFT
-                && !enemy.isCanStepOn(enemy.getxUnit() - 1, enemy.getyUnit())) {
-            return false;
-        }
-        return true;
+        return direction != DIRECTION.LEFT
+                || enemy.isCanStepOn(enemy.getxUnit() - 1, enemy.getyUnit());
     }
 
     public abstract DIRECTION calculateDirection();
 
-    public Random random = new Random();
+    public Bomber getBomber() {
+        return bomber;
+    }
 
     public void setBomber(Bomber bomber) {
         this.bomber = bomber;
-    }
-
-    public Bomber getBomber() {
-        return bomber;
     }
 
     public Map getGameMap() {

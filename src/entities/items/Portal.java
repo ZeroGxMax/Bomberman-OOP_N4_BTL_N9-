@@ -44,15 +44,15 @@ public class Portal extends Items {
         if (!destroyed || timeCount < 0) {
             return;
         }
-        if (destroyed == true) {
+        if (destroyed) {
             if (timeCount == 0) {
                 sprite = Sprite.grass;
                 Map.map[yUnit][xUnit] = 1;
-            } else if (timeCount < Constants.BRICK_DESTROY_TIME/3) {
+            } else if (timeCount < Constants.BRICK_DESTROY_TIME / 3) {
                 sprite = Sprite.brick_exploded[2];
-            } else if (timeCount < Constants.BRICK_DESTROY_TIME*2/3) {
+            } else if (timeCount < Constants.BRICK_DESTROY_TIME * 2 / 3) {
                 sprite = Sprite.brick_exploded[1];
-            } else  {
+            } else {
                 sprite = Sprite.brick_exploded[0];
             }
             timeCount--;

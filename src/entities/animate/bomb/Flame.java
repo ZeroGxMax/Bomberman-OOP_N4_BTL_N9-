@@ -1,15 +1,15 @@
 package entities.animate.bomb;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Flame extends AnimateEntity {
-    private List<ExplosionUnit> units = new ArrayList<ExplosionUnit>();
+    private final List<ExplosionUnit> units = new ArrayList<ExplosionUnit>();
 
     public Flame(int x, int y, int length) {
         units.add(new ExplosionUnit(x, y, Sprite.bomb_exploded));

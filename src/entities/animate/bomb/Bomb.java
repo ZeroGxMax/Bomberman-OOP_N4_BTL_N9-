@@ -14,8 +14,9 @@ public class Bomb extends ExplosionUnit {
 
     @Override
     public void update() {
-        if (destroy)
+        if (destroy) {
             return;
+        }
         goAnimate();
         sprite = Sprite.movingSprite(sprites, animate, Constants.BOMB_WAITING_TIME);
         if (sprite != sprites[countFrames]) {

@@ -1,23 +1,23 @@
 package entities.animate.bomb;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import constants.Constants.BOMB_STATUS;
 import entities.Entity;
 import entities.animate.AnimateEntity;
-import entities.still.Wall;
 import entities.still.Brick;
+import entities.still.Wall;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 import media.SoundController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Explosion extends AnimateEntity {
+    protected int bombLength;
     private BOMB_STATUS status;
     private Bomb status1;
     private Flame status2;
-    protected int bombLength;
 
     public Explosion() {
         super();

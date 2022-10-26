@@ -15,13 +15,13 @@ public class AnimateFactory {
             case '2':
                 return new Oneal(j, i, Sprite.oneal_left[0]);
             case '3':
-                return new Dahl(j, i,Sprite.doll_left[0]);
+                return new Dahl(j, i, Sprite.doll_left[0]);
             case '4':
-                return new Kondoria(j, i,Sprite.kondoria_left[0]);
+                return new Kondoria(j, i, Sprite.kondoria_left[0]);
             case '5':
-                return new Minvo(j, i,Sprite.minvo_left[0]);
+                return new Minvo(j, i, Sprite.minvo_left[0]);
             case '6':
-                return new Ghost(j, i,Sprite.ghost_left[0]);
+                return new Ghost(j, i, Sprite.ghost_left[0]);
             default:
                 return null;
         }

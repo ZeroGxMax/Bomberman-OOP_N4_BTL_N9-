@@ -20,10 +20,6 @@ public class ExplosionUnit extends AnimateEntity {
         new ExplosionUnit(x, y, chooseSprite(type));
     }
 
-    public boolean isDestroy() {
-        return destroy;
-    }
-
     public static Sprite[] chooseSprite(BOMB_UNITS unit) {
         switch (unit) {
             case BOMB:
@@ -45,6 +41,10 @@ public class ExplosionUnit extends AnimateEntity {
             default:
                 return null;
         }
+    }
+
+    public boolean isDestroy() {
+        return destroy;
     }
 
     @Override

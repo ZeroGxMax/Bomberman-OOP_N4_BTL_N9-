@@ -11,10 +11,6 @@ public class ThroughWallItem extends Items {
 
     @Override
     protected void setPowerUp() {
-        if (active) {
-            bomber.setWall_pass(true);
-        } else {
-            bomber.setWall_pass(false);
-        }
+        bomber.setWall_pass(active);
     }
 }
