@@ -59,7 +59,9 @@ public abstract class Mob extends AnimateEntity {
         System.out.println("set velocity to " + getVelocity());
     }
 
-
+    public boolean isCanStepOn(int x, int y) {
+        return gameMap.isCanStepOn(x, y);
+    }
 
     protected abstract void calculateMove();
 

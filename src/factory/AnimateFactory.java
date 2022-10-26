@@ -15,7 +15,7 @@ public class AnimateFactory {
             case '2':
                 return new Oneal(j, i, Sprite.oneal_left[0]);
             case '3':
-                return new Doll(j, i,Sprite.doll_left[0]);
+                return new Dahl(j, i,Sprite.doll_left[0]);
             case '4':
                 return new Kondoria(j, i,Sprite.kondoria_left[0]);
             case '5':

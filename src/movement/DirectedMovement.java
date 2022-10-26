@@ -1,23 +1,22 @@
-package tracing;
+package movement;
 
 import constants.Constants.DIRECTION;
 import entities.animate.mob.Bomber;
 import entities.animate.mob.enemy.Enemy;
+import map.Map;
 
-public class DirectedTracing extends Tracing {
+public class DirectedMovement extends Movement {
 
+    public DirectedMovement() {}
 
-    public DirectedTracing(Enemy enemy) {
-        this.enemy = enemy;
-    }
-
-    public DirectedTracing(Bomber bomber, Enemy enemy) {
+    public DirectedMovement(Bomber bomber, Enemy enemy, Map gameMap) {
         this.bomber = bomber;
         this.enemy = enemy;
+        this.gameMap = gameMap;
     }
 
     public DIRECTION calculateDirection() {
-        if (bomber == null) {
+        if (bomber == null || !canMoveAhead(enemy.getDirection())) {
             return DIRECTION.NONE;
         }
 
@@ -42,22 +41,36 @@ public class DirectedTracing extends Tracing {
     }
 
     protected DIRECTION calculateColDirection() {
-        if(bomber.getxUnit() < enemy.getxUnit()) {
+        if (gameMap == null) {
+            return DIRECTION.NONE;
+        }
+        if(bomber.getxUnit() < enemy.getxUnit()
+                && canMoveAhead(DIRECTION.LEFT)) {
             return DIRECTION.LEFT;
-        } else if (bomber.getxUnit() > enemy.getxUnit()) {
+        } else if (bomber.getxUnit() > enemy.getxUnit()
+                && canMoveAhead(DIRECTION.RIGHT)) {
             return DIRECTION.RIGHT;
         } else {
-            return DIRECTION.NONE;
+            return calculateRowDirection();
         }
     }
 
     protected DIRECTION calculateRowDirection() {
-        if(bomber.getyUnit() < enemy.getyUnit()) {
+        if (gameMap == null) {
+            return DIRECTION.NONE;
+        }
+        if (bomber.getyUnit() < enemy.getyUnit()
+                && canMoveAhead(DIRECTION.UP)) {
             return DIRECTION.UP;
-        } else if(bomber.getyUnit() > enemy.getyUnit()) {
+        } else if (bomber.getyUnit() > enemy.getyUnit()
+                && canMoveAhead(DIRECTION.DOWN)) {
             return DIRECTION.DOWN;
         } else {
-            return DIRECTION.NONE;
+            if (bomber.getxUnit() < enemy.getxUnit()) {
+                return DIRECTION.LEFT;
+            } else {
+                return DIRECTION.RIGHT;
+            }
         }
     }
 }

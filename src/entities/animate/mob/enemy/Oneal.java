@@ -1,14 +1,13 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
-import constants.Constants.DIRECTION;
 import graphics.Sprite;
 import map.Map;
 import support.Probability;
-import tracing.DirectedTracing;
+import movement.NearMovement;
 
 public class Oneal extends Enemy {
-    public DirectedTracing tracing = new DirectedTracing(this);
+    public NearMovement tracing = new NearMovement();
 
     public Oneal(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -36,11 +35,17 @@ public class Oneal extends Enemy {
      */
     @Override
     protected void calculateMove() {
+        if (tracing.getEnemy() == null) {
+            tracing.setEnemy(this);
+        }
+        if (tracing.getGameMap() == null) {
+            tracing.setGameMap(gameMap);
+        }
         if (tracing.getBomber() == null) {
             tracing.setBomber(gameMap.getBomber());
         }
         if (!moving) {
-            direction = DIRECTION.NONE;
+            direction = tracing.calculateDirection();
         }
         // Call parent's method
         super.calculateMove();
