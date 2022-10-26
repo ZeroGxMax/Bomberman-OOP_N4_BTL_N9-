@@ -1,6 +1,5 @@
 package entities.items;
 
-import constants.Constants;
 import entities.animate.mob.Bomber;
 import entities.still.destroyable.Brick;
 import graphics.Sprite;
@@ -23,6 +22,7 @@ public abstract class Items extends Brick {
         speed_up,
         range_bomb,
         limit_bomb,
+        wall_pass,
         none
     }
 
