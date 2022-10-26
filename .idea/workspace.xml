@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Refactor codes">
-      <change afterPath="$PROJECT_DIR$/src/entities/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/AnimateEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Dahl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Dahl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Ghost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Ghost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Kondoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Kondoria.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Minvo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Minvo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
-    </list>
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Refactor codes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +52,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/simpleUML_4493.jar",
+    "last_opened_file_path": "D:/Bomberman-OOP_N4_BTL_N9-",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
