@@ -21,7 +21,7 @@
 - Xỷ lý va chạm cho các đối tượng ![Bomber](res/sprites/player_down.png) Bomber, Enemy,
 ![Wall](res/sprites/wall.png) Wall, 
 ![Brick](res/sprites/brick.png) Brick, 
-![Bomb](res/bomb.png) Bomb
+![Bomb](res/sprites/bomb.png) Bomb
 - Xỷ lý bomb nổ ![](res/sprites/bomb.png)
 - Xử lý Khi bomber sử dụng các Item và khi đi vào vị trí Portal
     + ![Portal](res/sprites/portal.png) Cổng dịch chuyển sang màn mới nếu diệt tất cả enemy
