@@ -19,7 +19,7 @@ public class Dahl extends Enemy {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (!moving) {
             direction = movement.calculateDirection();
         }
