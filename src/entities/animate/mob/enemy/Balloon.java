@@ -6,7 +6,7 @@ import map.Map;
 import movement.RandomMovement;
 
 public class Balloon extends Enemy {
-    public RandomMovement tracing = new RandomMovement();
+    public RandomMovement movement = new RandomMovement();
 
     public Balloon(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -19,17 +19,8 @@ public class Balloon extends Enemy {
      */
     @Override
     protected void calculateMove() {
-        if (tracing.getEnemy() == null) {
-            tracing.setEnemy(this);
-        }
-        if (tracing.getGameMap() == null) {
-            tracing.setGameMap(gameMap);
-        }
-        if (tracing.getBomber() == null) {
-            tracing.setBomber(gameMap.getBomber());
-        }
         if (!moving) {
-            direction = tracing.calculateDirection();
+            direction = movement.calculateDirection();
         }
         // Call parent's method
         super.calculateMove();
@@ -40,7 +31,7 @@ public class Balloon extends Enemy {
         if (!isCanChangeDirection()) {
             return;
         }
-        direction = tracing.calculateDirection();
+        direction = movement.calculateDirection();
 
         // Depend on direction determine if it can still move:
         moving = true;
@@ -112,6 +103,20 @@ public class Balloon extends Enemy {
                 break;
             case NONE:
                 break;
+        }
+    }
+
+    @Override
+    public void init() {
+        super.init();
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
     }
 }

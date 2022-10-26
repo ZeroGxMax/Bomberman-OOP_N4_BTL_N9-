@@ -13,8 +13,7 @@ public abstract class Mob extends AnimateEntity {
     protected boolean moving = false;
     protected double velocity = 1;
 
-    public Mob() {
-    }
+    public Mob() {}
 
     public Mob(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -67,6 +66,4 @@ public abstract class Mob extends AnimateEntity {
     protected abstract void move(double xa, double ya);
 
     public abstract void setDirection();
-
-    // protected abstract void canMove(double x, double y);
 }

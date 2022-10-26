@@ -42,6 +42,7 @@ public abstract class Enemy extends Mob {
 
     @Override
     public void update() {
+        init();
         if (destroyed && timeAfter == -1) {
             return;
         }
@@ -70,7 +71,9 @@ public abstract class Enemy extends Mob {
     }
 
     public void init() {
-        this.bomber = gameMap.getBomber();
+        if (bomber == null) {
+            this.bomber = gameMap.getBomber();
+        }
     }
 
     public abstract void chooseSprite();

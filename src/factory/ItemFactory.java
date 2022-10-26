@@ -1,11 +1,7 @@
 package factory;
 
 import entities.Entity;
-import entities.items.LimitBombItem;
-import entities.items.Portal;
-import entities.items.PowerupFlame;
-import entities.items.SpeedupItem;
-import entities.items.ThroughWallItem;
+import entities.items.*;
 
 public class ItemFactory {
     public static Entity getItemEntity(int i, int j, char c) {

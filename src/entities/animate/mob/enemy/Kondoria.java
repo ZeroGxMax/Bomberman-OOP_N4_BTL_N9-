@@ -120,4 +120,18 @@ public class Kondoria extends Enemy {
                 break;
         }
     }
+
+    @Override
+    public void init() {
+        super.init();
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
+        }
+    }
 }

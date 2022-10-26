@@ -7,7 +7,7 @@ import constants.Constants.BOMB_STATUS;
 import entities.Entity;
 import entities.animate.AnimateEntity;
 import entities.still.Wall;
-import entities.still.destroyable.Brick;
+import entities.still.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
@@ -30,7 +30,7 @@ public class Explosion extends AnimateEntity {
         status = BOMB_STATUS.START;
         status1 = new Bomb(x, y);
         status2 = new Flame(x, y, bombLength);
-        Map._map[y][x] = 0;
+        Map.map[y][x] = 0;
     }
 
     public boolean isDestroyed() {
@@ -93,7 +93,7 @@ public class Explosion extends AnimateEntity {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
                 SoundController.playSound(4);
-                Map._map[yUnit][xUnit] = 1;
+                Map.map[yUnit][xUnit] = 1;
                 SoundController.playSound(4);
                 destroyedObjects();
                 break;
@@ -129,5 +129,12 @@ public class Explosion extends AnimateEntity {
         else if (status == BOMB_STATUS.EXPLOSION) {
             status2.render(gc);
         }
+    }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
     }
 }

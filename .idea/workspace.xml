@@ -4,36 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="New enemy images">
-      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracing/DahlTracing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracing/GhostTracing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tracing/NearTracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Each enemy has their movements">
+      <change afterPath="$PROJECT_DIR$/src/entities/items/ThroughWallItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/ExplosionUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/ExplosionUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Doll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factory/AnimateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/AnimateFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tracing/DirectedTracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/DirectedTracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tracing/RandomTracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/RandomTracing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tracing/Tracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/Tracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/items/LimitBombItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/LimitBombItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/items/Portal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Portal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/items/PowerupFlame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/PowerupFlame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/items/SpeedupItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/SpeedupItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/still/Grass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/Grass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/still/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/still/destroyable/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/still/destroyable/DestroyableObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/ItemFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/ItemFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/StillFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/StillFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/ExplosionUnit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/ExplosionUnit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Flame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Flame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Bomber.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/Mob.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items$Effect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Items.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/LimitBombItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/LimitBombItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/Portal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/Portal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/PowerupFlame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/PowerupFlame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/items/SpeedupItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/items/SpeedupItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Grass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/still/Wall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/Brick.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/still/destroyable/DestroyableObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/ItemFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/ItemFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/StillFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +113,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="entities.still" />
       <recent name="" />
     </key>
   </component>

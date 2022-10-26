@@ -3,7 +3,7 @@ package factory;
 import entities.Entity;
 import entities.still.Grass;
 import entities.still.Wall;
-import entities.still.destroyable.Brick;
+import entities.still.Brick;
 import graphics.Sprite;
 
 public class StillFactory {

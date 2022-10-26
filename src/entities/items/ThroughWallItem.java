@@ -6,8 +6,7 @@ public class ThroughWallItem extends Items {
     public ThroughWallItem(int xUnit, int yUnit) {
         super(xUnit, yUnit);
         this.actualSprite = Sprite.powerup_wallpass;
-        sprite = actualSprite;
-        effect = Effect.wall_pass;
+        effect = Effect.WALL_PASS;
     }
 
     @Override

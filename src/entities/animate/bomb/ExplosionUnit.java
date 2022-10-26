@@ -61,4 +61,11 @@ public class ExplosionUnit extends AnimateEntity {
         }
         img = sprite.getFxImage();
     }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
+    }
 }

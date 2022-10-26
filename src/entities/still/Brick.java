@@ -1,4 +1,4 @@
-package entities.still.destroyable;
+package entities.still;
 
 import constants.Constants;
 import entities.still.StillObject;
@@ -34,7 +34,7 @@ public class Brick extends StillObject {
         if (destroyed == true) {
             if (timeCount == 0) {
                 sprite = Sprite.grass;
-                Map._map[yUnit][xUnit] = 1;
+                Map.map[yUnit][xUnit] = 1;
             } else if (timeCount < Constants.BRICK_DESTROY_TIME/3) {
                 sprite = Sprite.brick_exploded[2];
             } else if (timeCount < Constants.BRICK_DESTROY_TIME*2/3) {
@@ -50,5 +50,12 @@ public class Brick extends StillObject {
     @Override
     public void render(GraphicsContext gc) {
         gc.drawImage(img, x, y);
+    }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
     }
 }

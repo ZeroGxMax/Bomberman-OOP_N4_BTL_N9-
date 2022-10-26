@@ -20,15 +20,6 @@ public class Dahl extends Enemy {
      */
     @Override
     protected void calculateMove() {
-        if (movement.getEnemy() == null) {
-            movement.setEnemy(this);
-        }
-        if (movement.getGameMap() == null) {
-            movement.setGameMap(gameMap);
-        }
-        if (movement.getBomber() == null) {
-            movement.setBomber(gameMap.getBomber());
-        }
         if (!moving) {
             direction = movement.calculateDirection();
         }
@@ -114,6 +105,20 @@ public class Dahl extends Enemy {
                 break;
             case NONE:
                 break;
+        }
+    }
+
+    @Override
+    public void init() {
+        super.init();
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
     }
 }

@@ -6,7 +6,7 @@ public class LimitBombItem extends Items {
     public LimitBombItem(int xUnit, int yUnit) {
         super(xUnit, yUnit);
         this.actualSprite = Sprite.powerup_bombs;
-        effect = Effect.limit_bomb;
+        effect = Effect.LIMIT_BOMB;
     }
 
     @Override
