@@ -15,7 +15,7 @@ public class Kondoria extends Enemy {
         velocity = 0.5;
     }
 
-    protected void calculateMove() {
+    public void calculateMove() {
         if (movement.getEnemy() == null) {
             movement.setEnemy(this);
         }
