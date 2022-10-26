@@ -1,38 +1,32 @@
 package entities.animate.mob.enemy;
 
 import constants.Constants;
+import entities.still.Wall;
 import graphics.Sprite;
-import map.Map;
-import support.Probability;
-import tracing.RandomTracing;
+import movement.DirectedMovement;
+import movement.Movement;
 
 public class Kondoria extends Enemy {
-    public RandomTracing tracing = new RandomTracing();
+    public Movement movement = new DirectedMovement();
 
     public Kondoria(double x, double y, Sprite sprite) {
         super(x, y, sprite);
         deadSprites.add(Sprite.kondoria_dead);
+        velocity = 0.5;
     }
 
-    /**
-     * Dựa vào tracing để xác định ví trí di chuyển
-     * Dựa theo direction để thay đổi tọa độ
-     */
-    @Override
     protected void calculateMove() {
-        if (tracing.getBomber() == null) {
-            tracing.setBomber(gameMap.getBomber());
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
-        if (tracing.timeEachDirection >= RandomTracing.TIME_EACH_DIRECTION_MAX
-                && isCanChangeDirection()) {
-            direction = tracing.calculateDirection();
-            tracing.timeEachDirection = 0;
-        } else {
-            // If the enemy hit the wall, change it direction.
-            if (!moving) {
-                direction = tracing.calculateDirection();
-            }
-            tracing.timeEachDirection++;
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (!moving) {
+            direction = movement.calculateDirection();
         }
         // Call parent's method
         super.calculateMove();
@@ -43,37 +37,34 @@ public class Kondoria extends Enemy {
         if (!isCanChangeDirection()) {
             return;
         }
-
-        if (Probability.isSometimes()) {
-            direction = tracing.calculateDirection();
-        }
+        direction = movement.calculateDirection();
 
         // Depend on direction determine if it can still move:
         moving = true;
         switch (direction) {
             case UP:
-                if (Map.isCanStepOn(xUnit, yUnit - 1)) {
+                if (!(gameMap.getObjectAt(xUnit, yUnit - 1) instanceof Wall)) {
                     yUnit--;
                 } else {
                     moving = false;
                 }
                 break;
             case DOWN:
-                if (Map.isCanStepOn(xUnit, yUnit + 1)) {
+                if (!(gameMap.getObjectAt(xUnit, yUnit + 1) instanceof Wall)) {
                     yUnit++;
                 } else {
                     moving = false;
                 }
                 break;
             case LEFT:
-                if (Map.isCanStepOn(xUnit - 1, yUnit)) {
+                if (!(gameMap.getObjectAt(xUnit - 1, yUnit) instanceof Wall)) {
                     xUnit--;
                 } else {
                     moving = false;
                 }
                 break;
             case RIGHT:
-                if (Map.isCanStepOn(xUnit + 1, yUnit)) {
+                if (!(gameMap.getObjectAt(xUnit + 1, yUnit) instanceof Wall)) {
                     xUnit++;
                 } else {
                     moving = false;
@@ -82,6 +73,15 @@ public class Kondoria extends Enemy {
             default:
                 moving = false;
                 break;
+        }
+    }
+
+    @Override
+    public boolean isCanStepOn(int x, int y) {
+        if (!(gameMap.getObjectAt(x, y) instanceof Wall)) {
+            return true;
+        } else {
+            return false;
         }
     }
 

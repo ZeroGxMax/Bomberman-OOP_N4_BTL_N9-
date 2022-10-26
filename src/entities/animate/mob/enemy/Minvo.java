@@ -3,15 +3,16 @@ package entities.animate.mob.enemy;
 import constants.Constants;
 import graphics.Sprite;
 import map.Map;
-import support.Probability;
-import tracing.RandomTracing;
+import movement.NearMovement;
+import movement.Movement;
 
 public class Minvo extends Enemy {
-    public RandomTracing tracing = new RandomTracing();
+    public Movement movement = new NearMovement();
 
     public Minvo(double x, double y, Sprite sprite) {
         super(x, y, sprite);
         deadSprites.add(Sprite.minvo_dead);
+        velocity = 1.5;
     }
 
     /**
@@ -20,19 +21,17 @@ public class Minvo extends Enemy {
      */
     @Override
     protected void calculateMove() {
-        if (tracing.getBomber() == null) {
-            tracing.setBomber(gameMap.getBomber());
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
-        if (tracing.timeEachDirection >= RandomTracing.TIME_EACH_DIRECTION_MAX
-                && isCanChangeDirection()) {
-            direction = tracing.calculateDirection();
-            tracing.timeEachDirection = 0;
-        } else {
-            // If the enemy hit the wall, change it direction.
-            if (!moving) {
-                direction = tracing.calculateDirection();
-            }
-            tracing.timeEachDirection++;
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (!moving) {
+            direction = movement.calculateDirection();
         }
         // Call parent's method
         super.calculateMove();
@@ -44,9 +43,7 @@ public class Minvo extends Enemy {
             return;
         }
 
-        if (Probability.isSometimes()) {
-            direction = tracing.calculateDirection();
-        }
+        direction = movement.calculateDirection();
 
         // Depend on direction determine if it can still move:
         moving = true;

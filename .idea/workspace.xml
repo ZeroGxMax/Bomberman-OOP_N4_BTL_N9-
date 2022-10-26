@@ -4,21 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Fixed: Brick destroyed images before item shown">
-      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Doll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="New enemy images">
+      <change afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tracing/DahlTracing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tracing/GhostTracing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tracing/NearTracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Doll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/factory/AnimateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/AnimateFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/bomb/Explosion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tracing/DirectedTracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/DirectedTracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tracing/RandomTracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/RandomTracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tracing/Tracing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tracing/Tracing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Balloon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/animate/mob/enemy/Oneal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/graphics/Sprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/DirectedTracing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/RandomTracing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tracing/Tracing.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,18 +75,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Bomberman-OOP_N4_BTL_N9-",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Bomberman-OOP_N4_BTL_N9-&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -79,6 +94,8 @@
   </component>
   <component name="RunManager" selected="Application.BombermanGame">
     <configuration name="BombermanGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Users\Zero\.jdks\corretto-1.8.0_352\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="game.BombermanGame" />
       <module name="bomberman" />
       <method v="2">
@@ -111,6 +128,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BombermanGame" />
+      <item itemvalue="Application.Starter" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BombermanGame" />

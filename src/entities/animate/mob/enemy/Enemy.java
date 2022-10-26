@@ -74,4 +74,6 @@ public abstract class Enemy extends Mob {
     }
 
     public abstract void chooseSprite();
+
+    public abstract void setDirection();
 }
