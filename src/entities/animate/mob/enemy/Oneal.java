@@ -14,7 +14,7 @@ public class Oneal extends Enemy {
         deadSprites.add(Sprite.oneal_dead);
     }
 
-    protected void changeVelocity() {
+    public void changeVelocity() {
         int randomNumber = movement.random.nextInt() % 3;
         switch (randomNumber) {
             case 0:
@@ -34,7 +34,7 @@ public class Oneal extends Enemy {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (movement.getEnemy() == null) {
             movement.setEnemy(this);
         }
