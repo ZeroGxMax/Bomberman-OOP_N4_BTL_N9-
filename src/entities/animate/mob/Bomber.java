@@ -8,7 +8,6 @@ import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
 import entities.animate.bomb.Explosion;
 import entities.still.Wall;
-import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.scene.canvas.GraphicsContext;
@@ -16,8 +15,8 @@ import map.Map;
 
 public class Bomber extends Mob {
     private int Max_Bombs = 1;
-    private boolean wall_pass = false;
     private List<Explosion> b = new ArrayList<>();
+    private boolean wall_pass = false;
     private int time_between_bomb = 0;
     private int bomb_length = 1;
 
@@ -31,14 +30,6 @@ public class Bomber extends Mob {
 
     public void setMax_Bombs(int max_Bomb) {
         Max_Bombs = max_Bomb;
-    }
-
-    public boolean isWall_pass() {
-        return wall_pass;
-    }
-
-    public void setWall_pass(boolean wall_pass) {
-        this.wall_pass = wall_pass;
     }
 
     public Bomber() {
@@ -78,18 +69,6 @@ public class Bomber extends Mob {
                 makeBomb();
         }
         setDirection();
-    }
-
-    @Override
-    public boolean isCanStepOn(int x, int y) {
-        boolean canStep = super.isCanStepOn(x, y);
-        if (canStep) {
-            return true;
-        }
-        if ((gameMap.getObjectAt(x, y) instanceof Wall || gameMap.getObjectAt(x, y) instanceof Brick) && wall_pass) {
-            return true;
-        }
-        return false;
     }
 
     public void setDirection(KEYBOARD key) {
@@ -203,9 +182,6 @@ public class Bomber extends Mob {
     }
 
     private void makeBomb() {
-        if (!Map.isCanStepOn(xUnit, yUnit)) {
-            return;
-        }
         Explosion temp = new Explosion(xUnit, yUnit, bomb_length);
         temp.setGameMap(gameMap);
         b.add(temp);
@@ -227,7 +203,30 @@ public class Bomber extends Mob {
         goAnimate();
     }
 
+    public boolean isCanStepOn(int x, int y) {
+        if (gameMap == null) {
+            return false;
+        }
+        if (!wall_pass) {
+            return super.isCanStepOn(x, y);
+        } else {
+            if (gameMap.getObjectAt(x, y) instanceof Wall) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
     public void init() {
 
+    }
+
+    public boolean isWall_pass() {
+        return wall_pass;
+    }
+
+    public void setWall_pass(boolean wall_pass) {
+        this.wall_pass = wall_pass;
     }
 }

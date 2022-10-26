@@ -7,7 +7,7 @@ import support.Probability;
 import movement.NearMovement;
 
 public class Oneal extends Enemy {
-    public NearMovement tracing = new NearMovement();
+    public NearMovement movement = new NearMovement();
 
     public Oneal(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -15,7 +15,7 @@ public class Oneal extends Enemy {
     }
 
     protected void changeVelocity() {
-        int randomNumber = tracing.random.nextInt() % 3;
+        int randomNumber = movement.random.nextInt() % 3;
         switch (randomNumber) {
             case 0:
                 velocity = 0.5;
@@ -35,17 +35,17 @@ public class Oneal extends Enemy {
      */
     @Override
     protected void calculateMove() {
-        if (tracing.getEnemy() == null) {
-            tracing.setEnemy(this);
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
-        if (tracing.getGameMap() == null) {
-            tracing.setGameMap(gameMap);
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
         }
-        if (tracing.getBomber() == null) {
-            tracing.setBomber(gameMap.getBomber());
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
         }
         if (!moving) {
-            direction = tracing.calculateDirection();
+            direction = movement.calculateDirection();
         }
         // Call parent's method
         super.calculateMove();
@@ -61,7 +61,7 @@ public class Oneal extends Enemy {
             changeVelocity();
         }
 
-        direction = tracing.calculateDirection();
+        direction = movement.calculateDirection();
 
         // Depend on direction determine if it can still move:
         moving = true;
@@ -131,6 +131,20 @@ public class Oneal extends Enemy {
                 break;
             case NONE:
                 break;
+        }
+    }
+
+    @Override
+    public void init() {
+        super.init();
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
     }
 }

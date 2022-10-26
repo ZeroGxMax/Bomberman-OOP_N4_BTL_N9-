@@ -15,4 +15,11 @@ public class Grass extends StillObject {
     @Override
     public void update() {
     }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
+    }
 }

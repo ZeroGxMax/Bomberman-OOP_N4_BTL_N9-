@@ -76,23 +76,9 @@ public abstract class Entity {
         this.destroyed = destroyed;
     }
 
-    public Rectangle2D getBoundary() {
-        return new Rectangle2D(x, y, Sprite.SCALED_SIZE, Sprite.SCALED_SIZE);
-    }
-
-    public boolean isCollision(Entity entity) {
-        if (entity == null) {
-            return false;
-        } else {
-            return this.getBoundary().intersects(entity.getBoundary());
-        }
-    }
-
     public abstract void update();
 
-    public void init() {
-
-    }
+    public abstract void init();
 
     public void render(GraphicsContext gc) {
         gc.drawImage(img, x, y);

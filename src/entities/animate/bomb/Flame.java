@@ -72,4 +72,11 @@ public class Flame extends AnimateEntity {
     public boolean isDestroy() {
         return units.get(0).isDestroy();
     }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
+    }
 }

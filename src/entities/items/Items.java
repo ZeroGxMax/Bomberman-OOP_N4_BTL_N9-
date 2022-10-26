@@ -1,7 +1,7 @@
 package entities.items;
 
 import entities.animate.mob.Bomber;
-import entities.still.destroyable.Brick;
+import entities.still.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
@@ -15,15 +15,15 @@ public abstract class Items extends Brick {
     protected Sprite actualSprite;
     protected Effect effect;
 
-    protected long time_start = 0;// thời gian bắt đầu (tính bằng mili s). Giúp tính thời gian đã qua
-    protected long time_of_existence = Long.MAX_VALUE;// thời gian tác dụng của item.
+    protected long timeStart = 0;// thời gian bắt đầu (tính bằng mili s). Giúp tính thời gian đã qua
+    protected long timeOfExistence = Long.MAX_VALUE;// thời gian tác dụng của item.
 
     public enum Effect {
-        speed_up,
-        range_bomb,
-        limit_bomb,
-        wall_pass,
-        none
+        SPEED_UP,
+        RANGE_BOMB,
+        LIMIT_BOMB,
+        WALL_PASS,
+        NONE
     }
 
     public Items(int xUnit, int yUnit) {
@@ -36,8 +36,8 @@ public abstract class Items extends Brick {
      * Hàm này sẽ đc gọi khi bomber đi lên item.
      */
     public void start() {
-        time_start = System.currentTimeMillis();
-        time_of_existence = Long.MAX_VALUE; // 10000 (ms) = 10 (s)
+        timeStart = System.currentTimeMillis();
+        timeOfExistence = Long.MAX_VALUE; // 10000 (ms) = 10 (s)
         active = true;
         shown = false;
         setPowerUp();
@@ -49,8 +49,8 @@ public abstract class Items extends Brick {
             if (end) {
                 return;
             }
-            if (destroyed && !shown && time_start == 0) {
-                Map._map[yUnit][xUnit] = 1;
+            if (destroyed && !shown && timeStart == 0) {
+                Map.map[yUnit][xUnit] = 1;
                 shown = true;
                 sprite = actualSprite;
             }
@@ -59,11 +59,11 @@ public abstract class Items extends Brick {
                 sprite = Sprite.grass;
                 start();
             }
-            if (time_start == 0) {// time_start == 0 khi chưa start()
+            if (timeStart == 0) {// time_start == 0 khi chưa start()
                 return;
             }
             // kiểm tra xem hết thời gian tác dụng của item chưa
-            if (System.currentTimeMillis() - time_start > time_of_existence && active) {
+            if (System.currentTimeMillis() - timeStart > timeOfExistence && active) {
                 active = false;
                 end = true;
                 setPowerUp();

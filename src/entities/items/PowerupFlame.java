@@ -7,7 +7,7 @@ public class PowerupFlame extends Items {
     public PowerupFlame(int xUnit, int yUnit) {
         super(xUnit, yUnit);
         this.actualSprite = Sprite.powerup_flames;
-        effect = Effect.range_bomb;
+        effect = Effect.RANGE_BOMB;
     }
 
     @Override

@@ -17,7 +17,6 @@ import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
 import javafx.scene.canvas.GraphicsContext;
-import media.SoundController;
 
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
@@ -31,7 +30,7 @@ public class Map {
     private static int width;
     private static int height;
     private int level;
-    public static int[][] _map;
+    public static int[][] map;
     protected boolean noEnemyLeft = true;
     protected boolean stagePassed = false;
 
@@ -56,9 +55,10 @@ public class Map {
      */
     public static boolean isCanStepOn(int x, int y) {
         // Kiểm tra tọa độ có trong map không
-        if (x < 0 || y < 0 || x >= width || y >= height)
+        if (x < 0 || y < 0 || x >= width || y >= height) {
             return false;
-        return _map[y][x] == 1 ? true : false;
+        }
+        return map[y][x] == 1 ? true : false;
     }
 
     public void createMap(String mapPath) throws FileNotFoundException {
@@ -66,7 +66,7 @@ public class Map {
         level = sc.nextInt();
         height = sc.nextInt();
         width = sc.nextInt();
-        _map = new int[height][width];
+        map = new int[height][width];
 
         sc.nextLine();
 
@@ -76,7 +76,7 @@ public class Map {
                 char c = str.charAt(j);
                 Entity temp = StillFactory.getStillEntity(i, j, c);
                 stillObjects.add(temp);
-                _map[i][j] = Grass.isGrass(temp) ? 1 : 0;
+                map[i][j] = Grass.isGrass(temp) ? 1 : 0;
                 Entity animateOne = AnimateFactory.getAnimateEntity(i, j, c);
                 if (animateOne != null) {
                     animateEntities.add(animateOne);
@@ -86,7 +86,7 @@ public class Map {
                     Items anItem = (Items) itemEntity;
                     items.add(anItem);
                     items.get(items.size() - 1).setBomber(getBomber());
-                    _map[i][j] = 0;
+                    map[i][j] = 0;
                 }
             }
         }
@@ -231,12 +231,12 @@ public class Map {
         this.level = level;
     }
 
-    public static int[][] get_map() {
-        return _map;
+    public static int[][] getMap() {
+        return map;
     }
 
-    public static void set_map(int[][] _map) {
-        Map._map = _map;
+    public static void setMap(int[][] map) {
+        Map.map = map;
     }
 
     public boolean isNoEnemyLeft() {

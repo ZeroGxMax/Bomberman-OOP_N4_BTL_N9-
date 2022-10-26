@@ -21,8 +21,8 @@ public class Portal extends Items {
             if (end) {
                 return;
             }
-            if (destroyed && !shown && time_start == 0) {
-                Map._map[yUnit][xUnit] = 1;
+            if (destroyed && !shown && timeStart == 0) {
+                Map.map[yUnit][xUnit] = 1;
                 shown = true;
                 sprite = actualSprite;
             }
@@ -32,11 +32,11 @@ public class Portal extends Items {
                     start();
                 }
             }
-            if (time_start == 0) {// time_start == 0 khi chưa start()
+            if (timeStart == 0) {// time_start == 0 khi chưa start()
                 return;
             }
             // kiểm tra xem hết thời gian tác dụng của item chưa
-            if (System.currentTimeMillis() - time_start > Constants.STAGE_PASSED_TIME && active) {
+            if (System.currentTimeMillis() - timeStart > Constants.STAGE_PASSED_TIME && active) {
                 //TODO PLAYSOUND HERE
                 gameMap.setStagePassed(true);
             }
@@ -47,7 +47,7 @@ public class Portal extends Items {
         if (destroyed == true) {
             if (timeCount == 0) {
                 sprite = Sprite.grass;
-                Map._map[yUnit][xUnit] = 1;
+                Map.map[yUnit][xUnit] = 1;
             } else if (timeCount < Constants.BRICK_DESTROY_TIME/3) {
                 sprite = Sprite.brick_exploded[2];
             } else if (timeCount < Constants.BRICK_DESTROY_TIME*2/3) {
