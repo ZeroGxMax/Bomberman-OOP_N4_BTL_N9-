@@ -9,7 +9,6 @@ import graphics.Sprite;
 import input.KeyBoardInput;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
-import media.SoundController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +122,7 @@ public class Bomber extends Mob {
     }
 
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (!moving) // Nếu không di chuyển -> thoát hàm
             return;
         double xa = 0;
@@ -195,7 +194,6 @@ public class Bomber extends Mob {
             return;
         }
         if (destroyed) {
-            SoundController.playSound(0);
             goAnimate();
             timeAfter--;
             return;
