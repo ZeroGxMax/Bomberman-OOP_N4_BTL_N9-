@@ -18,14 +18,6 @@ public abstract class Items extends Brick {
     protected long timeStart = 0;// thời gian bắt đầu (tính bằng mili s). Giúp tính thời gian đã qua
     protected long timeOfExistence = Long.MAX_VALUE;// thời gian tác dụng của item.
 
-    public enum Effect {
-        SPEED_UP,
-        RANGE_BOMB,
-        LIMIT_BOMB,
-        WALL_PASS,
-        NONE
-    }
-
     public Items(int xUnit, int yUnit) {
         super(xUnit, yUnit, Sprite.brick);
         this.sprite = Sprite.brick;
@@ -85,6 +77,10 @@ public abstract class Items extends Brick {
         return effect;
     }
 
+    public void setEffect(Effect effect) {
+        this.effect = effect;
+    }
+
     public Brick getFrontBrick() {
         return frontBrick;
     }
@@ -93,19 +89,23 @@ public abstract class Items extends Brick {
         return active;
     }
 
-    public void setBomber(Bomber bomber) {
-        this.bomber = bomber;
-    }
-
     public void setActive(boolean active) {
         this.active = active;
     }
 
-    public void setEffect(Effect effect) {
-        this.effect = effect;
+    public void setBomber(Bomber bomber) {
+        this.bomber = bomber;
     }
 
     public void setFrontWall() {
         this.frontBrick = new Brick(xUnit, yUnit, Sprite.brick);
+    }
+
+    public enum Effect {
+        SPEED_UP,
+        RANGE_BOMB,
+        LIMIT_BOMB,
+        WALL_PASS,
+        NONE
     }
 }

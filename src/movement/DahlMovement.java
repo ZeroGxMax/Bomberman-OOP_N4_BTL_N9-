@@ -12,13 +12,15 @@ public class DahlMovement extends Movement {
 
     private boolean verticalBound = false;
 
-    public DahlMovement() {}
+    public DahlMovement() {
+    }
 
     public DahlMovement(Bomber bomber, Enemy enemy, Map gameMap) {
         this.bomber = bomber;
         this.enemy = enemy;
         this.gameMap = gameMap;
     }
+
     @Override
     public DIRECTION calculateDirection() {
         if (Probability.isUsually()) {

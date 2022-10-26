@@ -80,11 +80,11 @@ public class Dahl extends Enemy {
         if (destroyed) {
             if (timeAfter == 0) {
                 return;
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/4) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 4) {
                 sprite = deadSprites.get(2);
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/3) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 3) {
                 sprite = deadSprites.get(1);
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/2) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 2) {
                 sprite = deadSprites.get(0);
             } else {
                 sprite = deadSprites.get(3);

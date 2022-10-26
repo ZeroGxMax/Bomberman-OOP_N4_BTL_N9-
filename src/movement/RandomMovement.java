@@ -15,7 +15,8 @@ public class RandomMovement extends Movement {
     public static final int TIME_EACH_DIRECTION_MAX = 100;
     public int timeEachDirection = 95; // Some overhead before first moving
 
-    public RandomMovement() {}
+    public RandomMovement() {
+    }
 
     public RandomMovement(Bomber bomber, Enemy enemy, Map gameMap) {
         this.bomber = bomber;
@@ -30,16 +31,16 @@ public class RandomMovement extends Movement {
         }
         // Map bi nguoc
         ArrayList<DIRECTION> availableDirection = new ArrayList<>();
-        if (gameMap.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() - 1)) {
+        if (Map.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() - 1)) {
             availableDirection.add(UP);
         }
-        if (gameMap.isCanStepOn(enemy.getxUnit() + 1, enemy.getyUnit())) {
+        if (Map.isCanStepOn(enemy.getxUnit() + 1, enemy.getyUnit())) {
             availableDirection.add(RIGHT);
         }
-        if (gameMap.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() + 1)) {
+        if (Map.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() + 1)) {
             availableDirection.add(DOWN);
         }
-        if (gameMap.isCanStepOn(enemy.getxUnit() - 1, enemy.getyUnit())) {
+        if (Map.isCanStepOn(enemy.getxUnit() - 1, enemy.getyUnit())) {
             availableDirection.add(LEFT);
         }
         if (Probability.isUsually()) {

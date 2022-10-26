@@ -1,8 +1,5 @@
 package entities.animate.mob;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import constants.Constants;
 import constants.Constants.DIRECTION;
 import constants.Constants.KEYBOARD;
@@ -13,24 +10,15 @@ import input.KeyBoardInput;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bomber extends Mob {
     private int Max_Bombs = 1;
     private List<Explosion> b = new ArrayList<>();
     private boolean wall_pass = false;
     private int time_between_bomb = 0;
     private int bomb_length = 1;
-
-    public void setBomb_length(int bomb_length) {
-        this.bomb_length = bomb_length;
-    }
-
-    public int getBomb_length() {
-        return bomb_length;
-    }
-
-    public void setMax_Bombs(int max_Bomb) {
-        Max_Bombs = max_Bomb;
-    }
 
     public Bomber() {
     }
@@ -43,6 +31,18 @@ public class Bomber extends Mob {
         deadSprites.add(Sprite.player_dead[0]);
         deadSprites.add(Sprite.player_dead[1]);
         deadSprites.add(Sprite.player_dead[2]);
+    }
+
+    public int getBomb_length() {
+        return bomb_length;
+    }
+
+    public void setBomb_length(int bomb_length) {
+        this.bomb_length = bomb_length;
+    }
+
+    public void setMax_Bombs(int max_Bomb) {
+        Max_Bombs = max_Bomb;
     }
 
     @Override
@@ -210,11 +210,7 @@ public class Bomber extends Mob {
         if (!wall_pass) {
             return super.isCanStepOn(x, y);
         } else {
-            if (gameMap.getObjectAt(x, y) instanceof Wall) {
-                return false;
-            } else {
-                return true;
-            }
+            return !(gameMap.getObjectAt(x, y) instanceof Wall);
         }
     }
 

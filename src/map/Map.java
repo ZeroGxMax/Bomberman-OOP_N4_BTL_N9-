@@ -1,11 +1,5 @@
 package map;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 import constants.Constants;
 import entities.Entity;
 import entities.animate.bomb.Explosion;
@@ -18,33 +12,25 @@ import factory.ItemFactory;
 import factory.StillFactory;
 import javafx.scene.canvas.GraphicsContext;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Map {
     public static final int WIDTH = Constants.WIDTH;
     public static final int HEIGHT = Constants.HEIGHT;
-
+    public static int[][] map;
+    private static int width;
+    private static int height;
     public List<Entity> animateEntities = new ArrayList<>();
     public List<Entity> stillObjects = new ArrayList<>();
     public List<Explosion> bombList = new ArrayList<>();
     public List<Items> items = new ArrayList<>();
-
-    private static int width;
-    private static int height;
-    private int level;
-    public static int[][] map;
     protected boolean noEnemyLeft = true;
     protected boolean stagePassed = false;
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
+    private int level;
 
     /**
      * Kiểm tra ô có tọa độ (x, y) trong bản đồ bomber có thể đi vào được không.
@@ -58,7 +44,39 @@ public class Map {
         if (x < 0 || y < 0 || x >= width || y >= height) {
             return false;
         }
-        return map[y][x] == 1 ? true : false;
+        return map[y][x] == 1;
+    }
+
+    public static int[][] getMap() {
+        return map;
+    }
+
+    public static void setMap(int[][] map) {
+        Map.map = map;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public static void setWidth(int width) {
+        Map.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public static void setHeight(int height) {
+        Map.height = height;
     }
 
     public void createMap(String mapPath) throws FileNotFoundException {
@@ -90,8 +108,6 @@ public class Map {
                 }
             }
         }
-        // animateEntities.add(new Balloon(1, 1, Sprite.balloom_left[0]));
-
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
@@ -117,7 +133,7 @@ public class Map {
 
     public Bomber getBomber() {
         for (int i = 0; i < animateEntities.size(); i++) {
-            if (animateEntities.get(i).isBomber == true) {
+            if (animateEntities.get(i).isBomber) {
                 return (Bomber) animateEntities.get(i);
             }
         }
@@ -217,26 +233,6 @@ public class Map {
 
     public void setItems(List<Items> items) {
         this.items = items;
-    }
-
-    public static void setWidth(int width) {
-        Map.width = width;
-    }
-
-    public static void setHeight(int height) {
-        Map.height = height;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public static int[][] getMap() {
-        return map;
-    }
-
-    public static void setMap(int[][] map) {
-        Map.map = map;
     }
 
     public boolean isNoEnemyLeft() {

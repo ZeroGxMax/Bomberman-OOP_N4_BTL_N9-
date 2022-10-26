@@ -15,7 +15,10 @@ public class Constants {
 
     public static final String MAP_PATH[] = {
             Constants.class.getResource("/levels/Level1.txt").getPath(),
-            Constants.class.getResource("/levels/Level2.txt").getPath()
+            Constants.class.getResource("/levels/Level2.txt").getPath(),
+            Constants.class.getResource("/levels/Level3.txt").getPath(),
+            Constants.class.getResource("/levels/Level4.txt").getPath(),
+            Constants.class.getResource("/levels/Level5.txt").getPath()
     };
 
     public static final String TEXTURE_PATH = "/textures/classic.png";
@@ -24,8 +27,13 @@ public class Constants {
 
     public static final URL LEVEL_FXML[] =  {
             Constants.class.getResource("/levels/Level_1.fxml"),
-            Constants.class.getResource("/levels/Level_2.fxml")
+            Constants.class.getResource("/levels/Level_2.fxml"),
+            Constants.class.getResource("/levels/Level_3.fxml"),
+            Constants.class.getResource("/levels/Level_4.fxml"),
+            Constants.class.getResource("/levels/Level_5.fxml")
     };
+
+    public static final URL WIN_GAME_FXML = Constants.class.getResource("/levels/WinGame.fxml");
 
     public static final int LEVEL_DELAY_TIME = 1000;
 
@@ -66,21 +74,4 @@ public class Constants {
         EXPLOSION_HORIZONTAL_LEFT_LAST,
         EXPLOSION_HORIZONTAL_RIGHT_LAST
     }
-
-    public enum MENU_STATUS {
-        MENU,
-        GUIDE,
-        PAUSE,
-        GAME_OVER,
-        GAME_WIN,
-
-        PLAYING,
-        NEXT_STAGE
-    }
-
-    public static String[] FONT_PATH = {
-            Constants.class.getResource("/fonts/font1.ttf").getPath(),
-            Constants.class.getResource("/fonts/font2.TTF").getPath(),
-            Constants.class.getResource("/fonts/font3.otf").getPath()
-    };
 }

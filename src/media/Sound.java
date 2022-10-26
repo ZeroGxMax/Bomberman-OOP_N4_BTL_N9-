@@ -1,30 +1,15 @@
 package media;
 
-import java.io.File;
-
 import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 
+import java.io.File;
+
 public class Sound {
-    private String path;
-    private AudioClip sound;
     public static Boolean mute = false;
+    private final String path;
+    private AudioClip sound;
     private boolean loop = false;
-
-    public boolean isPlaying() {
-        return sound.isPlaying();
-
-    }
-
-    public void setLoop(boolean loop) {
-        this.loop = loop;
-        if (loop) {
-            sound.setCycleCount(AudioClip.INDEFINITE);
-        } else {
-            sound.setCycleCount(1);
-        }
-    }
-
 
     public Sound(String path) {
         this.path = path;
@@ -35,6 +20,26 @@ public class Sound {
         this.path = _path;
         sound = chooseSound(_path);
         setLoop(_loop);
+    }
+
+    public static AudioClip chooseSound(String path) {
+        File file = new File(path);
+        Media media = new Media(file.toURI().toString());
+        AudioClip audioClip = new AudioClip(media.getSource());
+        return audioClip;
+    }
+
+    public boolean isPlaying() {
+        return sound.isPlaying();
+    }
+
+    public void setLoop(boolean loop) {
+        this.loop = loop;
+        if (loop) {
+            sound.setCycleCount(AudioClip.INDEFINITE);
+        } else {
+            sound.setCycleCount(1);
+        }
     }
 
     public void update() {
@@ -64,13 +69,6 @@ public class Sound {
 
     public void stop() {
         sound.stop();
-    }
-
-    public static AudioClip chooseSound(String path) {
-        File file = new File(path);
-        Media media = new Media(file.toURI().toString());
-        AudioClip audioClip = new AudioClip(media.getSource());
-        return audioClip;
     }
 
     @Override

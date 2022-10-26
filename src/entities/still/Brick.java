@@ -1,7 +1,6 @@
 package entities.still;
 
 import constants.Constants;
-import entities.still.StillObject;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
@@ -13,6 +12,11 @@ public class Brick extends StillObject {
     protected int timeCount = Constants.BRICK_DESTROY_TIME;
     protected Sprite behindSprite;
 
+    public Brick(int x, int y, Sprite sprite) {
+        super(x, y, sprite);
+        behindSprite = Sprite.grass;
+    }
+
     protected void goAnimate() {
         if (animate < MAX_ANIMATE) {
             animate++;
@@ -21,25 +25,20 @@ public class Brick extends StillObject {
         }
     }
 
-    public Brick(int x, int y, Sprite sprite) {
-        super(x, y, sprite);
-        behindSprite = Sprite.grass;
-    }
-
     @Override
     public void update() {
         if (!destroyed || timeCount < 0) {
             return;
         }
-        if (destroyed == true) {
+        if (destroyed) {
             if (timeCount == 0) {
                 sprite = Sprite.grass;
                 Map.map[yUnit][xUnit] = 1;
-            } else if (timeCount < Constants.BRICK_DESTROY_TIME/3) {
+            } else if (timeCount < Constants.BRICK_DESTROY_TIME / 3) {
                 sprite = Sprite.brick_exploded[2];
-            } else if (timeCount < Constants.BRICK_DESTROY_TIME*2/3) {
+            } else if (timeCount < Constants.BRICK_DESTROY_TIME * 2 / 3) {
                 sprite = Sprite.brick_exploded[1];
-            } else  {
+            } else {
                 sprite = Sprite.brick_exploded[0];
             }
             timeCount--;

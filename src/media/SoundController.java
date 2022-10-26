@@ -1,18 +1,14 @@
 package media;
 
-import java.util.LinkedList;
-
 import constants.Constants;
 
-public class SoundController {
-    private static LinkedList<Sound> soundsList = new LinkedList<>();
-    private static LinkedList<Sound> musicList = new LinkedList<>();
+import java.util.LinkedList;
 
+public class SoundController {
     public static final String[] MUSIC_PATH = {
             "Area0.wav",
             "Area1.wav"
     };
-
     public static final String[] SOUND_PATH = {
             "Die.wav",
             "EnemyDie.wav",
@@ -23,6 +19,8 @@ public class SoundController {
             "ItemAppears.wav",
             "Victory.wav"
     };
+    private static final LinkedList<Sound> soundsList = new LinkedList<>();
+    private static final LinkedList<Sound> musicList = new LinkedList<>();
 
     public static void init() {
         for (String i : MUSIC_PATH) {
