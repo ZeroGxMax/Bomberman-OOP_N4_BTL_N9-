@@ -45,6 +45,12 @@ public class SoundController {
         }
     }
 
+    public static void stopMusicList() {
+        for (Sound i : musicList) {
+            i.stop();
+        }
+    }
+
     public static void playMusic(int index) {
         if (index < 0 || index >= musicList.size()) {
             return;
