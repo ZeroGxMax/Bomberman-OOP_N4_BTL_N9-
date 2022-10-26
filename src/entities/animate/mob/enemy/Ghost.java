@@ -7,7 +7,7 @@ import movement.GhostMovement;
 import movement.Movement;
 
 public class Ghost extends Enemy {
-    protected Movement movement = new GhostMovement();
+    public Movement movement = new GhostMovement();
 
     public Ghost(double x, double y, Sprite sprite) {
         super(x, y, sprite);
@@ -19,7 +19,7 @@ public class Ghost extends Enemy {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (movement.getEnemy() == null) {
             movement.setEnemy(this);
         }
