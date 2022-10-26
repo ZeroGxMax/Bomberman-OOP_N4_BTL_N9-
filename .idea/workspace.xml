@@ -4,66 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Fix wall through item + refactor code">
-      <change afterPath="$PROJECT_DIR$/res/levels/Level3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/Level4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/Level5.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/Level_3.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/Level_4.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/Level_5.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/levels/WinGame.fxml" afterDir="false" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Refactor codes">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/levels/Level2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/AnimateEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Bomb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Bomb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Explosion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/ExplosionUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/ExplosionUnit.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Bomber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Kondoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/items/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/items/Portal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/Portal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/items/ThroughWallItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/items/ThroughWallItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/still/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/still/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factory/AnimateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/AnimateFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/factory/StillFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factory/StillFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/BombermanGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/BombermanGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Starter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Starter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphics/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/SpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/levels/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/levels/Levels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/media/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/Sound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/media/SoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/media/SoundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/movement/DahlMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/DahlMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/movement/DirectedMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/DirectedMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/movement/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/Movement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/movement/NearMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/NearMovement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/movement/RandomMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/RandomMovement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/support/Delay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/support/Delay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_STATUS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$BOMB_UNITS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$DIRECTION.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants$KEYBOARD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants$MENU_STATUS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/constants/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/factory/AnimateFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/game/BombermanGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/game/BombermanGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Level2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Level2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Levels$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Levels$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Levels$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/levels/Levels.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/levels/Levels.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/map/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/map/Map.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +26,7 @@
       <list>
         <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -115,7 +67,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -168,7 +120,6 @@
       <list>
         <item itemvalue="Application.BombermanGame" />
         <item itemvalue="Application.Starter" />
-        <item itemvalue="Application.BombermanGame" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +265,56 @@
       <option name="project" value="LOCAL" />
       <updated>1666781130223</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Generate new maps + refactor codes">
+      <created>1666782920982</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1666782920982</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Generate new maps + refactor codes">
+      <created>1666782931088</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666782931088</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Generate new maps + refactor codes">
+      <created>1666782937173</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666782937173</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Refactor codes">
+      <created>1666783145597</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1666783145597</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Refactor codes">
+      <created>1666783163329</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1666783163329</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Refactor codes">
+      <created>1666804562477</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1666804562477</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Refactor codes">
+      <created>1666804686808</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666804686808</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,7 +328,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Zero_branch_2" />
+                        <option value="Zero_branch_2" />
                       </list>
                     </value>
                   </entry>
@@ -356,7 +356,9 @@
     <MESSAGE value="Fixed: Brick destroyed image before item shown" />
     <MESSAGE value="Fixed: Brick destroyed images before item shown" />
     <MESSAGE value="Fix wall through item + refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix wall through item + refactor code" />
+    <MESSAGE value="Generate new maps + refactor codes" />
+    <MESSAGE value="Refactor codes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor codes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

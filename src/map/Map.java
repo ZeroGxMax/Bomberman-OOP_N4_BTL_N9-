@@ -40,7 +40,7 @@ public class Map {
      * @param y Tọa độ theo chiều dọc, hướng từ trên -> dưới, bắt đầu từ 0
      * @return Khả năng đi vào ô (x, y)
      */
-    public static boolean isCanStepOn(int x, int y) {
+    public static boolean availablePosition(int x, int y) {
         // Kiểm tra tọa độ có trong map không
         if (x < 0 || y < 0 || x >= width || y >= height) {
             return false;
@@ -112,8 +112,8 @@ public class Map {
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
-      SoundController.init();
-      SoundController.playMusic(1);
+//      SoundController.init();
+//      SoundController.playMusic(1);
     }
 
     public void initEntities() {
