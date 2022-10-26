@@ -12,5 +12,12 @@ public class Wall extends StillObject {
     public void update() {
 
     }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
+    }
 }
 

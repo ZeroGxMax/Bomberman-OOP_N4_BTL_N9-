@@ -1,23 +1,23 @@
 package entities.animate.bomb;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import constants.Constants.BOMB_STATUS;
 import entities.Entity;
 import entities.animate.AnimateEntity;
+import entities.still.Brick;
 import entities.still.Wall;
-import entities.still.destroyable.Brick;
 import graphics.Sprite;
 import javafx.scene.canvas.GraphicsContext;
 import map.Map;
 import media.SoundController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Explosion extends AnimateEntity {
+    protected int bombLength;
     private BOMB_STATUS status;
     private Bomb status1;
     private Flame status2;
-    protected int bombLength;
 
     public Explosion() {
         super();
@@ -30,7 +30,7 @@ public class Explosion extends AnimateEntity {
         status = BOMB_STATUS.START;
         status1 = new Bomb(x, y);
         status2 = new Flame(x, y, bombLength);
-        Map._map[y][x] = 0;
+        Map.map[y][x] = 0;
     }
 
     public boolean isDestroyed() {
@@ -93,7 +93,7 @@ public class Explosion extends AnimateEntity {
             case START:
                 status = BOMB_STATUS.EXPLOSION;
                 SoundController.playSound(4);
-                Map._map[yUnit][xUnit] = 1;
+                Map.map[yUnit][xUnit] = 1;
                 SoundController.playSound(4);
                 destroyedObjects();
                 break;
@@ -129,5 +129,12 @@ public class Explosion extends AnimateEntity {
         else if (status == BOMB_STATUS.EXPLOSION) {
             status2.render(gc);
         }
+    }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
     }
 }

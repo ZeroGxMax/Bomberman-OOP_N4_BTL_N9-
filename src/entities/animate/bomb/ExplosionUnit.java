@@ -20,10 +20,6 @@ public class ExplosionUnit extends AnimateEntity {
         new ExplosionUnit(x, y, chooseSprite(type));
     }
 
-    public boolean isDestroy() {
-        return destroy;
-    }
-
     public static Sprite[] chooseSprite(BOMB_UNITS unit) {
         switch (unit) {
             case BOMB:
@@ -47,6 +43,10 @@ public class ExplosionUnit extends AnimateEntity {
         }
     }
 
+    public boolean isDestroy() {
+        return destroy;
+    }
+
     @Override
     public void update() {
         if (destroy)
@@ -60,5 +60,12 @@ public class ExplosionUnit extends AnimateEntity {
             destroy = true;
         }
         img = sprite.getFxImage();
+    }
+
+    /**
+     * This don't need to be initialized
+     */
+    public void init() {
+
     }
 }

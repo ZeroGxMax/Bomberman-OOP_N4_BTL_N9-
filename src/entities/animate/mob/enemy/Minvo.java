@@ -3,8 +3,8 @@ package entities.animate.mob.enemy;
 import constants.Constants;
 import graphics.Sprite;
 import map.Map;
-import movement.NearMovement;
 import movement.Movement;
+import movement.NearMovement;
 
 public class Minvo extends Enemy {
     public Movement movement = new NearMovement();
@@ -90,11 +90,11 @@ public class Minvo extends Enemy {
         if (destroyed) {
             if (timeAfter == 0) {
                 return;
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/4) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 4) {
                 sprite = deadSprites.get(2);
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/3) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 3) {
                 sprite = deadSprites.get(1);
-            } else if (timeAfter < Constants.ENEMY_DEATH_TIME/2) {
+            } else if (timeAfter < Constants.ENEMY_DEATH_TIME / 2) {
                 sprite = deadSprites.get(0);
             } else {
                 sprite = deadSprites.get(3);
@@ -115,6 +115,20 @@ public class Minvo extends Enemy {
                 break;
             case NONE:
                 break;
+        }
+    }
+
+    @Override
+    public void init() {
+        super.init();
+        if (movement.getGameMap() == null) {
+            movement.setGameMap(gameMap);
+        }
+        if (movement.getBomber() == null) {
+            movement.setBomber(gameMap.getBomber());
+        }
+        if (movement.getEnemy() == null) {
+            movement.setEnemy(this);
         }
     }
 }

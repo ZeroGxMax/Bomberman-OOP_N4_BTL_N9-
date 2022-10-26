@@ -2,10 +2,11 @@ package movement;
 
 import constants.Constants;
 
-import static constants.Constants.DIRECTION.*;
+import static constants.Constants.DIRECTION.UP;
 
 public class NearMovement extends Movement {
-    public NearMovement() {}
+    public NearMovement() {
+    }
 
     @Override
     public Constants.DIRECTION calculateDirection() {

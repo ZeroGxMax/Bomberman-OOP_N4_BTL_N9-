@@ -1,11 +1,7 @@
 package factory;
 
 import entities.Entity;
-import entities.items.LimitBombItem;
-import entities.items.Portal;
-import entities.items.PowerupFlame;
-import entities.items.SpeedupItem;
-import entities.items.ThroughWallItem;
+import entities.items.*;
 
 public class ItemFactory {
     public static Entity getItemEntity(int i, int j, char c) {
@@ -19,7 +15,7 @@ public class ItemFactory {
             case 'x':
                 return new Portal(j, i);
             case 'w':
-                return new ThroughWallItem(j, i);
+                return new SoftBlocksThroughItem(j, i);
             default:
                 return null;
         }

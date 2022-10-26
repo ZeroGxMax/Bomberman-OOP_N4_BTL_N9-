@@ -1,13 +1,13 @@
 package entities;
 
 import graphics.Sprite;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import map.Map;
 import support.Unit;
 
 public abstract class Entity {
+    public boolean isBomber = false;
     // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
     protected Map gameMap = new Map();
     // Tọa độ X tính từ góc trái trên trong Canvas
@@ -19,7 +19,6 @@ public abstract class Entity {
     protected int yUnit;
     protected Sprite sprite;
     protected Image img;
-    public boolean isBomber = false;
     protected boolean destroyed = false;
     protected int timeAfter;
 
@@ -76,23 +75,9 @@ public abstract class Entity {
         this.destroyed = destroyed;
     }
 
-    public Rectangle2D getBoundary() {
-        return new Rectangle2D(x, y, Sprite.SCALED_SIZE, Sprite.SCALED_SIZE);
-    }
-
-    public boolean isCollision(Entity entity) {
-        if (entity == null) {
-            return false;
-        } else {
-            return this.getBoundary().intersects(entity.getBoundary());
-        }
-    }
-
     public abstract void update();
 
-    public void init() {
-
-    }
+    public abstract void init();
 
     public void render(GraphicsContext gc) {
         gc.drawImage(img, x, y);
