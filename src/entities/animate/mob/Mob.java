@@ -1,6 +1,7 @@
 package entities.animate.mob;
 
 import constants.Constants.DIRECTION;
+import entities.Movable;
 import entities.animate.AnimateEntity;
 import graphics.Sprite;
 import map.Map;
@@ -8,7 +9,7 @@ import map.Map;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Mob extends AnimateEntity {
+public abstract class Mob extends AnimateEntity implements Movable {
     protected List<Sprite> deadSprites = new ArrayList<>();
     protected DIRECTION direction = DIRECTION.NONE;
     protected boolean moving = false;
@@ -35,7 +36,7 @@ public abstract class Mob extends AnimateEntity {
      *
      * @return
      */
-    protected boolean isCanChangeDirection() {
+    public boolean isCanChangeDirection() {
         // Kiểm tra bomber đã đúng ô chưa. Nếu cách 1 pixel coi như đã đúng vị trí (giá
         // trị 1 có thể thay đổi cho phù hợp).
         if (Math.abs(xUnit * Sprite.SCALED_SIZE - x) > velocity) {
@@ -63,9 +64,9 @@ public abstract class Mob extends AnimateEntity {
         return Map.isCanStepOn(x, y);
     }
 
-    protected abstract void calculateMove();
+    public abstract void calculateMove();
 
-    protected abstract void move(double xa, double ya);
+    public abstract void move(double xa, double ya);
 
     public abstract void setDirection();
 }

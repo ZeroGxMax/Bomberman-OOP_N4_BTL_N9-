@@ -20,7 +20,7 @@ public class Minvo extends Enemy {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (movement.getEnemy() == null) {
             movement.setEnemy(this);
         }
