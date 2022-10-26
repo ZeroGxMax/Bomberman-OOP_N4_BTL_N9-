@@ -1,6 +1,7 @@
 package levels;
 
 import java.io.FileNotFoundException;
+
 import constants.Constants;
 import graphics.Sprite;
 import input.KeyBoardInput;
@@ -14,8 +15,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import map.Map;
 import support.Delay;
-
-import static constants.Constants.WIDTH;
 
 public class Levels {
     public Map gameMap = new Map();
