@@ -4,9 +4,6 @@
 - [Phạm Đàm Quân](https://github.com/ZeroGxMax)
 - [Phạm Anh Tuấn](https://github.com/SakamakiIzayoi123)
 
-## Built With
-- Java
-
 ## Game engine
 - [JavaFx](https://openjfx.io/openjfx-docs/)
 
