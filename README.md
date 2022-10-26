@@ -17,7 +17,7 @@
 ![Demo.png](Demo.png)
 - Xây dựng bản đồ màn chơi từ tệp cấu hình
 - ![Bomber](res/sprites/player_down.png) Di chuyển Bomber theo sự điều khiển từ người chơi.
-- Tự động di chuyển các Enemy (![Balloon](res/sprites/balloom_right1.png) (![Oneal](res/sprites/oneal_right1.png) (![Doll](res/sprites/doll_right1.png) (![Kondoria](res/sprites/kondoria_right1.png) (![Minvo](res/sprites/minvo_right1.png) (![Ghost](res/sprites/ghost_right1.png)
+- Tự động di chuyển các Enemy ![Balloon](res/sprites/balloom_right1.png) ![Oneal](res/sprites/oneal_right1.png) ![Doll](res/sprites/doll_right1.png) ![Kondoria](res/sprites/kondoria_right1.png) ![Minvo](res/sprites/minvo_right1.png) Ghost.
 - Xỷ lý va chạm cho các đối tượng ![Bomber](res/sprites/player_down.png) Bomber, Enemy,
 ![Wall](res/sprites/wall.png) Wall, 
 ![Brick](res/sprites/brick.png) Brick, 
