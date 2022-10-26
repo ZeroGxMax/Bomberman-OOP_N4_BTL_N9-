@@ -29,7 +29,7 @@ public class Map {
     public List<Entity> stillObjects = new ArrayList<>();
     public List<Explosion> bombList = new ArrayList<>();
     public List<Items> items = new ArrayList<>();
-    protected boolean noEnemyLeft = true;
+    protected boolean noEnemyLeft = false;
     protected boolean stagePassed = false;
     private int level;
 
