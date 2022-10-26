@@ -14,7 +14,6 @@ public abstract class AnimateEntity extends Entity {
         super(x, y, sprite);
     }
 
-
     protected void goAnimate() {
         if (animate < MAX_ANIMATE) {
             animate++;
