@@ -14,7 +14,7 @@
 - [SceneBuilder](https://gluonhq.com/products/scene-builder/)
 
 ## Game demo
-![Demo.png](Demo.png)
+![Demo.png](res/introduction/Demo.png)
 - Xây dựng bản đồ màn chơi từ tệp cấu hình
 - ![Bomber](res/sprites/player_down.png) Di chuyển Bomber theo sự điều khiển từ người chơi.
 - Tự động di chuyển các Enemy ![Balloon](res/sprites/balloom_right1.png) ![Oneal](res/sprites/oneal_right1.png) ![Doll](res/sprites/doll_right1.png) ![Kondoria](res/sprites/kondoria_right1.png) ![Minvo](res/sprites/minvo_right1.png) ![Ghost](res/sprites/ghost.png)
@@ -30,7 +30,7 @@
     + ![BombItem](res/sprites/powerup_bombs.png) Đặt được nhiều bomb hơn
 
  ## Game advancement
-![TreeExtends](Diagram.png)
+![TreeExtends](res/introduction/Diagram.png)
 - Thiết kế cây thừa kế cho các đối tượng game
 - Tìm đường cho Enemy. 
 - Xử lý hiệu ứng âm thanh (thêm music & sound effects)
