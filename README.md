@@ -37,6 +37,7 @@
 - Cài đặt thêm các loại Enemy khác:
   + ![Oneal](res/sprites/oneal_right1.png) Oneal sẽ đuổi theo bomber nếu nằm trong phạm vi
   + ![Doll](res/sprites/doll_right1.png) Doll, chủ yếu di chuyển sang trái phải, thi thoảng sẽ đổi hướng lên xuống, chỉ thay đổi khi đụng tường
-  + ![Kondoria](src/main/resources/sprites/kondoria_right1.png) Kondoria tìm kiếm bomber, có thể di chuyển qua Brick và Bomb
-  + ![Ghost](src/main/resources/sprites/ghost.png) Ghost đi xuyên Brick, thi thoảng đuổi theo bomber
-  + ![Minvo](src/main/resources/sprites/minvo_right1.png) di chuyển rất nhanh, di chuyển giống Doll nhưng lại đuổi theo người chơi nếu ở gần
+  + ![Kondoria](res/sprites/kondoria_right1.png) Kondoria tìm kiếm bomber, có thể di chuyển qua Brick và Bomb
+  + ![Minvo](res/sprites/minvo_right1.png) di chuyển rất nhanh, di chuyển giống Doll nhưng lại đuổi theo người chơi nếu ở gần
+  + ![Ghost](res/sprites/ghost.pngg) Ghost đi xuyên Brick, thi thoảng đuổi theo bomber
+  
