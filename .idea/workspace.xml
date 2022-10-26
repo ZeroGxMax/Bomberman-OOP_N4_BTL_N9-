@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Refactor codes" />
+    <list default="true" id="4586ab7b-5012-49d7-b10b-d5920c390890" name="Changes" comment="Refactor codes">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/bomb/Flame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/Mob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Balloon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Dahl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Minvo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/animate/mob/enemy/Oneal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/movement/RandomMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/movement/RandomMovement.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666804562477</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Refactor codes">
+      <created>1666804686808</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666804686808</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

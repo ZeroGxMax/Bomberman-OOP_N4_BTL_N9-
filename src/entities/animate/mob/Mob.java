@@ -61,7 +61,7 @@ public abstract class Mob extends AnimateEntity implements Movable {
     }
 
     public boolean isCanStepOn(int x, int y) {
-        return Map.isCanStepOn(x, y);
+        return Map.availablePosition(x, y);
     }
 
     public abstract void calculateMove();
