@@ -29,7 +29,7 @@ public class Map {
     public List<Entity> stillObjects = new ArrayList<>();
     public List<Explosion> bombList = new ArrayList<>();
     public List<Items> items = new ArrayList<>();
-    protected boolean noEnemyLeft = true;
+    protected boolean noEnemyLeft = false;
     protected boolean stagePassed = false;
     private int level;
 
@@ -112,8 +112,8 @@ public class Map {
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
-//      SoundController.init();
-//      SoundController.playMusic(1);
+        SoundController.init();
+        SoundController.playMusic(1);
     }
 
     public void initEntities() {
