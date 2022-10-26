@@ -105,7 +105,7 @@ public abstract class Items extends Brick {
         SPEED_UP,
         RANGE_BOMB,
         LIMIT_BOMB,
-        WALL_PASS,
+        SOFT_BLOCK_PASS,
         NONE
     }
 }

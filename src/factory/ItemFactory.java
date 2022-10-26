@@ -15,7 +15,7 @@ public class ItemFactory {
             case 'x':
                 return new Portal(j, i);
             case 'w':
-                return new ThroughWallItem(j, i);
+                return new SoftBlocksThroughItem(j, i);
             default:
                 return null;
         }
