@@ -11,6 +11,7 @@ import factory.AnimateFactory;
 import factory.ItemFactory;
 import factory.StillFactory;
 import javafx.scene.canvas.GraphicsContext;
+import media.SoundController;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -111,8 +112,8 @@ public class Map {
         // Lưu ý: Phải setGameMap ở bên ngoài (không thể construct trực tiếp).
         sc.close();
 
-//       SoundController.init();
-//       SoundController.playMusic(1);
+        SoundController.init();
+        SoundController.playMusic(1);
     }
 
     public void initEntities() {
@@ -201,6 +202,7 @@ public class Map {
         items.clear();
         noEnemyLeft = false;
         stagePassed = false;
+        SoundController.stop();
     }
 
     public List<Entity> getAnimateEntities() {

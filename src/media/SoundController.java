@@ -83,4 +83,10 @@ public class SoundController {
             s.play(1);
         }
     }
+
+    public static void stop() {
+        for (Sound i : musicList) {
+            i.stop();
+        }
+    }
 }
