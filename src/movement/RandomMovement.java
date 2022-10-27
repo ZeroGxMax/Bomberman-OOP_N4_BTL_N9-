@@ -31,16 +31,16 @@ public class RandomMovement extends Movement {
         }
         // Map bi nguoc
         ArrayList<DIRECTION> availableDirection = new ArrayList<>();
-        if (Map.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() - 1)) {
+        if (Map.availablePosition(enemy.getxUnit(), enemy.getyUnit() - 1)) {
             availableDirection.add(UP);
         }
-        if (Map.isCanStepOn(enemy.getxUnit() + 1, enemy.getyUnit())) {
+        if (Map.availablePosition(enemy.getxUnit() + 1, enemy.getyUnit())) {
             availableDirection.add(RIGHT);
         }
-        if (Map.isCanStepOn(enemy.getxUnit(), enemy.getyUnit() + 1)) {
+        if (Map.availablePosition(enemy.getxUnit(), enemy.getyUnit() + 1)) {
             availableDirection.add(DOWN);
         }
-        if (Map.isCanStepOn(enemy.getxUnit() - 1, enemy.getyUnit())) {
+        if (Map.availablePosition(enemy.getxUnit() - 1, enemy.getyUnit())) {
             availableDirection.add(LEFT);
         }
         if (Probability.isUsually()) {

@@ -122,7 +122,7 @@ public class Bomber extends Mob {
     }
 
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (!moving) // Nếu không di chuyển -> thoát hàm
             return;
         double xa = 0;

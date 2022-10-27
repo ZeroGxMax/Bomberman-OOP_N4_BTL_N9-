@@ -14,7 +14,7 @@ public class Flame extends AnimateEntity {
     public Flame(int x, int y, int length) {
         units.add(new ExplosionUnit(x, y, Sprite.bomb_exploded));
         for (int i = 1; i <= length; i++) {
-            if (Map.isCanStepOn(x - i, y)) {
+            if (Map.availablePosition(x - i, y)) {
                 if (i == length) {
                     units.add(new ExplosionUnit(x - i, y, Sprite.explosion_horizontal_left_last));
                 } else {
@@ -25,7 +25,7 @@ public class Flame extends AnimateEntity {
             }
         }
         for (int i = 1; i <= length; i++) {
-            if (Map.isCanStepOn(x + i, y)) {
+            if (Map.availablePosition(x + i, y)) {
                 if (i == length) {
                     units.add(new ExplosionUnit(x + i, y, Sprite.explosion_horizontal_right_last));
                 } else {
@@ -36,7 +36,7 @@ public class Flame extends AnimateEntity {
             }
         }
         for (int i = 1; i <= length; i++) {
-            if (Map.isCanStepOn(x, y - i)) {
+            if (Map.availablePosition(x, y - i)) {
                 if (i == length) {
                     units.add(new ExplosionUnit(x, y - i, Sprite.explosion_vertical_top_last));
                 } else {
@@ -47,7 +47,7 @@ public class Flame extends AnimateEntity {
             }
         }
         for (int i = 1; i <= length; i++) {
-            if (Map.isCanStepOn(x, y + i)) {
+            if (Map.availablePosition(x, y + i)) {
                 if (i == length) {
                     units.add(new ExplosionUnit(x, y + i, Sprite.explosion_vertical_down_last));
                 } else {

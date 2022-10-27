@@ -23,7 +23,7 @@ public abstract class Enemy extends Mob {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         double xa = 0;
         double ya = 0;
 

@@ -29,7 +29,7 @@ public class Map {
     public List<Entity> stillObjects = new ArrayList<>();
     public List<Explosion> bombList = new ArrayList<>();
     public List<Items> items = new ArrayList<>();
-    protected boolean noEnemyLeft = true;
+    protected boolean noEnemyLeft = false;
     protected boolean stagePassed = false;
     private int level;
 
@@ -40,7 +40,7 @@ public class Map {
      * @param y Tọa độ theo chiều dọc, hướng từ trên -> dưới, bắt đầu từ 0
      * @return Khả năng đi vào ô (x, y)
      */
-    public static boolean isCanStepOn(int x, int y) {
+    public static boolean availablePosition(int x, int y) {
         // Kiểm tra tọa độ có trong map không
         if (x < 0 || y < 0 || x >= width || y >= height) {
             return false;

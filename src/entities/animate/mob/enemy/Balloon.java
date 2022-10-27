@@ -18,7 +18,7 @@ public class Balloon extends Enemy {
      * Dựa theo direction để thay đổi tọa độ
      */
     @Override
-    protected void calculateMove() {
+    public void calculateMove() {
         if (!moving) {
             direction = movement.calculateDirection();
         }
@@ -37,28 +37,28 @@ public class Balloon extends Enemy {
         moving = true;
         switch (direction) {
             case UP:
-                if (Map.isCanStepOn(xUnit, yUnit - 1)) {
+                if (Map.availablePosition(xUnit, yUnit - 1)) {
                     yUnit--;
                 } else {
                     moving = false;
                 }
                 break;
             case DOWN:
-                if (Map.isCanStepOn(xUnit, yUnit + 1)) {
+                if (Map.availablePosition(xUnit, yUnit + 1)) {
                     yUnit++;
                 } else {
                     moving = false;
                 }
                 break;
             case LEFT:
-                if (Map.isCanStepOn(xUnit - 1, yUnit)) {
+                if (Map.availablePosition(xUnit - 1, yUnit)) {
                     xUnit--;
                 } else {
                     moving = false;
                 }
                 break;
             case RIGHT:
-                if (Map.isCanStepOn(xUnit + 1, yUnit)) {
+                if (Map.availablePosition(xUnit + 1, yUnit)) {
                     xUnit++;
                 } else {
                     moving = false;
